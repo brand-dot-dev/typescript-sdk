@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.1-alpha.2 (2025-05-21)
+
+Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
+
+### Chores
+
+* configure new SDK language ([fa4bf57](https://github.com/brand-dot-dev/typescript-sdk/commit/fa4bf57b52799969998afe320e24014cb078140c))
+
 ## 0.0.1-alpha.1 (2025-05-21)
 
 Full Changelog: [v0.0.1-alpha.0...v0.0.1-alpha.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.0...v0.0.1-alpha.1)
