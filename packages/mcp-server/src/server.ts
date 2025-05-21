@@ -19,7 +19,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'brand_dev_api',
-    version: '0.0.1-alpha.1',
+    version: '0.0.1-alpha.2',
   },
   {
     capabilities: {
