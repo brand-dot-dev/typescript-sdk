@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.1-alpha.3 (2025-05-24)
+
+Full Changelog: [v0.0.1-alpha.2...v0.0.1-alpha.3](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.2...v0.0.1-alpha.3)
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([ab24ba0](https://github.com/brand-dot-dev/typescript-sdk/commit/ab24ba029cf26e71ac15da2a6dcdc55fb5c6bc20))
+
+
+### Chores
+
+* **internal:** codegen related update ([0bdcf4b](https://github.com/brand-dot-dev/typescript-sdk/commit/0bdcf4b6aa36c58284b5afe76776711e1121b5b1))
+
 ## 0.0.1-alpha.2 (2025-05-21)
 
 Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
