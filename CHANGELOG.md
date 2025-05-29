@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.1 (2025-05-29)
+
+Full Changelog: [v0.0.1-alpha.2...v0.1.0-alpha.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.2...v0.1.0-alpha.1)
+
+### Features
+
+* **mcp:** include http information in tools ([608a554](https://github.com/brand-dot-dev/typescript-sdk/commit/608a5549eba7d3775b4be77278e44eff460a56f3))
+
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([ab24ba0](https://github.com/brand-dot-dev/typescript-sdk/commit/ab24ba029cf26e71ac15da2a6dcdc55fb5c6bc20))
+* **mcp:** include description in dynamic tool search ([d698f91](https://github.com/brand-dot-dev/typescript-sdk/commit/d698f9173f905924424c82e0026b06fec3488572))
+
+
+### Chores
+
+* improve publish-npm script --latest tag logic ([a096145](https://github.com/brand-dot-dev/typescript-sdk/commit/a0961454962591ee6e1f0179ad1abf335275235e))
+* **internal:** codegen related update ([0bdcf4b](https://github.com/brand-dot-dev/typescript-sdk/commit/0bdcf4b6aa36c58284b5afe76776711e1121b5b1))
+* **mcp:** remove duplicate assignment ([1984da9](https://github.com/brand-dot-dev/typescript-sdk/commit/1984da989afc8b54c8a81656a0c32f0a488eeb68))
+
 ## 0.0.1-alpha.2 (2025-05-21)
 
 Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
