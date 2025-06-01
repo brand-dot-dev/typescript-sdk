@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-05-31)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* compat with more runtimes ([4595f13](https://github.com/brand-dot-dev/typescript-sdk/commit/4595f133be88a2d148b9267ccd4535eb9a558f51))
+
+
+### Chores
+
+* **deps:** bump eslint-plugin-prettier ([4637721](https://github.com/brand-dot-dev/typescript-sdk/commit/4637721c6e8bb3feeaf727824ee1b2f67cd13204))
+* **internal:** update jest config ([261cd8e](https://github.com/brand-dot-dev/typescript-sdk/commit/261cd8e99fcb636154c5f8b669ccfcaa6d6ff6e9))
+
 ## 0.1.0-alpha.1 (2025-05-29)
 
 Full Changelog: [v0.0.1-alpha.2...v0.1.0-alpha.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.2...v0.1.0-alpha.1)
