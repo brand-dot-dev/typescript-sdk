@@ -22,6 +22,8 @@ import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
 import {
   Brand,
+  BrandAIQueryParams,
+  BrandAIQueryResponse,
   BrandIdentifyFromTransactionParams,
   BrandIdentifyFromTransactionResponse,
   BrandRetrieveByTickerParams,
@@ -712,11 +714,13 @@ export declare namespace BrandDev {
   export {
     Brand as Brand,
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandSearchResponse as BrandSearchResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
