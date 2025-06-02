@@ -4,6 +4,7 @@ import BrandDev from 'brand.dev';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
 import retrieve_brand from './brand/retrieve-brand';
+import ai_query_brand from './brand/ai-query-brand';
 import identify_from_transaction_brand from './brand/identify-from-transaction-brand';
 import retrieve_by_ticker_brand from './brand/retrieve-by-ticker-brand';
 import retrieve_naics_brand from './brand/retrieve-naics-brand';
@@ -34,6 +35,7 @@ function addEndpoint(endpoint: Endpoint) {
 }
 
 addEndpoint(retrieve_brand);
+addEndpoint(ai_query_brand);
 addEndpoint(identify_from_transaction_brand);
 addEndpoint(retrieve_by_ticker_brand);
 addEndpoint(retrieve_naics_brand);

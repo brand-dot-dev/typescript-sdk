@@ -3,11 +3,13 @@
 export {
   Brand,
   type BrandRetrieveResponse,
+  type BrandAIQueryResponse,
   type BrandIdentifyFromTransactionResponse,
   type BrandRetrieveByTickerResponse,
   type BrandRetrieveNaicsResponse,
   type BrandSearchResponse,
   type BrandRetrieveParams,
+  type BrandAIQueryParams,
   type BrandIdentifyFromTransactionParams,
   type BrandRetrieveByTickerParams,
   type BrandRetrieveNaicsParams,

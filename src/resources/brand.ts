@@ -13,6 +13,15 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Beta feature: Use AI to extract specific data points from a brand's website. The
+   * AI will crawl the website and extract the requested information based on the
+   * provided data points.
+   */
+  aiQuery(body: BrandAIQueryParams, options?: RequestOptions): APIPromise<BrandAIQueryResponse> {
+    return this._client.post('/brand/ai/query', { body, ...options });
+  }
+
+  /**
    * Endpoint specially designed for platforms that want to identify transaction data
    * by the transaction title.
    */
@@ -324,6 +333,37 @@ export namespace BrandRetrieveResponse {
        */
       ticker?: string;
     }
+  }
+}
+
+export interface BrandAIQueryResponse {
+  /**
+   * Array of extracted data points
+   */
+  data_extracted?: Array<BrandAIQueryResponse.DataExtracted>;
+
+  /**
+   * The domain that was analyzed
+   */
+  domain?: string;
+
+  /**
+   * List of URLs that were analyzed
+   */
+  urls_analyzed?: Array<string>;
+}
+
+export namespace BrandAIQueryResponse {
+  export interface DataExtracted {
+    /**
+     * Name of the extracted data point
+     */
+    datapoint_name?: string;
+
+    /**
+     * Value of the extracted data point
+     */
+    datapoint_value?: string | number | boolean | Array<string> | Array<number>;
   }
 }
 
@@ -1000,6 +1040,47 @@ export interface BrandRetrieveParams {
     | 'welsh';
 }
 
+export interface BrandAIQueryParams {
+  /**
+   * Array of data points to extract from the website
+   */
+  data_to_extract: Array<BrandAIQueryParams.DataToExtract>;
+
+  /**
+   * The domain name to analyze
+   */
+  domain: string;
+
+  /**
+   * Optional array of specific pages to analyze
+   */
+  specific_pages?: Array<string>;
+}
+
+export namespace BrandAIQueryParams {
+  export interface DataToExtract {
+    /**
+     * Description of what to extract
+     */
+    datapoint_description: string;
+
+    /**
+     * Example of the expected value
+     */
+    datapoint_example: string;
+
+    /**
+     * Name of the data point to extract
+     */
+    datapoint_name: string;
+
+    /**
+     * Type of the data point
+     */
+    datapoint_type: 'text' | 'number' | 'date' | 'boolean' | 'list' | 'url';
+  }
+}
+
 export interface BrandIdentifyFromTransactionParams {
   /**
    * Transaction information to identify the brand
@@ -1033,11 +1114,13 @@ export interface BrandSearchParams {
 export declare namespace Brand {
   export {
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandSearchResponse as BrandSearchResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
