@@ -51,11 +51,43 @@ export const tool: Tool = {
         description: 'The domain name to analyze',
       },
       specific_pages: {
-        type: 'array',
-        description: 'Optional array of specific pages to analyze',
-        items: {
-          type: 'string',
+        type: 'object',
+        description: 'Optional object specifying which pages to analyze',
+        properties: {
+          about_us: {
+            type: 'boolean',
+            description: 'Whether to analyze the about us page',
+          },
+          blog: {
+            type: 'boolean',
+            description: 'Whether to analyze the blog',
+          },
+          careers: {
+            type: 'boolean',
+            description: 'Whether to analyze the careers page',
+          },
+          contact_us: {
+            type: 'boolean',
+            description: 'Whether to analyze the contact us page',
+          },
+          faq: {
+            type: 'boolean',
+            description: 'Whether to analyze the FAQ page',
+          },
+          home_page: {
+            type: 'boolean',
+            description: 'Whether to analyze the home page',
+          },
+          privacy_policy: {
+            type: 'boolean',
+            description: 'Whether to analyze the privacy policy page',
+          },
+          terms_and_conditions: {
+            type: 'boolean',
+            description: 'Whether to analyze the terms and conditions page',
+          },
         },
+        required: [],
       },
     },
   },
