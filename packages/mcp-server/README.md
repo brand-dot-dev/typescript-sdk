@@ -168,6 +168,7 @@ The following tools are available in this MCP server.
 ### Resource `brand`:
 
 - `retrieve_brand` (`read`): Retrieve brand data by domain
+- `ai_query_brand` (`write`): Beta feature: Use AI to extract specific data points from a brand's website. The AI will crawl the website and extract the requested information based on the provided data points.
 - `identify_from_transaction_brand` (`read`): Endpoint specially designed for platforms that want to identify transaction data by the transaction title.
 - `retrieve_by_ticker_brand` (`read`): Retrieve brand data by stock ticker (e.g. AAPL, TSLA, etc.)
 - `retrieve_naics_brand` (`read`): Endpoint to classify any brand into a 2022 NAICS code.
