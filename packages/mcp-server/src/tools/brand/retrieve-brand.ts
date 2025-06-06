@@ -85,7 +85,7 @@ export const tool: Tool = {
       maxSpeed: {
         type: 'boolean',
         description:
-          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip social media data extraction and external service calls (like Crunchbase) to return results faster with basic brand information only.',
+          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip time-consuming operations for faster response at the cost of less comprehensive data.',
       },
     },
   },
