@@ -22,7 +22,11 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieve: required and optional params', async () => {
-    const response = await client.brand.retrieve({ domain: 'domain', force_language: 'albanian' });
+    const response = await client.brand.retrieve({
+      domain: 'domain',
+      force_language: 'albanian',
+      maxSpeed: true,
+    });
   });
 
   // skipped: tests are disabled for the time being
