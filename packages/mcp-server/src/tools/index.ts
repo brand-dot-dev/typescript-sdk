@@ -7,6 +7,7 @@ export { Metadata, Endpoint, HandlerFunction };
 import retrieve_brand from './brand/retrieve-brand';
 import ai_query_brand from './brand/ai-query-brand';
 import identify_from_transaction_brand from './brand/identify-from-transaction-brand';
+import prefetch_brand from './brand/prefetch-brand';
 import retrieve_by_ticker_brand from './brand/retrieve-by-ticker-brand';
 import retrieve_naics_brand from './brand/retrieve-naics-brand';
 import search_brand from './brand/search-brand';
@@ -20,6 +21,7 @@ function addEndpoint(endpoint: Endpoint) {
 addEndpoint(retrieve_brand);
 addEndpoint(ai_query_brand);
 addEndpoint(identify_from_transaction_brand);
+addEndpoint(prefetch_brand);
 addEndpoint(retrieve_by_ticker_brand);
 addEndpoint(retrieve_naics_brand);
 addEndpoint(search_brand);

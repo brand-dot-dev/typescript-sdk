@@ -90,6 +90,23 @@ describe('resource brand', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('prefetch: only required params', async () => {
+    const responsePromise = client.brand.prefetch({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('prefetch: required and optional params', async () => {
+    const response = await client.brand.prefetch({ domain: 'domain' });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('retrieveByTicker: only required params', async () => {
     const responsePromise = client.brand.retrieveByTicker({ ticker: 'ticker' });
     const rawResponse = await responsePromise.asResponse();
