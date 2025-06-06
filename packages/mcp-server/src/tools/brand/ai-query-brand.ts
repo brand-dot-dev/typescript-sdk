@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'brand.dev-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
 import BrandDev from 'brand.dev';
@@ -51,19 +53,51 @@ export const tool: Tool = {
         description: 'The domain name to analyze',
       },
       specific_pages: {
-        type: 'array',
-        description: 'Optional array of specific pages to analyze',
-        items: {
-          type: 'string',
+        type: 'object',
+        description: 'Optional object specifying which pages to analyze',
+        properties: {
+          about_us: {
+            type: 'boolean',
+            description: 'Whether to analyze the about us page',
+          },
+          blog: {
+            type: 'boolean',
+            description: 'Whether to analyze the blog',
+          },
+          careers: {
+            type: 'boolean',
+            description: 'Whether to analyze the careers page',
+          },
+          contact_us: {
+            type: 'boolean',
+            description: 'Whether to analyze the contact us page',
+          },
+          faq: {
+            type: 'boolean',
+            description: 'Whether to analyze the FAQ page',
+          },
+          home_page: {
+            type: 'boolean',
+            description: 'Whether to analyze the home page',
+          },
+          privacy_policy: {
+            type: 'boolean',
+            description: 'Whether to analyze the privacy policy page',
+          },
+          terms_and_conditions: {
+            type: 'boolean',
+            description: 'Whether to analyze the terms and conditions page',
+          },
         },
+        required: [],
       },
     },
   },
 };
 
-export const handler = (client: BrandDev, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.brand.aiQuery(body);
+  return asTextContentResult(await client.brand.aiQuery(body));
 };
 
 export default { metadata, tool, handler };

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-06-06)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** manual updates ([1cc75cd](https://github.com/brand-dot-dev/typescript-sdk/commit/1cc75cd9877da7b2280329cf4e53c7b73f067d46))
+* **mcp:** implement support for binary responses ([4d35e49](https://github.com/brand-dot-dev/typescript-sdk/commit/4d35e49621a740137fde22d0d50b570366697967))
+
+
+### Chores
+
+* adjust eslint.config.mjs ignore pattern ([95468aa](https://github.com/brand-dot-dev/typescript-sdk/commit/95468aa42a24f2f9333d2cf240b8b604d30e4b75))
+* **docs:** use top-level-await in example snippets ([2376ef9](https://github.com/brand-dot-dev/typescript-sdk/commit/2376ef99f488b1b990d3adeaa783be774bd3bbdb))
+* **internal:** fix readablestream types in node 20 ([d753e24](https://github.com/brand-dot-dev/typescript-sdk/commit/d753e243856e1efa6d82e5a3ba5e395a6dfe3558))
+
 ## 0.1.0-alpha.3 (2025-06-02)
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)

@@ -1052,9 +1052,9 @@ export interface BrandAIQueryParams {
   domain: string;
 
   /**
-   * Optional array of specific pages to analyze
+   * Optional object specifying which pages to analyze
    */
-  specific_pages?: Array<string>;
+  specific_pages?: BrandAIQueryParams.SpecificPages;
 }
 
 export namespace BrandAIQueryParams {
@@ -1078,6 +1078,51 @@ export namespace BrandAIQueryParams {
      * Type of the data point
      */
     datapoint_type: 'text' | 'number' | 'date' | 'boolean' | 'list' | 'url';
+  }
+
+  /**
+   * Optional object specifying which pages to analyze
+   */
+  export interface SpecificPages {
+    /**
+     * Whether to analyze the about us page
+     */
+    about_us?: boolean;
+
+    /**
+     * Whether to analyze the blog
+     */
+    blog?: boolean;
+
+    /**
+     * Whether to analyze the careers page
+     */
+    careers?: boolean;
+
+    /**
+     * Whether to analyze the contact us page
+     */
+    contact_us?: boolean;
+
+    /**
+     * Whether to analyze the FAQ page
+     */
+    faq?: boolean;
+
+    /**
+     * Whether to analyze the home page
+     */
+    home_page?: boolean;
+
+    /**
+     * Whether to analyze the privacy policy page
+     */
+    privacy_policy?: boolean;
+
+    /**
+     * Whether to analyze the terms and conditions page
+     */
+    terms_and_conditions?: boolean;
   }
 }
 

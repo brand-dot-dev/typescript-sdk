@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import BrandDev from 'brand.dev';
-import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import { Metadata, Endpoint, HandlerFunction } from './types';
+
+export { Metadata, Endpoint, HandlerFunction };
 
 import retrieve_brand from './brand/retrieve-brand';
 import ai_query_brand from './brand/ai-query-brand';
@@ -9,24 +10,6 @@ import identify_from_transaction_brand from './brand/identify-from-transaction-b
 import retrieve_by_ticker_brand from './brand/retrieve-by-ticker-brand';
 import retrieve_naics_brand from './brand/retrieve-naics-brand';
 import search_brand from './brand/search-brand';
-
-export type HandlerFunction = (client: BrandDev, args: Record<string, unknown> | undefined) => Promise<any>;
-
-export type Metadata = {
-  resource: string;
-  operation: 'read' | 'write';
-  tags: string[];
-
-  httpMethod?: string;
-  httpPath?: string;
-  operationId?: string;
-};
-
-export type Endpoint = {
-  metadata: Metadata;
-  tool: Tool;
-  handler: HandlerFunction;
-};
 
 export const endpoints: Endpoint[] = [];
 

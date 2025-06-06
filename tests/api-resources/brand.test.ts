@@ -59,7 +59,16 @@ describe('resource brand', () => {
         },
       ],
       domain: 'domain',
-      specific_pages: ['string'],
+      specific_pages: {
+        about_us: true,
+        blog: true,
+        careers: true,
+        contact_us: true,
+        faq: true,
+        home_page: true,
+        privacy_policy: true,
+        terms_and_conditions: true,
+      },
     });
   });
 
