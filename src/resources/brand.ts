@@ -33,6 +33,16 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Signal that you may fetch brand data for a particular domain soon to improve
+   * latency. This endpoint does not charge credits and is available for paid
+   * customers to optimize future requests. [You must be on a paid plan to use this
+   * endpoint]
+   */
+  prefetch(body: BrandPrefetchParams, options?: RequestOptions): APIPromise<BrandPrefetchResponse> {
+    return this._client.post('/brand/prefetch', { body, ...options });
+  }
+
+  /**
    * Retrieve brand data by stock ticker (e.g. AAPL, TSLA, etc.)
    */
   retrieveByTicker(
@@ -643,6 +653,23 @@ export namespace BrandIdentifyFromTransactionResponse {
   }
 }
 
+export interface BrandPrefetchResponse {
+  /**
+   * The domain that was queued for prefetching
+   */
+  domain?: string;
+
+  /**
+   * Success message
+   */
+  message?: string;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
+}
+
 export interface BrandRetrieveByTickerResponse {
   /**
    * Detailed brand information
@@ -1133,6 +1160,13 @@ export interface BrandIdentifyFromTransactionParams {
   transaction_info: string;
 }
 
+export interface BrandPrefetchParams {
+  /**
+   * Domain name to prefetch brand data for
+   */
+  domain: string;
+}
+
 export interface BrandRetrieveByTickerParams {
   /**
    * Stock ticker symbol to retrieve brand data for (e.g. AAPL, TSLA, etc.)
@@ -1161,12 +1195,14 @@ export declare namespace Brand {
     type BrandRetrieveResponse as BrandRetrieveResponse,
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
+    type BrandPrefetchResponse as BrandPrefetchResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandSearchResponse as BrandSearchResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
+    type BrandPrefetchParams as BrandPrefetchParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandSearchParams as BrandSearchParams,
