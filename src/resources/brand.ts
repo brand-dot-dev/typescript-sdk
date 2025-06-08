@@ -1072,6 +1072,13 @@ export interface BrandRetrieveParams {
    * less comprehensive data.
    */
   maxSpeed?: boolean;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export interface BrandAIQueryParams {
@@ -1089,6 +1096,13 @@ export interface BrandAIQueryParams {
    * Optional object specifying which pages to analyze
    */
   specific_pages?: BrandAIQueryParams.SpecificPages;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export namespace BrandAIQueryParams {
@@ -1165,6 +1179,13 @@ export interface BrandIdentifyFromTransactionParams {
    * Transaction information to identify the brand
    */
   transaction_info: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export interface BrandPrefetchParams {
@@ -1172,6 +1193,13 @@ export interface BrandPrefetchParams {
    * Domain name to prefetch brand data for
    */
   domain: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export interface BrandRetrieveByTickerParams {
@@ -1179,6 +1207,13 @@ export interface BrandRetrieveByTickerParams {
    * Stock ticker symbol to retrieve brand data for (e.g. AAPL, TSLA, etc.)
    */
   ticker: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export interface BrandRetrieveNaicsParams {
@@ -1188,6 +1223,13 @@ export interface BrandRetrieveNaicsParams {
    * the brand using the provided title.
    */
   input: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export interface BrandSearchParams {
@@ -1195,6 +1237,13 @@ export interface BrandSearchParams {
    * Query string to search brands
    */
   query: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
 }
 
 export declare namespace Brand {
