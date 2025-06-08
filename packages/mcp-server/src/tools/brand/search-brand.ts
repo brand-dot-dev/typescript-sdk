@@ -24,6 +24,11 @@ export const tool: Tool = {
         type: 'string',
         description: 'Query string to search brands',
       },
+      timeoutMS: {
+        type: 'integer',
+        description:
+          'Optional timeout in milliseconds for the request. If the request takes longer than this value, it will be aborted with a 408 status code. Maximum allowed value is 300000ms (5 minutes).',
+      },
     },
   },
 };

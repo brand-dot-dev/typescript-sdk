@@ -26,6 +26,7 @@ describe('resource brand', () => {
       domain: 'domain',
       force_language: 'albanian',
       maxSpeed: true,
+      timeoutMS: 1,
     });
   });
 
@@ -73,6 +74,7 @@ describe('resource brand', () => {
         privacy_policy: true,
         terms_and_conditions: true,
       },
+      timeoutMS: 1,
     });
   });
 
@@ -90,7 +92,10 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('identifyFromTransaction: required and optional params', async () => {
-    const response = await client.brand.identifyFromTransaction({ transaction_info: 'transaction_info' });
+    const response = await client.brand.identifyFromTransaction({
+      transaction_info: 'transaction_info',
+      timeoutMS: 1,
+    });
   });
 
   // skipped: tests are disabled for the time being
@@ -107,7 +112,7 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('prefetch: required and optional params', async () => {
-    const response = await client.brand.prefetch({ domain: 'domain' });
+    const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1 });
   });
 
   // skipped: tests are disabled for the time being
@@ -124,7 +129,7 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieveByTicker: required and optional params', async () => {
-    const response = await client.brand.retrieveByTicker({ ticker: 'ticker' });
+    const response = await client.brand.retrieveByTicker({ ticker: 'ticker', timeoutMS: 1 });
   });
 
   // skipped: tests are disabled for the time being
@@ -141,7 +146,7 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('retrieveNaics: required and optional params', async () => {
-    const response = await client.brand.retrieveNaics({ input: 'input' });
+    const response = await client.brand.retrieveNaics({ input: 'input', timeoutMS: 1 });
   });
 
   // skipped: tests are disabled for the time being
@@ -158,6 +163,6 @@ describe('resource brand', () => {
 
   // skipped: tests are disabled for the time being
   test.skip('search: required and optional params', async () => {
-    const response = await client.brand.search({ query: 'query' });
+    const response = await client.brand.search({ query: 'query', timeoutMS: 1 });
   });
 });
