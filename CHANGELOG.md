@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-06-14)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([ce784cd](https://github.com/brand-dot-dev/typescript-sdk/commit/ce784cdd350a285e46139075209405820d7624e1))
+
+
+### Chores
+
+* **internal:** add pure annotations, make base APIResource abstract ([d8a845c](https://github.com/brand-dot-dev/typescript-sdk/commit/d8a845cc477720993869fd020e4a65d9b49c5e1f))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([cd28940](https://github.com/brand-dot-dev/typescript-sdk/commit/cd289406a6103a675b98405719a604b80c162f3c))
+
 ## 0.1.0-alpha.8 (2025-06-08)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
