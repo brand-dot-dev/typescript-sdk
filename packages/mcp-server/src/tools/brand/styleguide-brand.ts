@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'styleguide_brand',
   description:
-    "Beta feature: Automatically extract comprehensive design system information from a brand's website including colors, typography, spacing, shadows, and UI components. Uses AI-powered analysis of website screenshots to identify design patterns and create a reusable styleguide.",
+    "Beta feature: Automatically extract comprehensive design system information from a brand's website including colors, typography, spacing, shadows, and UI components.",
   inputSchema: {
     type: 'object',
     properties: {
