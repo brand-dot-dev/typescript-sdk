@@ -150,6 +150,23 @@ describe('resource brand', () => {
   });
 
   // skipped: tests are disabled for the time being
+  test.skip('retrieveSimplified: only required params', async () => {
+    const responsePromise = client.brand.retrieveSimplified({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // skipped: tests are disabled for the time being
+  test.skip('retrieveSimplified: required and optional params', async () => {
+    const response = await client.brand.retrieveSimplified({ domain: 'domain', timeoutMS: 1 });
+  });
+
+  // skipped: tests are disabled for the time being
   test.skip('screenshot: only required params', async () => {
     const responsePromise = client.brand.screenshot({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
