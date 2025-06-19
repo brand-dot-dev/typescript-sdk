@@ -63,6 +63,18 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Returns a simplified version of brand data containing only essential
+   * information: domain, title, colors, logos, and backdrops. This endpoint is
+   * optimized for faster responses and reduced data transfer.
+   */
+  retrieveSimplified(
+    query: BrandRetrieveSimplifiedParams,
+    options?: RequestOptions,
+  ): APIPromise<BrandRetrieveSimplifiedResponse> {
+    return this._client.get('/brand/retrieve-simplified', { query, ...options });
+  }
+
+  /**
    * Beta feature: Capture a screenshot of a website. Supports both viewport
    * (standard browser view) and full-page screenshots. Returns a URL to the uploaded
    * screenshot image hosted on our CDN.
@@ -1001,6 +1013,186 @@ export namespace BrandRetrieveNaicsResponse {
   }
 }
 
+export interface BrandRetrieveSimplifiedResponse {
+  /**
+   * Simplified brand information
+   */
+  brand?: BrandRetrieveSimplifiedResponse.Brand;
+
+  /**
+   * HTTP status code of the response
+   */
+  code?: number;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
+}
+
+export namespace BrandRetrieveSimplifiedResponse {
+  /**
+   * Simplified brand information
+   */
+  export interface Brand {
+    /**
+     * An array of backdrop images for the brand
+     */
+    backdrops?: Array<Brand.Backdrop>;
+
+    /**
+     * An array of brand colors
+     */
+    colors?: Array<Brand.Color>;
+
+    /**
+     * The domain name of the brand
+     */
+    domain?: string;
+
+    /**
+     * An array of logos associated with the brand
+     */
+    logos?: Array<Brand.Logo>;
+
+    /**
+     * The title or name of the brand
+     */
+    title?: string;
+  }
+
+  export namespace Brand {
+    export interface Backdrop {
+      /**
+       * Array of colors in the backdrop image
+       */
+      colors?: Array<Backdrop.Color>;
+
+      /**
+       * Resolution of the backdrop image
+       */
+      resolution?: Backdrop.Resolution;
+
+      /**
+       * URL of the backdrop image
+       */
+      url?: string;
+    }
+
+    export namespace Backdrop {
+      export interface Color {
+        /**
+         * Color in hexadecimal format
+         */
+        hex?: string;
+
+        /**
+         * Name of the color
+         */
+        name?: string;
+      }
+
+      /**
+       * Resolution of the backdrop image
+       */
+      export interface Resolution {
+        /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
+        /**
+         * Height of the image in pixels
+         */
+        height?: number;
+
+        /**
+         * Width of the image in pixels
+         */
+        width?: number;
+      }
+    }
+
+    export interface Color {
+      /**
+       * Color in hexadecimal format
+       */
+      hex?: string;
+
+      /**
+       * Name of the color
+       */
+      name?: string;
+    }
+
+    export interface Logo {
+      /**
+       * Array of colors in the logo
+       */
+      colors?: Array<Logo.Color>;
+
+      /**
+       * Group identifier for logos
+       */
+      group?: number;
+
+      /**
+       * Mode of the logo, e.g., 'dark', 'light'
+       */
+      mode?: string;
+
+      /**
+       * Resolution of the logo image
+       */
+      resolution?: Logo.Resolution;
+
+      /**
+       * Type of the logo based on resolution (e.g., 'icon', 'logo', 'banner')
+       */
+      type?: string;
+
+      /**
+       * URL of the logo image
+       */
+      url?: string;
+    }
+
+    export namespace Logo {
+      export interface Color {
+        /**
+         * Color in hexadecimal format
+         */
+        hex?: string;
+
+        /**
+         * Name of the color
+         */
+        name?: string;
+      }
+
+      /**
+       * Resolution of the logo image
+       */
+      export interface Resolution {
+        /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
+        /**
+         * Height of the image in pixels
+         */
+        height?: number;
+
+        /**
+         * Width of the image in pixels
+         */
+        width?: number;
+      }
+    }
+  }
+}
+
 export interface BrandScreenshotResponse {
   /**
    * HTTP status code
@@ -1650,6 +1842,20 @@ export interface BrandRetrieveNaicsParams {
   timeoutMS?: number;
 }
 
+export interface BrandRetrieveSimplifiedParams {
+  /**
+   * Domain name to retrieve simplified brand data for
+   */
+  domain: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
 export interface BrandScreenshotParams {
   /**
    * Domain name to take screenshot of (e.g., 'example.com', 'google.com'). The
@@ -1702,6 +1908,7 @@ export declare namespace Brand {
     type BrandPrefetchResponse as BrandPrefetchResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
+    type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandSearchResponse as BrandSearchResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
@@ -1711,6 +1918,7 @@ export declare namespace Brand {
     type BrandPrefetchParams as BrandPrefetchParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
+    type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
     type BrandSearchParams as BrandSearchParams,
     type BrandStyleguideParams as BrandStyleguideParams,
