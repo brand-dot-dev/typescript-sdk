@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2025-06-19)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** manual updates ([f405c69](https://github.com/brand-dot-dev/typescript-sdk/commit/f405c69d49712539cb8623e9a5cc2b73431dd9dc))
+* **api:** manual updates ([437ffa2](https://github.com/brand-dot-dev/typescript-sdk/commit/437ffa2b5b4d650dafc0584ab45bafce9ccabc8e))
+* **client:** add support for endpoint-specific base URLs ([bd84840](https://github.com/brand-dot-dev/typescript-sdk/commit/bd848405ed7a7b7cf967dc9e9e068a3b04eb5bfd))
+* **mcp:** set X-Stainless-MCP header ([9f8bca8](https://github.com/brand-dot-dev/typescript-sdk/commit/9f8bca8ea75f6d11b15e3dfcbc9abeb4461257e2))
+
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([ce784cd](https://github.com/brand-dot-dev/typescript-sdk/commit/ce784cdd350a285e46139075209405820d7624e1))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([623b5d6](https://github.com/brand-dot-dev/typescript-sdk/commit/623b5d6a5ea903ac4c2ed14841587318c3b62b75))
+* **client:** refactor imports ([d90fb77](https://github.com/brand-dot-dev/typescript-sdk/commit/d90fb773c0a32e7129041025cda6bf999d4750a0))
+* **internal:** add pure annotations, make base APIResource abstract ([d8a845c](https://github.com/brand-dot-dev/typescript-sdk/commit/d8a845cc477720993869fd020e4a65d9b49c5e1f))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([cd28940](https://github.com/brand-dot-dev/typescript-sdk/commit/cd289406a6103a675b98405719a604b80c162f3c))
+* **readme:** update badges ([46380e0](https://github.com/brand-dot-dev/typescript-sdk/commit/46380e0141b9570f5e2c816c5ca90f74f781df69))
+* **readme:** use better example snippet for undocumented params ([56c698d](https://github.com/brand-dot-dev/typescript-sdk/commit/56c698d1f5b47609e2e3da90c18813c715bdbb84))
+
 ## 0.1.0-alpha.8 (2025-06-08)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
