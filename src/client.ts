@@ -30,8 +30,12 @@ import {
   BrandRetrieveNaicsResponse,
   BrandRetrieveParams,
   BrandRetrieveResponse,
+  BrandScreenshotParams,
+  BrandScreenshotResponse,
   BrandSearchParams,
   BrandSearchResponse,
+  BrandStyleguideParams,
+  BrandStyleguideResponse,
 } from './resources/brand';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -738,13 +742,17 @@ export declare namespace BrandDev {
     type BrandPrefetchResponse as BrandPrefetchResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
+    type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandSearchResponse as BrandSearchResponse,
+    type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
+    type BrandScreenshotParams as BrandScreenshotParams,
     type BrandSearchParams as BrandSearchParams,
+    type BrandStyleguideParams as BrandStyleguideParams,
   };
 }

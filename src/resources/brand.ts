@@ -63,10 +63,29 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Beta feature: Capture a screenshot of a website. Supports both viewport
+   * (standard browser view) and full-page screenshots. Returns a URL to the uploaded
+   * screenshot image hosted on our CDN.
+   */
+  screenshot(query: BrandScreenshotParams, options?: RequestOptions): APIPromise<BrandScreenshotResponse> {
+    return this._client.get('/brand/screenshot', { query, ...options });
+  }
+
+  /**
    * Search brands by query
    */
   search(query: BrandSearchParams, options?: RequestOptions): APIPromise<BrandSearchResponse> {
     return this._client.get('/brand/search', { query, ...options });
+  }
+
+  /**
+   * Beta feature: Automatically extract comprehensive design system information from
+   * a brand's website including colors, typography, spacing, shadows, and UI
+   * components. Uses AI-powered analysis of website screenshots to identify design
+   * patterns and create a reusable styleguide.
+   */
+  styleguide(query: BrandStyleguideParams, options?: RequestOptions): APIPromise<BrandStyleguideResponse> {
+    return this._client.get('/brand/styleguide', { query, ...options });
   }
 }
 
@@ -982,6 +1001,33 @@ export namespace BrandRetrieveNaicsResponse {
   }
 }
 
+export interface BrandScreenshotResponse {
+  /**
+   * HTTP status code
+   */
+  code?: number;
+
+  /**
+   * The normalized domain that was processed
+   */
+  domain?: string;
+
+  /**
+   * Public URL of the uploaded screenshot image
+   */
+  screenshot?: string;
+
+  /**
+   * Type of screenshot that was captured
+   */
+  screenshotType?: 'viewport' | 'fullPage';
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
+}
+
 export type BrandSearchResponse = Array<BrandSearchResponse.BrandSearchResponseItem>;
 
 export namespace BrandSearchResponse {
@@ -1000,6 +1046,378 @@ export namespace BrandSearchResponse {
      * Title or name of the brand
      */
     title?: string;
+  }
+}
+
+export interface BrandStyleguideResponse {
+  /**
+   * HTTP status code
+   */
+  code?: number;
+
+  /**
+   * The normalized domain that was processed
+   */
+  domain?: string;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
+
+  /**
+   * Comprehensive styleguide data extracted from the website
+   */
+  styleguide?: BrandStyleguideResponse.Styleguide;
+}
+
+export namespace BrandStyleguideResponse {
+  /**
+   * Comprehensive styleguide data extracted from the website
+   */
+  export interface Styleguide {
+    /**
+     * Primary colors used on the website
+     */
+    colors?: Styleguide.Colors;
+
+    /**
+     * UI component styles
+     */
+    components?: Styleguide.Components;
+
+    /**
+     * Spacing system used on the website
+     */
+    elementSpacing?: Styleguide.ElementSpacing;
+
+    /**
+     * Shadow styles used on the website
+     */
+    shadows?: Styleguide.Shadows;
+
+    /**
+     * Typography styles used on the website
+     */
+    typography?: Styleguide.Typography;
+  }
+
+  export namespace Styleguide {
+    /**
+     * Primary colors used on the website
+     */
+    export interface Colors {
+      /**
+       * Accent color of the website (hex format)
+       */
+      accent?: string;
+
+      /**
+       * Background color of the website (hex format)
+       */
+      background?: string;
+
+      /**
+       * Text color of the website (hex format)
+       */
+      text?: string;
+    }
+
+    /**
+     * UI component styles
+     */
+    export interface Components {
+      /**
+       * Button component styles
+       */
+      button?: Components.Button;
+
+      /**
+       * Card component style
+       */
+      card?: Components.Card;
+    }
+
+    export namespace Components {
+      /**
+       * Button component styles
+       */
+      export interface Button {
+        /**
+         * Link button style
+         */
+        link?: Button.Link;
+
+        /**
+         * Primary button style
+         */
+        primary?: Button.Primary;
+
+        /**
+         * Secondary button style
+         */
+        secondary?: Button.Secondary;
+      }
+
+      export namespace Button {
+        /**
+         * Link button style
+         */
+        export interface Link {
+          backgroundColor?: string;
+
+          borderColor?: string;
+
+          borderRadius?: string;
+
+          borderStyle?: string;
+
+          borderWidth?: string;
+
+          boxShadow?: string;
+
+          color?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          padding?: string;
+
+          textDecoration?: string;
+        }
+
+        /**
+         * Primary button style
+         */
+        export interface Primary {
+          backgroundColor?: string;
+
+          borderColor?: string;
+
+          borderRadius?: string;
+
+          borderStyle?: string;
+
+          borderWidth?: string;
+
+          boxShadow?: string;
+
+          color?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          padding?: string;
+
+          textDecoration?: string;
+        }
+
+        /**
+         * Secondary button style
+         */
+        export interface Secondary {
+          backgroundColor?: string;
+
+          borderColor?: string;
+
+          borderRadius?: string;
+
+          borderStyle?: string;
+
+          borderWidth?: string;
+
+          boxShadow?: string;
+
+          color?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          padding?: string;
+
+          textDecoration?: string;
+        }
+      }
+
+      /**
+       * Card component style
+       */
+      export interface Card {
+        backgroundColor?: string;
+
+        borderColor?: string;
+
+        borderRadius?: string;
+
+        borderStyle?: string;
+
+        borderWidth?: string;
+
+        boxShadow?: string;
+
+        padding?: string;
+
+        textColor?: string;
+      }
+    }
+
+    /**
+     * Spacing system used on the website
+     */
+    export interface ElementSpacing {
+      /**
+       * Large spacing value
+       */
+      lg?: string;
+
+      /**
+       * Medium spacing value
+       */
+      md?: string;
+
+      /**
+       * Small spacing value
+       */
+      sm?: string;
+
+      /**
+       * Extra large spacing value
+       */
+      xl?: string;
+
+      /**
+       * Extra small spacing value
+       */
+      xs?: string;
+    }
+
+    /**
+     * Shadow styles used on the website
+     */
+    export interface Shadows {
+      /**
+       * Inner shadow value
+       */
+      inner?: string;
+
+      /**
+       * Large shadow value
+       */
+      lg?: string;
+
+      /**
+       * Medium shadow value
+       */
+      md?: string;
+
+      /**
+       * Small shadow value
+       */
+      sm?: string;
+
+      /**
+       * Extra large shadow value
+       */
+      xl?: string;
+    }
+
+    /**
+     * Typography styles used on the website
+     */
+    export interface Typography {
+      /**
+       * Heading styles
+       */
+      headings?: Typography.Headings;
+
+      /**
+       * Paragraph text styles
+       */
+      p?: Typography.P;
+    }
+
+    export namespace Typography {
+      /**
+       * Heading styles
+       */
+      export interface Headings {
+        h1?: Headings.H1;
+
+        h2?: Headings.H2;
+
+        h3?: Headings.H3;
+
+        h4?: Headings.H4;
+      }
+
+      export namespace Headings {
+        export interface H1 {
+          fontFamily?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          letterSpacing?: string;
+
+          lineHeight?: string;
+        }
+
+        export interface H2 {
+          fontFamily?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          letterSpacing?: string;
+
+          lineHeight?: string;
+        }
+
+        export interface H3 {
+          fontFamily?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          letterSpacing?: string;
+
+          lineHeight?: string;
+        }
+
+        export interface H4 {
+          fontFamily?: string;
+
+          fontSize?: string;
+
+          fontWeight?: number;
+
+          letterSpacing?: string;
+
+          lineHeight?: string;
+        }
+      }
+
+      /**
+       * Paragraph text styles
+       */
+      export interface P {
+        fontFamily?: string;
+
+        fontSize?: string;
+
+        fontWeight?: number;
+
+        letterSpacing?: string;
+
+        lineHeight?: string;
+      }
+    }
   }
 }
 
@@ -1232,11 +1650,41 @@ export interface BrandRetrieveNaicsParams {
   timeoutMS?: number;
 }
 
+export interface BrandScreenshotParams {
+  /**
+   * Domain name to take screenshot of (e.g., 'example.com', 'google.com'). The
+   * domain will be automatically normalized and validated.
+   */
+  domain: string;
+
+  /**
+   * Optional parameter to determine screenshot type. If 'true', takes a full page
+   * screenshot capturing all content. If 'false' or not provided, takes a viewport
+   * screenshot (standard browser view).
+   */
+  fullScreenshot?: 'true' | 'false';
+}
+
 export interface BrandSearchParams {
   /**
    * Query string to search brands
    */
   query: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
+export interface BrandStyleguideParams {
+  /**
+   * Domain name to extract styleguide from (e.g., 'example.com', 'google.com'). The
+   * domain will be automatically normalized and validated.
+   */
+  domain: string;
 
   /**
    * Optional timeout in milliseconds for the request. If the request takes longer
@@ -1254,13 +1702,17 @@ export declare namespace Brand {
     type BrandPrefetchResponse as BrandPrefetchResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
+    type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandSearchResponse as BrandSearchResponse,
+    type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
+    type BrandScreenshotParams as BrandScreenshotParams,
     type BrandSearchParams as BrandSearchParams,
+    type BrandStyleguideParams as BrandStyleguideParams,
   };
 }

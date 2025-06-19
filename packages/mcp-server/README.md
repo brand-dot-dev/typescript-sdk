@@ -173,4 +173,6 @@ The following tools are available in this MCP server.
 - `prefetch_brand` (`write`): Signal that you may fetch brand data for a particular domain soon to improve latency. This endpoint does not charge credits and is available for paid customers to optimize future requests. [You must be on a paid plan to use this endpoint]
 - `retrieve_by_ticker_brand` (`read`): Retrieve brand data by stock ticker (e.g. AAPL, TSLA, etc.)
 - `retrieve_naics_brand` (`read`): Endpoint to classify any brand into a 2022 NAICS code.
+- `screenshot_brand` (`read`): Beta feature: Capture a screenshot of a website. Supports both viewport (standard browser view) and full-page screenshots. Returns a URL to the uploaded screenshot image hosted on our CDN.
 - `search_brand` (`read`): Search brands by query
+- `styleguide_brand` (`read`): Beta feature: Automatically extract comprehensive design system information from a brand's website including colors, typography, spacing, shadows, and UI components. Uses AI-powered analysis of website screenshots to identify design patterns and create a reusable styleguide.
