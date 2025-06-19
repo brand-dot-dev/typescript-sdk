@@ -8,7 +8,10 @@ Types:
 - <code><a href="./src/resources/brand.ts">BrandPrefetchResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByTickerResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveNaicsResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandRetrieveSimplifiedResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandScreenshotResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandSearchResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandStyleguideResponse</a></code>
 
 Methods:
 
@@ -18,4 +21,7 @@ Methods:
 - <code title="post /brand/prefetch">client.brand.<a href="./src/resources/brand.ts">prefetch</a>({ ...params }) -> BrandPrefetchResponse</code>
 - <code title="get /brand/retrieve-by-ticker">client.brand.<a href="./src/resources/brand.ts">retrieveByTicker</a>({ ...params }) -> BrandRetrieveByTickerResponse</code>
 - <code title="get /brand/naics">client.brand.<a href="./src/resources/brand.ts">retrieveNaics</a>({ ...params }) -> BrandRetrieveNaicsResponse</code>
+- <code title="get /brand/retrieve-simplified">client.brand.<a href="./src/resources/brand.ts">retrieveSimplified</a>({ ...params }) -> BrandRetrieveSimplifiedResponse</code>
+- <code title="get /brand/screenshot">client.brand.<a href="./src/resources/brand.ts">screenshot</a>({ ...params }) -> BrandScreenshotResponse</code>
 - <code title="get /brand/search">client.brand.<a href="./src/resources/brand.ts">search</a>({ ...params }) -> BrandSearchResponse</code>
+- <code title="get /brand/styleguide">client.brand.<a href="./src/resources/brand.ts">styleguide</a>({ ...params }) -> BrandStyleguideResponse</code>

@@ -10,7 +10,10 @@ import identify_from_transaction_brand from './brand/identify-from-transaction-b
 import prefetch_brand from './brand/prefetch-brand';
 import retrieve_by_ticker_brand from './brand/retrieve-by-ticker-brand';
 import retrieve_naics_brand from './brand/retrieve-naics-brand';
+import retrieve_simplified_brand from './brand/retrieve-simplified-brand';
+import screenshot_brand from './brand/screenshot-brand';
 import search_brand from './brand/search-brand';
+import styleguide_brand from './brand/styleguide-brand';
 
 export const endpoints: Endpoint[] = [];
 
@@ -24,7 +27,10 @@ addEndpoint(identify_from_transaction_brand);
 addEndpoint(prefetch_brand);
 addEndpoint(retrieve_by_ticker_brand);
 addEndpoint(retrieve_naics_brand);
+addEndpoint(retrieve_simplified_brand);
+addEndpoint(screenshot_brand);
 addEndpoint(search_brand);
+addEndpoint(styleguide_brand);
 
 export type Filter = {
   type: 'resource' | 'operation' | 'tag' | 'tool';
@@ -50,9 +56,10 @@ export function query(filters: Filter[], endpoints: Endpoint[]): Endpoint[] {
   });
 
   // Check if any filters didn't match
-  if (unmatchedFilters.size > 0) {
+  const unmatched = Array.from(unmatchedFilters).filter((f) => f.type === 'tool' || f.type === 'resource');
+  if (unmatched.length > 0) {
     throw new Error(
-      `The following filters did not match any endpoints: ${[...unmatchedFilters]
+      `The following filters did not match any endpoints: ${unmatched
         .map((f) => `${f.type}=${f.value}`)
         .join(', ')}`,
     );
