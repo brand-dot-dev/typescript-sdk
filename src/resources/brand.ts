@@ -93,8 +93,7 @@ export class Brand extends APIResource {
   /**
    * Beta feature: Automatically extract comprehensive design system information from
    * a brand's website including colors, typography, spacing, shadows, and UI
-   * components. Uses AI-powered analysis of website screenshots to identify design
-   * patterns and create a reusable styleguide.
+   * components.
    */
   styleguide(query: BrandStyleguideParams, options?: RequestOptions): APIPromise<BrandStyleguideResponse> {
     return this._client.get('/brand/styleguide', { query, ...options });
