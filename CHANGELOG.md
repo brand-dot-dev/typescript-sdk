@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2025-06-21)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Bug Fixes
+
+* **client:** explicitly copy fetch in withOptions ([17dfeaf](https://github.com/brand-dot-dev/typescript-sdk/commit/17dfeaf08885c914a1ac4c0f24233c87e358f31e))
+
 ## 0.1.0-alpha.10 (2025-06-19)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
