@@ -148,7 +148,8 @@ export namespace BrandRetrieveResponse {
     domain?: string;
 
     /**
-     * An array of fonts used by the brand's website
+     * An array of fonts used by the brand's website. NOTE: This is deprecated and will
+     * be removed in the future. Please migrate to the styleguide API.
      */
     fonts?: Array<Brand.Font>;
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-06-29)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* **api:** manual updates ([553a065](https://github.com/brand-dot-dev/typescript-sdk/commit/553a065ea64adf95b92d149e3a23bb8f0f71725e))
+
 ## 0.1.0-alpha.11 (2025-06-28)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
