@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-07-03)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Chores
+
+* add docs to RequestOptions type ([f4b33df](https://github.com/brand-dot-dev/typescript-sdk/commit/f4b33df15437998afd2d728ec5224f9c1a880890))
+* **client:** improve path param validation ([2f2fc76](https://github.com/brand-dot-dev/typescript-sdk/commit/2f2fc76068cde16de95d3a718b8a80edeee4902b))
+
 ## 0.1.0-alpha.12 (2025-06-29)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
