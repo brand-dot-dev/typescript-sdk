@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'brand.dev-mcp/filtering';
 import { asTextContentResult } from 'brand.dev-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'ai_query_brand',
   description:
-    "Beta feature: Use AI to extract specific data points from a brand's website. The AI will crawl the website and extract the requested information based on the provided data points.",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nBeta feature: Use AI to extract specific data points from a brand's website. The AI will crawl the website and extract the requested information based on the provided data points.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data_extracted: {\n      type: 'array',\n      description: 'Array of extracted data points',\n      items: {\n        type: 'object',\n        properties: {\n          datapoint_name: {\n            type: 'string',\n            description: 'Name of the extracted data point'\n          },\n          datapoint_value: {\n            anyOf: [              {\n                type: 'string'\n              },\n              {\n                type: 'number'\n              },\n              {\n                type: 'boolean'\n              },\n              {\n                type: 'array',\n                items: {\n                  type: 'string'\n                }\n              },\n              {\n                type: 'array',\n                items: {\n                  type: 'number'\n                }\n              }\n            ],\n            description: 'Value of the extracted data point'\n          }\n        },\n        required: []\n      }\n    },\n    domain: {\n      type: 'string',\n      description: 'The domain that was analyzed'\n    },\n    urls_analyzed: {\n      type: 'array',\n      description: 'List of URLs that were analyzed',\n      items: {\n        type: 'string'\n      }\n    }\n  },\n  required: []\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -96,13 +97,19 @@ export const tool: Tool = {
         description:
           'Optional timeout in milliseconds for the request. If the request takes longer than this value, it will be aborted with a 408 status code. Maximum allowed value is 300000ms (5 minutes).',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.brand.aiQuery(body));
+  return asTextContentResult(await maybeFilter(args, await client.brand.aiQuery(body)));
 };
 
 export default { metadata, tool, handler };
