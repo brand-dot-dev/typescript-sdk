@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-07-11)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Features
+
+* **mcp:** support filtering tool results by a jq expression ([7bb7ed6](https://github.com/brand-dot-dev/typescript-sdk/commit/7bb7ed637ba3ff9bb957fca486973134be21e1ed))
+
+
+### Bug Fixes
+
+* **mcp:** relax input type for asTextContextResult ([b604761](https://github.com/brand-dot-dev/typescript-sdk/commit/b6047611bda8b8c275f87828f21b98d3a79cba20))
+
+
+### Chores
+
+* add docs to RequestOptions type ([f4b33df](https://github.com/brand-dot-dev/typescript-sdk/commit/f4b33df15437998afd2d728ec5224f9c1a880890))
+* **client:** improve path param validation ([2f2fc76](https://github.com/brand-dot-dev/typescript-sdk/commit/2f2fc76068cde16de95d3a718b8a80edeee4902b))
+* make some internal functions async ([683286e](https://github.com/brand-dot-dev/typescript-sdk/commit/683286e2a0e44bfef1501d19f29cd5dc05caa82f))
+
 ## 0.1.0-alpha.12 (2025-06-29)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
