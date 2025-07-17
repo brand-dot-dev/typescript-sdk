@@ -28,11 +28,7 @@ export const server = new McpServer(
     name: 'brand_dev_api',
     version: '0.1.0-alpha.12',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
