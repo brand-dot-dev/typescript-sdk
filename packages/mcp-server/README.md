@@ -175,5 +175,4 @@ The following tools are available in this MCP server.
 - `retrieve_naics_brand` (`read`): Endpoint to classify any brand into a 2022 NAICS code.
 - `retrieve_simplified_brand` (`read`): Returns a simplified version of brand data containing only essential information: domain, title, colors, logos, and backdrops. This endpoint is optimized for faster responses and reduced data transfer.
 - `screenshot_brand` (`read`): Beta feature: Capture a screenshot of a website. Supports both viewport (standard browser view) and full-page screenshots. Returns a URL to the uploaded screenshot image hosted on our CDN.
-- `search_brand` (`read`): Search brands by query
 - `styleguide_brand` (`read`): Beta feature: Automatically extract comprehensive design system information from a brand's website including colors, typography, spacing, shadows, and UI components.

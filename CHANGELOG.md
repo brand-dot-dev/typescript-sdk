@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.0.1 (2025-07-21)
+
+Full Changelog: [v0.1.0-alpha.12...v0.0.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.12...v0.0.1)
+
+### Features
+
+* **api:** manual updates ([51f9de8](https://github.com/brand-dot-dev/typescript-sdk/commit/51f9de82a052b33c027b38b103bb2fa2557cc32e))
+* **mcp:** support filtering tool results by a jq expression ([7bb7ed6](https://github.com/brand-dot-dev/typescript-sdk/commit/7bb7ed637ba3ff9bb957fca486973134be21e1ed))
+
+
+### Bug Fixes
+
+* **mcp:** include required section for top-level properties and support naming transformations ([8a3d09d](https://github.com/brand-dot-dev/typescript-sdk/commit/8a3d09d405b8ce692a492ae3082a473a386d345c))
+* **mcp:** relax input type for asTextContextResult ([b604761](https://github.com/brand-dot-dev/typescript-sdk/commit/b6047611bda8b8c275f87828f21b98d3a79cba20))
+* **mcp:** support jq filtering on cloudflare workers ([05a640e](https://github.com/brand-dot-dev/typescript-sdk/commit/05a640ee793c5a0f276688e38a43a592276c51b8))
+
+
+### Chores
+
+* add docs to RequestOptions type ([f4b33df](https://github.com/brand-dot-dev/typescript-sdk/commit/f4b33df15437998afd2d728ec5224f9c1a880890))
+* **client:** improve path param validation ([2f2fc76](https://github.com/brand-dot-dev/typescript-sdk/commit/2f2fc76068cde16de95d3a718b8a80edeee4902b))
+* make some internal functions async ([683286e](https://github.com/brand-dot-dev/typescript-sdk/commit/683286e2a0e44bfef1501d19f29cd5dc05caa82f))
+* **mcp:** formatting ([0939837](https://github.com/brand-dot-dev/typescript-sdk/commit/0939837fae8c9da449ec10f7aa65355bf2612654))
+* **mcp:** rework imports in tools ([497fc6c](https://github.com/brand-dot-dev/typescript-sdk/commit/497fc6c5a69112de5677dee10d77995705872af9))
+* **ts:** reorder package.json imports ([4495729](https://github.com/brand-dot-dev/typescript-sdk/commit/44957290ba6883ecb207720620001ba6b75559bd))
+
 ## 0.1.0-alpha.12 (2025-06-29)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
