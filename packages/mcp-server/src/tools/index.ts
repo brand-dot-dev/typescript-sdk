@@ -12,7 +12,6 @@ import retrieve_by_ticker_brand from './brand/retrieve-by-ticker-brand';
 import retrieve_naics_brand from './brand/retrieve-naics-brand';
 import retrieve_simplified_brand from './brand/retrieve-simplified-brand';
 import screenshot_brand from './brand/screenshot-brand';
-import search_brand from './brand/search-brand';
 import styleguide_brand from './brand/styleguide-brand';
 
 export const endpoints: Endpoint[] = [];
@@ -29,7 +28,6 @@ addEndpoint(retrieve_by_ticker_brand);
 addEndpoint(retrieve_naics_brand);
 addEndpoint(retrieve_simplified_brand);
 addEndpoint(screenshot_brand);
-addEndpoint(search_brand);
 addEndpoint(styleguide_brand);
 
 export type Filter = {

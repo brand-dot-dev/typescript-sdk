@@ -84,13 +84,6 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Search brands by query
-   */
-  search(query: BrandSearchParams, options?: RequestOptions): APIPromise<BrandSearchResponse> {
-    return this._client.get('/brand/search', { query, ...options });
-  }
-
-  /**
    * Beta feature: Automatically extract comprehensive design system information from
    * a brand's website including colors, typography, spacing, shadows, and UI
    * components.
@@ -146,12 +139,6 @@ export namespace BrandRetrieveResponse {
      * The domain name of the brand
      */
     domain?: string;
-
-    /**
-     * An array of fonts used by the brand's website. NOTE: This is deprecated and will
-     * be removed in the future. Please migrate to the styleguide API.
-     */
-    fonts?: Array<Brand.Font>;
 
     /**
      * An array of logos associated with the brand
@@ -277,18 +264,6 @@ export namespace BrandRetrieveResponse {
        * Name of the color
        */
       name?: string;
-    }
-
-    export interface Font {
-      /**
-       * Name of the font
-       */
-      name?: string;
-
-      /**
-       * Usage of the font, e.g., 'title', 'body', 'button'
-       */
-      usage?: string;
     }
 
     export interface Logo {
@@ -456,11 +431,6 @@ export namespace BrandIdentifyFromTransactionResponse {
     domain?: string;
 
     /**
-     * An array of fonts used by the brand's website
-     */
-    fonts?: Array<Brand.Font>;
-
-    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
@@ -584,18 +554,6 @@ export namespace BrandIdentifyFromTransactionResponse {
        * Name of the color
        */
       name?: string;
-    }
-
-    export interface Font {
-      /**
-       * Name of the font
-       */
-      name?: string;
-
-      /**
-       * Usage of the font, e.g., 'title', 'body', 'button'
-       */
-      usage?: string;
     }
 
     export interface Logo {
@@ -749,11 +707,6 @@ export namespace BrandRetrieveByTickerResponse {
     domain?: string;
 
     /**
-     * An array of fonts used by the brand's website
-     */
-    fonts?: Array<Brand.Font>;
-
-    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
@@ -877,18 +830,6 @@ export namespace BrandRetrieveByTickerResponse {
        * Name of the color
        */
       name?: string;
-    }
-
-    export interface Font {
-      /**
-       * Name of the font
-       */
-      name?: string;
-
-      /**
-       * Usage of the font, e.g., 'title', 'body', 'button'
-       */
-      usage?: string;
     }
 
     export interface Logo {
@@ -1218,27 +1159,6 @@ export interface BrandScreenshotResponse {
    * Status of the response, e.g., 'ok'
    */
   status?: string;
-}
-
-export type BrandSearchResponse = Array<BrandSearchResponse.BrandSearchResponseItem>;
-
-export namespace BrandSearchResponse {
-  export interface BrandSearchResponseItem {
-    /**
-     * Domain name of the brand
-     */
-    domain?: string;
-
-    /**
-     * URL of the brand's logo
-     */
-    logo?: string;
-
-    /**
-     * Title or name of the brand
-     */
-    title?: string;
-  }
 }
 
 export interface BrandStyleguideResponse {
@@ -1871,20 +1791,6 @@ export interface BrandScreenshotParams {
   fullScreenshot?: 'true' | 'false';
 }
 
-export interface BrandSearchParams {
-  /**
-   * Query string to search brands
-   */
-  query: string;
-
-  /**
-   * Optional timeout in milliseconds for the request. If the request takes longer
-   * than this value, it will be aborted with a 408 status code. Maximum allowed
-   * value is 300000ms (5 minutes).
-   */
-  timeoutMS?: number;
-}
-
 export interface BrandStyleguideParams {
   /**
    * Domain name to extract styleguide from (e.g., 'example.com', 'google.com'). The
@@ -1910,7 +1816,6 @@ export declare namespace Brand {
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
-    type BrandSearchResponse as BrandSearchResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
@@ -1920,7 +1825,6 @@ export declare namespace Brand {
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
-    type BrandSearchParams as BrandSearchParams,
     type BrandStyleguideParams as BrandStyleguideParams,
   };
 }

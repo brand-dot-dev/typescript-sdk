@@ -10,7 +10,6 @@ export {
   type BrandRetrieveNaicsResponse,
   type BrandRetrieveSimplifiedResponse,
   type BrandScreenshotResponse,
-  type BrandSearchResponse,
   type BrandStyleguideResponse,
   type BrandRetrieveParams,
   type BrandAIQueryParams,
@@ -20,6 +19,5 @@ export {
   type BrandRetrieveNaicsParams,
   type BrandRetrieveSimplifiedParams,
   type BrandScreenshotParams,
-  type BrandSearchParams,
   type BrandStyleguideParams,
 } from './brand';

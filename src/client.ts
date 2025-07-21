@@ -34,8 +34,6 @@ import {
   BrandRetrieveSimplifiedResponse,
   BrandScreenshotParams,
   BrandScreenshotResponse,
-  BrandSearchParams,
-  BrandSearchResponse,
   BrandStyleguideParams,
   BrandStyleguideResponse,
 } from './resources/brand';
@@ -752,7 +750,6 @@ export declare namespace BrandDev {
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
-    type BrandSearchResponse as BrandSearchResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
@@ -762,7 +759,6 @@ export declare namespace BrandDev {
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
-    type BrandSearchParams as BrandSearchParams,
     type BrandStyleguideParams as BrandStyleguideParams,
   };
 }
