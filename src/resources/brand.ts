@@ -141,6 +141,11 @@ export namespace BrandRetrieveResponse {
     domain?: string;
 
     /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
@@ -354,6 +359,11 @@ export namespace BrandRetrieveResponse {
 
 export interface BrandAIQueryResponse {
   /**
+   * HTTP status code
+   */
+  code?: number;
+
+  /**
    * Array of extracted data points
    */
   data_extracted?: Array<BrandAIQueryResponse.DataExtracted>;
@@ -362,6 +372,11 @@ export interface BrandAIQueryResponse {
    * The domain that was analyzed
    */
   domain?: string;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
 
   /**
    * List of URLs that were analyzed
@@ -429,6 +444,11 @@ export namespace BrandIdentifyFromTransactionResponse {
      * The domain name of the brand
      */
     domain?: string;
+
+    /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
 
     /**
      * An array of logos associated with the brand
@@ -705,6 +725,11 @@ export namespace BrandRetrieveByTickerResponse {
      * The domain name of the brand
      */
     domain?: string;
+
+    /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
 
     /**
      * An array of logos associated with the brand
