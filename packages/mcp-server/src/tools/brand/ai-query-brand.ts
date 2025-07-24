@@ -104,6 +104,7 @@ export const tool: Tool = {
     },
     required: ['data_to_extract', 'domain'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
