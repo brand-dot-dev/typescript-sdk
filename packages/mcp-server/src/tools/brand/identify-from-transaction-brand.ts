@@ -39,6 +39,9 @@ export const tool: Tool = {
     },
     required: ['transaction_info'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
