@@ -40,6 +40,9 @@ export const tool: Tool = {
     },
     required: ['input'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {

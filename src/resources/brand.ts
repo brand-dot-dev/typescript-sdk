@@ -141,9 +141,24 @@ export namespace BrandRetrieveResponse {
     domain?: string;
 
     /**
+     * Company email address
+     */
+    email?: string;
+
+    /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
+
+    /**
+     * Company phone number
+     */
+    phone?: string;
 
     /**
      * The brand's slogan
@@ -243,6 +258,11 @@ export namespace BrandRetrieveResponse {
        */
       export interface Resolution {
         /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
+        /**
          * Height of the image in pixels
          */
         height?: number;
@@ -273,14 +293,11 @@ export namespace BrandRetrieveResponse {
       colors?: Array<Logo.Color>;
 
       /**
-       * Group identifier for logos
+       * Indicates when this logo is best used: 'light' = best for light mode, 'dark' =
+       * best for dark mode, 'has_opaque_background' = can be used for either as image
+       * has its own background
        */
-      group?: number;
-
-      /**
-       * Mode of the logo, e.g., 'dark', 'light'
-       */
-      mode?: string;
+      mode?: 'light' | 'dark' | 'has_opaque_background';
 
       /**
        * Resolution of the logo image
@@ -288,7 +305,12 @@ export namespace BrandRetrieveResponse {
       resolution?: Logo.Resolution;
 
       /**
-       * URL of the logo image
+       * Type of the logo based on resolution (e.g., 'icon', 'logo')
+       */
+      type?: 'icon' | 'logo';
+
+      /**
+       * CDN hosted url of the logo (ready for display)
        */
       url?: string;
     }
@@ -310,6 +332,11 @@ export namespace BrandRetrieveResponse {
        * Resolution of the logo image
        */
       export interface Resolution {
+        /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
         /**
          * Height of the image in pixels
          */
@@ -362,6 +389,11 @@ export interface BrandAIQueryResponse {
    * The domain that was analyzed
    */
   domain?: string;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
 
   /**
    * List of URLs that were analyzed
@@ -431,9 +463,24 @@ export namespace BrandIdentifyFromTransactionResponse {
     domain?: string;
 
     /**
+     * Company email address
+     */
+    email?: string;
+
+    /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
+
+    /**
+     * Company phone number
+     */
+    phone?: string;
 
     /**
      * The brand's slogan
@@ -533,6 +580,11 @@ export namespace BrandIdentifyFromTransactionResponse {
        */
       export interface Resolution {
         /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
+        /**
          * Height of the image in pixels
          */
         height?: number;
@@ -563,14 +615,11 @@ export namespace BrandIdentifyFromTransactionResponse {
       colors?: Array<Logo.Color>;
 
       /**
-       * Group identifier for logos
+       * Indicates when this logo is best used: 'light' = best for light mode, 'dark' =
+       * best for dark mode, 'has_opaque_background' = can be used for either as image
+       * has its own background
        */
-      group?: number;
-
-      /**
-       * Mode of the logo, e.g., 'dark', 'light'
-       */
-      mode?: string;
+      mode?: 'light' | 'dark' | 'has_opaque_background';
 
       /**
        * Resolution of the logo image
@@ -578,7 +627,12 @@ export namespace BrandIdentifyFromTransactionResponse {
       resolution?: Logo.Resolution;
 
       /**
-       * URL of the logo image
+       * Type of the logo based on resolution (e.g., 'icon', 'logo')
+       */
+      type?: 'icon' | 'logo';
+
+      /**
+       * CDN hosted url of the logo (ready for display)
        */
       url?: string;
     }
@@ -600,6 +654,11 @@ export namespace BrandIdentifyFromTransactionResponse {
        * Resolution of the logo image
        */
       export interface Resolution {
+        /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
         /**
          * Height of the image in pixels
          */
@@ -707,9 +766,24 @@ export namespace BrandRetrieveByTickerResponse {
     domain?: string;
 
     /**
+     * Company email address
+     */
+    email?: string;
+
+    /**
+     * Indicates whether the brand content is not safe for work (NSFW)
+     */
+    is_nsfw?: boolean;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
+
+    /**
+     * Company phone number
+     */
+    phone?: string;
 
     /**
      * The brand's slogan
@@ -809,6 +883,11 @@ export namespace BrandRetrieveByTickerResponse {
        */
       export interface Resolution {
         /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
+        /**
          * Height of the image in pixels
          */
         height?: number;
@@ -839,14 +918,11 @@ export namespace BrandRetrieveByTickerResponse {
       colors?: Array<Logo.Color>;
 
       /**
-       * Group identifier for logos
+       * Indicates when this logo is best used: 'light' = best for light mode, 'dark' =
+       * best for dark mode, 'has_opaque_background' = can be used for either as image
+       * has its own background
        */
-      group?: number;
-
-      /**
-       * Mode of the logo, e.g., 'dark', 'light'
-       */
-      mode?: string;
+      mode?: 'light' | 'dark' | 'has_opaque_background';
 
       /**
        * Resolution of the logo image
@@ -854,7 +930,12 @@ export namespace BrandRetrieveByTickerResponse {
       resolution?: Logo.Resolution;
 
       /**
-       * URL of the logo image
+       * Type of the logo based on resolution (e.g., 'icon', 'logo')
+       */
+      type?: 'icon' | 'logo';
+
+      /**
+       * CDN hosted url of the logo (ready for display)
        */
       url?: string;
     }
@@ -876,6 +957,11 @@ export namespace BrandRetrieveByTickerResponse {
        * Resolution of the logo image
        */
       export interface Resolution {
+        /**
+         * Aspect ratio of the image (width/height)
+         */
+        aspect_ratio?: number;
+
         /**
          * Height of the image in pixels
          */
@@ -1073,14 +1159,11 @@ export namespace BrandRetrieveSimplifiedResponse {
       colors?: Array<Logo.Color>;
 
       /**
-       * Group identifier for logos
+       * Indicates when this logo is best used: 'light' = best for light mode, 'dark' =
+       * best for dark mode, 'has_opaque_background' = can be used for either as image
+       * has its own background
        */
-      group?: number;
-
-      /**
-       * Mode of the logo, e.g., 'dark', 'light'
-       */
-      mode?: string;
+      mode?: 'light' | 'dark' | 'has_opaque_background';
 
       /**
        * Resolution of the logo image
@@ -1088,12 +1171,12 @@ export namespace BrandRetrieveSimplifiedResponse {
       resolution?: Logo.Resolution;
 
       /**
-       * Type of the logo based on resolution (e.g., 'icon', 'logo', 'banner')
+       * Type of the logo based on resolution (e.g., 'icon', 'logo')
        */
-      type?: string;
+      type?: 'icon' | 'logo';
 
       /**
-       * URL of the logo image
+       * CDN hosted url of the logo (ready for display)
        */
       url?: string;
     }
