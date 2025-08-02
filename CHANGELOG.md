@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0 (2025-08-02)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **mcp:** add logging when environment variable is set ([6364c45](https://github.com/brand-dot-dev/typescript-sdk/commit/6364c459f3b73de0568da5d024086547527c1c8b))
+
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([3672f68](https://github.com/brand-dot-dev/typescript-sdk/commit/3672f68d7115bcb763b46798e7a18828908b68d1))
+* **mcp:** reverse validJson capability option and limit scope ([0b58267](https://github.com/brand-dot-dev/typescript-sdk/commit/0b58267daa05a66fd7e0ef7467c808813c766b28))
+
 ## 0.1.0 (2025-07-31)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1...v0.1.0)
