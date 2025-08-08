@@ -46,8 +46,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.brand.retrieveNaics(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.brand.retrieveNaics(body)));
 };
 
 export default { metadata, tool, handler };

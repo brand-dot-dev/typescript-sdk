@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.2.0 (2025-08-07)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **mcp:** add logging when environment variable is set ([6364c45](https://github.com/brand-dot-dev/typescript-sdk/commit/6364c459f3b73de0568da5d024086547527c1c8b))
+* **mcp:** add unix socket option for remote MCP ([cb8dbf0](https://github.com/brand-dot-dev/typescript-sdk/commit/cb8dbf040623a3a62aff8808b75de8e9d59cc1fa))
+* **mcp:** remote server with passthru auth ([8683693](https://github.com/brand-dot-dev/typescript-sdk/commit/8683693a6e2dc2c20c06a492a1e06c193bdc717b))
+
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([3672f68](https://github.com/brand-dot-dev/typescript-sdk/commit/3672f68d7115bcb763b46798e7a18828908b68d1))
+* **mcp:** fix bug in header handling ([c541ba4](https://github.com/brand-dot-dev/typescript-sdk/commit/c541ba4b906f845b12e67d155c081e68bdd774bc))
+* **mcp:** reverse validJson capability option and limit scope ([0b58267](https://github.com/brand-dot-dev/typescript-sdk/commit/0b58267daa05a66fd7e0ef7467c808813c766b28))
+
+
+### Chores
+
+* **internal:** move publish config ([9ce6753](https://github.com/brand-dot-dev/typescript-sdk/commit/9ce675365598d2367cdaec848869db6448c0ea1d))
+* **mcp:** refactor streamable http transport ([c0d86b9](https://github.com/brand-dot-dev/typescript-sdk/commit/c0d86b96c0fa96436d5cc76bf4c85c28a2873eec))
+
 ## 0.1.0 (2025-07-31)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1...v0.1.0)
