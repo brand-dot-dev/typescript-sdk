@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 (2025-08-09)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.2.0...v0.2.1)
+
+### Chores
+
+* update @stainless-api/prism-cli to v5.15.0 ([8510713](https://github.com/brand-dot-dev/typescript-sdk/commit/85107138d8677a0836dc1f8b5f4f6406daad2af2))
+
 ## 0.2.0 (2025-08-07)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0...v0.2.0)
