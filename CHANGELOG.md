@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.1 (2025-08-16)
+
+Full Changelog: [v0.2.0...v0.2.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.2.0...v0.2.1)
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.17.58 ([bc313d7](https://github.com/brand-dot-dev/typescript-sdk/commit/bc313d7490efb258b89dcacbe5e6ba20234d559c))
+* **internal:** codegen related update ([388e0d3](https://github.com/brand-dot-dev/typescript-sdk/commit/388e0d38ca4fc8a4d468b72ab5b2b13539cac1d1))
+* **internal:** formatting change ([62a8d7d](https://github.com/brand-dot-dev/typescript-sdk/commit/62a8d7de6e3fd2419bf38885c4fd473e619e6364))
+* **internal:** update comment in script ([48243f3](https://github.com/brand-dot-dev/typescript-sdk/commit/48243f3343affccf20412647169a40ab72187b96))
+* **mcp:** document remote server in README.md ([8265fa8](https://github.com/brand-dot-dev/typescript-sdk/commit/8265fa8fd02a828b738f3fb07b54a225d2051be9))
+* **mcp:** minor cleanup of types and package.json ([fa6eb07](https://github.com/brand-dot-dev/typescript-sdk/commit/fa6eb0725c762a67a58d0315673fe64fcee2c79a))
+* **mcp:** update README ([025b597](https://github.com/brand-dot-dev/typescript-sdk/commit/025b597bdbe44137092678270761830fdad6eafe))
+* update @stainless-api/prism-cli to v5.15.0 ([8510713](https://github.com/brand-dot-dev/typescript-sdk/commit/85107138d8677a0836dc1f8b5f4f6406daad2af2))
+
 ## 0.2.0 (2025-08-07)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0...v0.2.0)
