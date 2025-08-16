@@ -736,7 +736,9 @@ export class BrandDev {
 
   brand: API.Brand = new API.Brand(this);
 }
+
 BrandDev.Brand = Brand;
+
 export declare namespace BrandDev {
   export type RequestOptions = Opts.RequestOptions;
 
