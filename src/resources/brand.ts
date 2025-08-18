@@ -47,16 +47,6 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Retrieve brand data by stock ticker (e.g. AAPL, TSLA, etc.)
-   */
-  retrieveByTicker(
-    query: BrandRetrieveByTickerParams,
-    options?: RequestOptions,
-  ): APIPromise<BrandRetrieveByTickerResponse> {
-    return this._client.get('/brand/retrieve-by-ticker', { query, ...options });
-  }
-
-  /**
    * Endpoint to classify any brand into a 2022 NAICS code.
    */
   retrieveNaics(
@@ -720,292 +710,6 @@ export interface BrandPrefetchResponse {
    * Status of the response, e.g., 'ok'
    */
   status?: string;
-}
-
-export interface BrandRetrieveByTickerResponse {
-  /**
-   * Detailed brand information
-   */
-  brand?: BrandRetrieveByTickerResponse.Brand;
-
-  /**
-   * HTTP status code
-   */
-  code?: number;
-
-  /**
-   * Status of the response, e.g., 'ok'
-   */
-  status?: string;
-}
-
-export namespace BrandRetrieveByTickerResponse {
-  /**
-   * Detailed brand information
-   */
-  export interface Brand {
-    /**
-     * Physical address of the brand
-     */
-    address?: Brand.Address;
-
-    /**
-     * An array of backdrop images for the brand
-     */
-    backdrops?: Array<Brand.Backdrop>;
-
-    /**
-     * An array of brand colors
-     */
-    colors?: Array<Brand.Color>;
-
-    /**
-     * A brief description of the brand
-     */
-    description?: string;
-
-    /**
-     * The domain name of the brand
-     */
-    domain?: string;
-
-    /**
-     * Company email address
-     */
-    email?: string;
-
-    /**
-     * Indicates whether the brand content is not safe for work (NSFW)
-     */
-    is_nsfw?: boolean;
-
-    /**
-     * An array of logos associated with the brand
-     */
-    logos?: Array<Brand.Logo>;
-
-    /**
-     * Company phone number
-     */
-    phone?: string;
-
-    /**
-     * The brand's slogan
-     */
-    slogan?: string;
-
-    /**
-     * An array of social media links for the brand
-     */
-    socials?: Array<Brand.Social>;
-
-    /**
-     * Stock market information for this brand (will be null if not a publicly traded
-     * company)
-     */
-    stock?: Brand.Stock;
-
-    /**
-     * The title or name of the brand
-     */
-    title?: string;
-  }
-
-  export namespace Brand {
-    /**
-     * Physical address of the brand
-     */
-    export interface Address {
-      /**
-       * City name
-       */
-      city?: string;
-
-      /**
-       * Country name
-       */
-      country?: string;
-
-      /**
-       * Country code
-       */
-      country_code?: string;
-
-      /**
-       * Postal or ZIP code
-       */
-      postal_code?: string;
-
-      /**
-       * State or province code
-       */
-      state_code?: string;
-
-      /**
-       * State or province name
-       */
-      state_province?: string;
-
-      /**
-       * Street address
-       */
-      street?: string;
-    }
-
-    export interface Backdrop {
-      /**
-       * Array of colors in the backdrop image
-       */
-      colors?: Array<Backdrop.Color>;
-
-      /**
-       * Resolution of the backdrop image
-       */
-      resolution?: Backdrop.Resolution;
-
-      /**
-       * URL of the backdrop image
-       */
-      url?: string;
-    }
-
-    export namespace Backdrop {
-      export interface Color {
-        /**
-         * Color in hexadecimal format
-         */
-        hex?: string;
-
-        /**
-         * Name of the color
-         */
-        name?: string;
-      }
-
-      /**
-       * Resolution of the backdrop image
-       */
-      export interface Resolution {
-        /**
-         * Aspect ratio of the image (width/height)
-         */
-        aspect_ratio?: number;
-
-        /**
-         * Height of the image in pixels
-         */
-        height?: number;
-
-        /**
-         * Width of the image in pixels
-         */
-        width?: number;
-      }
-    }
-
-    export interface Color {
-      /**
-       * Color in hexadecimal format
-       */
-      hex?: string;
-
-      /**
-       * Name of the color
-       */
-      name?: string;
-    }
-
-    export interface Logo {
-      /**
-       * Array of colors in the logo
-       */
-      colors?: Array<Logo.Color>;
-
-      /**
-       * Indicates when this logo is best used: 'light' = best for light mode, 'dark' =
-       * best for dark mode, 'has_opaque_background' = can be used for either as image
-       * has its own background
-       */
-      mode?: 'light' | 'dark' | 'has_opaque_background';
-
-      /**
-       * Resolution of the logo image
-       */
-      resolution?: Logo.Resolution;
-
-      /**
-       * Type of the logo based on resolution (e.g., 'icon', 'logo')
-       */
-      type?: 'icon' | 'logo';
-
-      /**
-       * CDN hosted url of the logo (ready for display)
-       */
-      url?: string;
-    }
-
-    export namespace Logo {
-      export interface Color {
-        /**
-         * Color in hexadecimal format
-         */
-        hex?: string;
-
-        /**
-         * Name of the color
-         */
-        name?: string;
-      }
-
-      /**
-       * Resolution of the logo image
-       */
-      export interface Resolution {
-        /**
-         * Aspect ratio of the image (width/height)
-         */
-        aspect_ratio?: number;
-
-        /**
-         * Height of the image in pixels
-         */
-        height?: number;
-
-        /**
-         * Width of the image in pixels
-         */
-        width?: number;
-      }
-    }
-
-    export interface Social {
-      /**
-       * Type of social media, e.g., 'facebook', 'twitter'
-       */
-      type?: string;
-
-      /**
-       * URL of the social media page
-       */
-      url?: string;
-    }
-
-    /**
-     * Stock market information for this brand (will be null if not a publicly traded
-     * company)
-     */
-    export interface Stock {
-      /**
-       * Stock exchange name
-       */
-      exchange?: string;
-
-      /**
-       * Stock ticker symbol
-       */
-      ticker?: string;
-    }
-  }
 }
 
 export interface BrandRetrieveNaicsResponse {
@@ -1835,20 +1539,6 @@ export interface BrandPrefetchParams {
   timeoutMS?: number;
 }
 
-export interface BrandRetrieveByTickerParams {
-  /**
-   * Stock ticker symbol to retrieve brand data for (e.g. AAPL, TSLA, etc.)
-   */
-  ticker: string;
-
-  /**
-   * Optional timeout in milliseconds for the request. If the request takes longer
-   * than this value, it will be aborted with a 408 status code. Maximum allowed
-   * value is 300000ms (5 minutes).
-   */
-  timeoutMS?: number;
-}
-
 export interface BrandRetrieveNaicsParams {
   /**
    * Brand domain or title to retrieve NAICS code for. If a valid domain is provided
@@ -1915,7 +1605,6 @@ export declare namespace Brand {
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandPrefetchResponse as BrandPrefetchResponse,
-    type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
@@ -1924,7 +1613,6 @@ export declare namespace Brand {
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
-    type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
