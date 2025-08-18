@@ -6,9 +6,13 @@ import { RequestOptions } from '../internal/request-options';
 
 export class Brand extends APIResource {
   /**
-   * Retrieve brand data by domain
+   * Retrieve brand information using one of three methods: domain name, company
+   * name, or stock ticker symbol. Exactly one of these parameters must be provided.
    */
-  retrieve(query: BrandRetrieveParams, options?: RequestOptions): APIPromise<BrandRetrieveResponse> {
+  retrieve(
+    query: BrandRetrieveParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<BrandRetrieveResponse> {
     return this._client.get('/brand/retrieve', { query, ...options });
   }
 
@@ -1618,12 +1622,14 @@ export namespace BrandStyleguideResponse {
 
 export interface BrandRetrieveParams {
   /**
-   * Domain name to retrieve brand data for
+   * Domain name to retrieve brand data for (e.g., 'example.com', 'google.com').
+   * Cannot be used with name or ticker parameters.
    */
-  domain: string;
+  domain?: string;
 
   /**
-   * Optional parameter to force the language of the retrieved brand data
+   * Optional parameter to force the language of the retrieved brand data. Works with
+   * all three lookup methods.
    */
   force_language?:
     | 'albanian'
@@ -1682,9 +1688,23 @@ export interface BrandRetrieveParams {
   /**
    * Optional parameter to optimize the API call for maximum speed. When set to true,
    * the API will skip time-consuming operations for faster response at the cost of
-   * less comprehensive data.
+   * less comprehensive data. Works with all three lookup methods.
    */
   maxSpeed?: boolean;
+
+  /**
+   * Company name to retrieve brand data for (e.g., 'Apple Inc', 'Microsoft
+   * Corporation'). Must be 3-30 characters. Cannot be used with domain or ticker
+   * parameters.
+   */
+  name?: string;
+
+  /**
+   * Stock ticker symbol to retrieve brand data for (e.g., 'AAPL', 'GOOGL', 'BRK.A').
+   * Must be 1-6 characters, letters/numbers/dots only. Cannot be used with domain or
+   * name parameters.
+   */
+  ticker?: string;
 
   /**
    * Optional timeout in milliseconds for the request. If the request takes longer
