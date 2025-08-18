@@ -9,8 +9,8 @@ const client = new BrandDev({
 
 describe('resource brand', () => {
   // Prism tests are disabled
-  test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.brand.retrieve({ domain: 'domain' });
+  test.skip('retrieve', async () => {
+    const responsePromise = client.brand.retrieve();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,13 +21,21 @@ describe('resource brand', () => {
   });
 
   // Prism tests are disabled
-  test.skip('retrieve: required and optional params', async () => {
-    const response = await client.brand.retrieve({
-      domain: 'domain',
-      force_language: 'albanian',
-      maxSpeed: true,
-      timeoutMS: 1,
-    });
+  test.skip('retrieve: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.brand.retrieve(
+        {
+          domain: 'domain',
+          force_language: 'albanian',
+          maxSpeed: true,
+          name: 'xxx',
+          ticker: 'ticker',
+          timeoutMS: 1,
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(BrandDev.NotFoundError);
   });
 
   // Prism tests are disabled
