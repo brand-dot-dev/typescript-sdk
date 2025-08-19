@@ -126,6 +126,45 @@ over time, you can manually enable or disable certain capabilities:
 --resource=cards,accounts --operation=read --tag=kyc --no-tool=create_cards
 ```
 
+## Running remotely
+
+Launching the client with `--transport=http` launches the server as a remote server using Streamable HTTP transport. The `--port` setting can choose the port it will run on, and the `--socket` setting allows it to run on a Unix socket.
+
+Authorization can be provided via the `Authorization` header using the Bearer scheme.
+
+Additionally, authorization can be provided via the following headers:
+| Header | Equivalent client option | Security scheme |
+| --------------------- | ------------------------ | --------------- |
+| `x-brand-dev-api-key` | `apiKey` | bearerAuth |
+
+A configuration JSON for this server might look like this, assuming the server is hosted at `http://localhost:3000`:
+
+```json
+{
+  "mcpServers": {
+    "brand_dev_api": {
+      "url": "http://localhost:3000",
+      "headers": {
+        "Authorization": "Bearer <auth value>"
+      }
+    }
+  }
+}
+```
+
+The command-line arguments for filtering tools and specifying clients can also be used as query parameters in the URL.
+For example, to exclude specific tools while including others, use the URL:
+
+```
+http://localhost:3000?resource=cards&resource=accounts&no_tool=create_cards
+```
+
+Or, to configure for the Cursor client, with a custom max tool name length, use the URL:
+
+```
+http://localhost:3000?client=cursor&capability=tool-name-length%3D40
+```
+
 ## Importing the tools and server individually
 
 ```js
@@ -167,11 +206,10 @@ The following tools are available in this MCP server.
 
 ### Resource `brand`:
 
-- `retrieve_brand` (`read`): Retrieve brand data by domain
+- `retrieve_brand` (`read`): Retrieve brand information using one of three methods: domain name, company name, or stock ticker symbol. Exactly one of these parameters must be provided.
 - `ai_query_brand` (`write`): Beta feature: Use AI to extract specific data points from a brand's website. The AI will crawl the website and extract the requested information based on the provided data points.
 - `identify_from_transaction_brand` (`read`): Endpoint specially designed for platforms that want to identify transaction data by the transaction title.
 - `prefetch_brand` (`write`): Signal that you may fetch brand data for a particular domain soon to improve latency. This endpoint does not charge credits and is available for paid customers to optimize future requests. [You must be on a paid plan to use this endpoint]
-- `retrieve_by_ticker_brand` (`read`): Retrieve brand data by stock ticker (e.g. AAPL, TSLA, etc.)
 - `retrieve_naics_brand` (`read`): Endpoint to classify any brand into a 2022 NAICS code.
 - `retrieve_simplified_brand` (`read`): Returns a simplified version of brand data containing only essential information: domain, title, colors, logos, and backdrops. This endpoint is optimized for faster responses and reduced data transfer.
 - `screenshot_brand` (`read`): Beta feature: Capture a screenshot of a website. Supports both viewport (standard browser view) and full-page screenshots. Returns a URL to the uploaded screenshot image hosted on our CDN.

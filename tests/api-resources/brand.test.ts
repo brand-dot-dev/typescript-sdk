@@ -8,9 +8,9 @@ const client = new BrandDev({
 });
 
 describe('resource brand', () => {
-  // skipped: tests are disabled for the time being
-  test.skip('retrieve: only required params', async () => {
-    const responsePromise = client.brand.retrieve({ domain: 'domain' });
+  // Prism tests are disabled
+  test.skip('retrieve', async () => {
+    const responsePromise = client.brand.retrieve();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,17 +20,25 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
-  test.skip('retrieve: required and optional params', async () => {
-    const response = await client.brand.retrieve({
-      domain: 'domain',
-      force_language: 'albanian',
-      maxSpeed: true,
-      timeoutMS: 1,
-    });
+  // Prism tests are disabled
+  test.skip('retrieve: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.brand.retrieve(
+        {
+          domain: 'domain',
+          force_language: 'albanian',
+          maxSpeed: true,
+          name: 'xxx',
+          ticker: 'ticker',
+          timeoutMS: 1,
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(BrandDev.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiQuery: only required params', async () => {
     const responsePromise = client.brand.aiQuery({
       data_to_extract: [
@@ -52,7 +60,7 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiQuery: required and optional params', async () => {
     const response = await client.brand.aiQuery({
       data_to_extract: [
@@ -78,7 +86,7 @@ describe('resource brand', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('identifyFromTransaction: only required params', async () => {
     const responsePromise = client.brand.identifyFromTransaction({ transaction_info: 'transaction_info' });
     const rawResponse = await responsePromise.asResponse();
@@ -90,7 +98,7 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('identifyFromTransaction: required and optional params', async () => {
     const response = await client.brand.identifyFromTransaction({
       transaction_info: 'transaction_info',
@@ -98,7 +106,7 @@ describe('resource brand', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('prefetch: only required params', async () => {
     const responsePromise = client.brand.prefetch({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
@@ -110,29 +118,12 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('prefetch: required and optional params', async () => {
     const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1 });
   });
 
-  // skipped: tests are disabled for the time being
-  test.skip('retrieveByTicker: only required params', async () => {
-    const responsePromise = client.brand.retrieveByTicker({ ticker: 'ticker' });
-    const rawResponse = await responsePromise.asResponse();
-    expect(rawResponse).toBeInstanceOf(Response);
-    const response = await responsePromise;
-    expect(response).not.toBeInstanceOf(Response);
-    const dataAndResponse = await responsePromise.withResponse();
-    expect(dataAndResponse.data).toBe(response);
-    expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // skipped: tests are disabled for the time being
-  test.skip('retrieveByTicker: required and optional params', async () => {
-    const response = await client.brand.retrieveByTicker({ ticker: 'ticker', timeoutMS: 1 });
-  });
-
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveNaics: only required params', async () => {
     const responsePromise = client.brand.retrieveNaics({ input: 'input' });
     const rawResponse = await responsePromise.asResponse();
@@ -144,12 +135,12 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveNaics: required and optional params', async () => {
     const response = await client.brand.retrieveNaics({ input: 'input', timeoutMS: 1 });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveSimplified: only required params', async () => {
     const responsePromise = client.brand.retrieveSimplified({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
@@ -161,12 +152,12 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveSimplified: required and optional params', async () => {
     const response = await client.brand.retrieveSimplified({ domain: 'domain', timeoutMS: 1 });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('screenshot: only required params', async () => {
     const responsePromise = client.brand.screenshot({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
@@ -178,12 +169,12 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('screenshot: required and optional params', async () => {
     const response = await client.brand.screenshot({ domain: 'domain', fullScreenshot: 'true' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('styleguide: only required params', async () => {
     const responsePromise = client.brand.styleguide({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
@@ -195,7 +186,7 @@ describe('resource brand', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('styleguide: required and optional params', async () => {
     const response = await client.brand.styleguide({ domain: 'domain', timeoutMS: 1 });
   });

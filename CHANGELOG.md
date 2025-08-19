@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.3.0 (2025-08-19)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **api:** api update ([687376d](https://github.com/brand-dot-dev/typescript-sdk/commit/687376d23c7a4548ee4dac9a0791f6c489da8825))
+* **api:** api update ([2185b42](https://github.com/brand-dot-dev/typescript-sdk/commit/2185b42c23cf6d8939c042978e547789cee751ac))
+* **api:** api update ([c5e5171](https://github.com/brand-dot-dev/typescript-sdk/commit/c5e5171340898f18a1e00a56d01ca331a871db02))
+* **mcp:** parse query string as mcp client options in mcp server ([35bbdf5](https://github.com/brand-dot-dev/typescript-sdk/commit/35bbdf5b6e6222a60030686def5bf873d3b595dc))
+
+
+### Chores
+
+* **deps:** update dependency @types/node to v20.17.58 ([bc313d7](https://github.com/brand-dot-dev/typescript-sdk/commit/bc313d7490efb258b89dcacbe5e6ba20234d559c))
+* **internal:** codegen related update ([388e0d3](https://github.com/brand-dot-dev/typescript-sdk/commit/388e0d38ca4fc8a4d468b72ab5b2b13539cac1d1))
+* **internal:** formatting change ([62a8d7d](https://github.com/brand-dot-dev/typescript-sdk/commit/62a8d7de6e3fd2419bf38885c4fd473e619e6364))
+* **internal:** refactor array check ([d999332](https://github.com/brand-dot-dev/typescript-sdk/commit/d9993321bfc0bf80e0c19472e91a735fe1de3893))
+* **internal:** update comment in script ([48243f3](https://github.com/brand-dot-dev/typescript-sdk/commit/48243f3343affccf20412647169a40ab72187b96))
+* **mcp:** document remote server in README.md ([8265fa8](https://github.com/brand-dot-dev/typescript-sdk/commit/8265fa8fd02a828b738f3fb07b54a225d2051be9))
+* **mcp:** minor cleanup of types and package.json ([fa6eb07](https://github.com/brand-dot-dev/typescript-sdk/commit/fa6eb0725c762a67a58d0315673fe64fcee2c79a))
+* **mcp:** update README ([025b597](https://github.com/brand-dot-dev/typescript-sdk/commit/025b597bdbe44137092678270761830fdad6eafe))
+* update @stainless-api/prism-cli to v5.15.0 ([8510713](https://github.com/brand-dot-dev/typescript-sdk/commit/85107138d8677a0836dc1f8b5f4f6406daad2af2))
+
 ## 0.2.0 (2025-08-07)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0...v0.2.0)

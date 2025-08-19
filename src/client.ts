@@ -24,8 +24,6 @@ import {
   BrandIdentifyFromTransactionResponse,
   BrandPrefetchParams,
   BrandPrefetchResponse,
-  BrandRetrieveByTickerParams,
-  BrandRetrieveByTickerResponse,
   BrandRetrieveNaicsParams,
   BrandRetrieveNaicsResponse,
   BrandRetrieveParams,
@@ -736,7 +734,9 @@ export class BrandDev {
 
   brand: API.Brand = new API.Brand(this);
 }
+
 BrandDev.Brand = Brand;
+
 export declare namespace BrandDev {
   export type RequestOptions = Opts.RequestOptions;
 
@@ -746,7 +746,6 @@ export declare namespace BrandDev {
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandPrefetchResponse as BrandPrefetchResponse,
-    type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
     type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
@@ -755,7 +754,6 @@ export declare namespace BrandDev {
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
-    type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
     type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
