@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.4.0 (2025-08-22)
+
+Full Changelog: [v0.3.0...v0.4.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.3.0...v0.4.0)
+
+### Features
+
+* **mcp:** add code execution tool ([0c37834](https://github.com/brand-dot-dev/typescript-sdk/commit/0c378349d41408eb70be2fa073c980841508c860))
+* **mcp:** add option to infer mcp client ([38a98d1](https://github.com/brand-dot-dev/typescript-sdk/commit/38a98d1f072b7cedf26c9954736784e15eddb8b4))
+
+
+### Chores
+
+* add package to package.json ([f4afc21](https://github.com/brand-dot-dev/typescript-sdk/commit/f4afc219f25a08c2225a83911c540f47e8eaec89))
+* **client:** qualify global Blob ([e01d45a](https://github.com/brand-dot-dev/typescript-sdk/commit/e01d45ae764ae74df9c3d472875207266f0e7515))
+* **internal:** codegen related update ([3839f68](https://github.com/brand-dot-dev/typescript-sdk/commit/3839f68e28effb75f129c048bcc8b0e81991d58c))
+* **internal:** make mcp-server publishing public by defaut ([90b04c8](https://github.com/brand-dot-dev/typescript-sdk/commit/90b04c8f722e48f7343cabc930fce89bd776306b))
+* **mcp:** add cors to oauth metadata route ([c03f17a](https://github.com/brand-dot-dev/typescript-sdk/commit/c03f17a2086c9f05898e4b8b165274ea7e1ab2ca))
+* **mcp:** update package.json ([078179f](https://github.com/brand-dot-dev/typescript-sdk/commit/078179f739e593b32ad7e3dbe610252528d96f9a))
+* **mcp:** update types ([a57d2fc](https://github.com/brand-dot-dev/typescript-sdk/commit/a57d2fc0aa82cf331dbac055e3af7b7b8c9b7e66))
+
 ## 0.3.0 (2025-08-19)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.2.0...v0.3.0)
