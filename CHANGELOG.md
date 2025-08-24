@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.1 (2025-08-24)
+
+Full Changelog: [v0.4.0...v0.4.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.4.0...v0.4.1)
+
+### Chores
+
+* **internal:** codegen related update ([d0588aa](https://github.com/brand-dot-dev/typescript-sdk/commit/d0588aa66ab40b60f4a93c9d7f32f48d6ad4c539))
+* update CI script ([a9b3ce6](https://github.com/brand-dot-dev/typescript-sdk/commit/a9b3ce6545e7f6dc9d3957fe48625e6af9848971))
+
 ## 0.4.0 (2025-08-22)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.3.0...v0.4.0)
