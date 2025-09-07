@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.5.0 (2025-09-07)
+
+Full Changelog: [v0.4.0...v0.5.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.4.0...v0.5.0)
+
+### Features
+
+* **api:** api update ([5657c5b](https://github.com/brand-dot-dev/typescript-sdk/commit/5657c5b12852bc544e53f63bace8986616179751))
+* **mcp:** allow setting logging level ([fc2ba05](https://github.com/brand-dot-dev/typescript-sdk/commit/fc2ba058f379a321c7e8cf6e4b9e2993915b76b6))
+* **mcp:** expose client options in `streamableHTTPApp` ([2652b70](https://github.com/brand-dot-dev/typescript-sdk/commit/2652b7052e2190ed1aee56ab4c4cae6d4170504e))
+
+
+### Bug Fixes
+
+* **mcp:** fix query options parsing ([661f292](https://github.com/brand-dot-dev/typescript-sdk/commit/661f2927adfe695dde2cf846c02f705b3afecc24))
+
+
+### Chores
+
+* ci build action ([c14bc35](https://github.com/brand-dot-dev/typescript-sdk/commit/c14bc3525a0ae51e0e1cc9df6ffdccbd6659c938))
+* **internal:** codegen related update ([ccf944b](https://github.com/brand-dot-dev/typescript-sdk/commit/ccf944b38ed48e5e5d2f09b04d0b641bda2f81ce))
+* **internal:** codegen related update ([29a572a](https://github.com/brand-dot-dev/typescript-sdk/commit/29a572a2e619f03a1c1ffc91834c54ff1851e650))
+* **internal:** codegen related update ([d0588aa](https://github.com/brand-dot-dev/typescript-sdk/commit/d0588aa66ab40b60f4a93c9d7f32f48d6ad4c539))
+* **internal:** update global Error reference ([fa20dfd](https://github.com/brand-dot-dev/typescript-sdk/commit/fa20dfdb2b2230826e567b525c9770e0d8e6a475))
+* update CI script ([a9b3ce6](https://github.com/brand-dot-dev/typescript-sdk/commit/a9b3ce6545e7f6dc9d3957fe48625e6af9848971))
+
 ## 0.4.0 (2025-08-22)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.3.0...v0.4.0)
