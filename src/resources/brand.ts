@@ -150,6 +150,11 @@ export namespace BrandRetrieveResponse {
     is_nsfw?: boolean;
 
     /**
+     * Important website links for the brand
+     */
+    links?: Brand.Links;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
@@ -551,6 +556,41 @@ export namespace BrandRetrieveResponse {
           | 'Beauty & Cosmetics CPG'
           | 'Health & Wellness CPG';
       }
+    }
+
+    /**
+     * Important website links for the brand
+     */
+    export interface Links {
+      /**
+       * URL to the brand's blog or news page
+       */
+      blog?: string | null;
+
+      /**
+       * URL to the brand's careers or job opportunities page
+       */
+      careers?: string | null;
+
+      /**
+       * URL to the brand's contact or contact us page
+       */
+      contact?: string | null;
+
+      /**
+       * URL to the brand's pricing or plans page
+       */
+      pricing?: string | null;
+
+      /**
+       * URL to the brand's privacy policy page
+       */
+      privacy?: string | null;
+
+      /**
+       * URL to the brand's terms of service or terms and conditions page
+       */
+      terms?: string | null;
     }
 
     export interface Logo {
@@ -745,6 +785,11 @@ export namespace BrandIdentifyFromTransactionResponse {
     is_nsfw?: boolean;
 
     /**
+     * Important website links for the brand
+     */
+    links?: Brand.Links;
+
+    /**
      * An array of logos associated with the brand
      */
     logos?: Array<Brand.Logo>;
@@ -1146,6 +1191,41 @@ export namespace BrandIdentifyFromTransactionResponse {
           | 'Beauty & Cosmetics CPG'
           | 'Health & Wellness CPG';
       }
+    }
+
+    /**
+     * Important website links for the brand
+     */
+    export interface Links {
+      /**
+       * URL to the brand's blog or news page
+       */
+      blog?: string | null;
+
+      /**
+       * URL to the brand's careers or job opportunities page
+       */
+      careers?: string | null;
+
+      /**
+       * URL to the brand's contact or contact us page
+       */
+      contact?: string | null;
+
+      /**
+       * URL to the brand's pricing or plans page
+       */
+      pricing?: string | null;
+
+      /**
+       * URL to the brand's privacy policy page
+       */
+      privacy?: string | null;
+
+      /**
+       * URL to the brand's terms of service or terms and conditions page
+       */
+      terms?: string | null;
     }
 
     export interface Logo {
@@ -1539,6 +1619,11 @@ export namespace BrandStyleguideResponse {
      * Spacing system used on the website
      */
     elementSpacing?: Styleguide.ElementSpacing;
+
+    /**
+     * The primary color mode of the website design
+     */
+    mode?: 'light' | 'dark';
 
     /**
      * Shadow styles used on the website
