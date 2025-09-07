@@ -1,8 +1,8 @@
 {
   "name": "brand.dev-mcp",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The official MCP Server for the Brand Dev API",
-  "author": "Brand Dev <>",
+  "author": "Brand Dev <hello@brand.dev>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
