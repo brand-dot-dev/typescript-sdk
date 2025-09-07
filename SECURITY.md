@@ -18,6 +18,10 @@ before making any information public.
 If you encounter security issues that are not directly related to SDKs but pertain to the services
 or products provided by Brand Dev, please follow the respective company's security reporting guidelines.
 
+### Brand Dev Terms and Policies
+
+Please contact hello@brand.dev for any questions or concerns regarding the security of our services.
+
 ---
 
 Thank you for helping us keep the SDKs and systems they interact with secure.
