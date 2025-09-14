@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.7.0 (2025-09-14)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **api:** api update ([360996b](https://github.com/brand-dot-dev/typescript-sdk/commit/360996b45e1df89cadcd2ac8d5e1e39d500a3212))
+
+
+### Bug Fixes
+
+* coerce nullable values to undefined ([7e219a5](https://github.com/brand-dot-dev/typescript-sdk/commit/7e219a526d4ab6c50df00da18401995aecc58879))
+* **mcp:** fix uploading dxt release assets ([9f0931e](https://github.com/brand-dot-dev/typescript-sdk/commit/9f0931eff110f8c1f66cc142bb7d4213ac966bfd))
+
+
+### Chores
+
+* **mcp:** upload dxt as release asset ([4142308](https://github.com/brand-dot-dev/typescript-sdk/commit/4142308fb9ec6b4d3212a92283fa33fb9b14dbbb))
+
 ## 0.6.0 (2025-09-07)
 
 Full Changelog: [v0.5.0...v0.6.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.5.0...v0.6.0)
