@@ -171,7 +171,12 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('screenshot: required and optional params', async () => {
-    const response = await client.brand.screenshot({ domain: 'domain', fullScreenshot: 'true' });
+    const response = await client.brand.screenshot({
+      domain: 'domain',
+      fullScreenshot: 'true',
+      page: 'login',
+      prioritize: 'speed',
+    });
   });
 
   // Prism tests are disabled
@@ -188,6 +193,6 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('styleguide: required and optional params', async () => {
-    const response = await client.brand.styleguide({ domain: 'domain', timeoutMS: 1 });
+    const response = await client.brand.styleguide({ domain: 'domain', prioritize: 'speed', timeoutMS: 1 });
   });
 });
