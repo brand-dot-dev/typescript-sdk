@@ -25,6 +25,12 @@ export const tool: Tool = {
         description:
           "Domain name to extract styleguide from (e.g., 'example.com', 'google.com'). The domain will be automatically normalized and validated.",
       },
+      prioritize: {
+        type: 'string',
+        description:
+          "Optional parameter to prioritize screenshot capture for styleguide extraction. If 'speed', optimizes for faster capture with basic quality. If 'quality', optimizes for higher quality with longer wait times. Defaults to 'speed' if not provided.",
+        enum: ['speed', 'quality'],
+      },
       timeoutMS: {
         type: 'integer',
         description:

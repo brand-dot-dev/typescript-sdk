@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'screenshot_brand',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nBeta feature: Capture a screenshot of a website. Supports both viewport (standard browser view) and full-page screenshots. Returns a URL to the uploaded screenshot image hosted on our CDN.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    code: {\n      type: 'integer',\n      description: 'HTTP status code'\n    },\n    domain: {\n      type: 'string',\n      description: 'The normalized domain that was processed'\n    },\n    screenshot: {\n      type: 'string',\n      description: 'Public URL of the uploaded screenshot image'\n    },\n    screenshotType: {\n      type: 'string',\n      description: 'Type of screenshot that was captured',\n      enum: [        'viewport',\n        'fullPage'\n      ]\n    },\n    status: {\n      type: 'string',\n      description: 'Status of the response, e.g., \\'ok\\''\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nBeta feature: Capture a screenshot of a website. Supports both viewport (standard browser view) and full-page screenshots. Can also screenshot specific page types (login, pricing, etc.) by using heuristics to find the appropriate URL. Returns a URL to the uploaded screenshot image hosted on our CDN.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    code: {\n      type: 'integer',\n      description: 'HTTP status code'\n    },\n    domain: {\n      type: 'string',\n      description: 'The normalized domain that was processed'\n    },\n    screenshot: {\n      type: 'string',\n      description: 'Public URL of the uploaded screenshot image'\n    },\n    screenshotType: {\n      type: 'string',\n      description: 'Type of screenshot that was captured',\n      enum: [        'viewport',\n        'fullPage'\n      ]\n    },\n    status: {\n      type: 'string',\n      description: 'Status of the response, e.g., \\'ok\\''\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -31,6 +31,18 @@ export const tool: Tool = {
         description:
           "Optional parameter to determine screenshot type. If 'true', takes a full page screenshot capturing all content. If 'false' or not provided, takes a viewport screenshot (standard browser view).",
         enum: ['true', 'false'],
+      },
+      page: {
+        type: 'string',
+        description:
+          "Optional parameter to specify which page type to screenshot. If provided, the system will scrape the domain's links and use heuristics to find the most appropriate URL for the specified page type (30 supported languages). If not provided, screenshots the main domain landing page.",
+        enum: ['login', 'signup', 'blog', 'careers', 'pricing', 'terms', 'privacy', 'contact'],
+      },
+      prioritize: {
+        type: 'string',
+        description:
+          "Optional parameter to prioritize screenshot capture. If 'speed', optimizes for faster capture with basic quality. If 'quality', optimizes for higher quality with longer wait times. Defaults to 'quality' if not provided.",
+        enum: ['speed', 'quality'],
       },
       jq_filter: {
         type: 'string',
