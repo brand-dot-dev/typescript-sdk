@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.8.0 (2025-09-20)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* **mcp:** add docs search tool ([0a055f3](https://github.com/brand-dot-dev/typescript-sdk/commit/0a055f370cf8893eb026c8a594a7d094e00105d6))
+
+
+### Bug Fixes
+
+* **ci:** set permissions for DXT publish action ([1020169](https://github.com/brand-dot-dev/typescript-sdk/commit/1020169737b7e28b4473eb93fa467ed11c708769))
+
+
+### Chores
+
+* **codegen:** internal codegen update ([8e46689](https://github.com/brand-dot-dev/typescript-sdk/commit/8e46689eb493e1208c17a8c9a7434bd0b9ca2aae))
+* do not install brew dependencies in ./scripts/bootstrap by default ([b07f40c](https://github.com/brand-dot-dev/typescript-sdk/commit/b07f40c3047e27ee1f07ed953103f4b88ed5d455))
+* **internal:** gitignore .mcpb files ([c6ed0ce](https://github.com/brand-dot-dev/typescript-sdk/commit/c6ed0cebd9a94dfdaaad160d0a2adda28ef5ed9e))
+* **mcp:** rename dxt to mcpb ([42531d2](https://github.com/brand-dot-dev/typescript-sdk/commit/42531d22db14cf599da634a2318fc627ef70148f))
+
 ## 0.7.0 (2025-09-14)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.6.0...v0.7.0)
