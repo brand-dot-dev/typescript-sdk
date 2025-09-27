@@ -28,7 +28,7 @@ export const tool: Tool = {
       prioritize: {
         type: 'string',
         description:
-          "Optional parameter to prioritize screenshot capture for styleguide extraction. If 'speed', optimizes for faster capture with basic quality. If 'quality', optimizes for higher quality with longer wait times. Defaults to 'speed' if not provided.",
+          "Optional parameter to prioritize screenshot capture for styleguide extraction. If 'speed', optimizes for faster capture with basic quality. If 'quality', optimizes for higher quality with longer wait times. Defaults to 'quality' if not provided.",
         enum: ['speed', 'quality'],
       },
       timeoutMS: {
