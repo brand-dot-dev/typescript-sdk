@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.9.0 (2025-10-08)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **api:** api update ([ce64b29](https://github.com/brand-dot-dev/typescript-sdk/commit/ce64b29689364c62b93b930af22eb4882e81bcbe))
+* **api:** api update ([411fb44](https://github.com/brand-dot-dev/typescript-sdk/commit/411fb44ff0558d155bf96800c105d43efc184715))
+* **api:** api update ([62304b0](https://github.com/brand-dot-dev/typescript-sdk/commit/62304b03a8b46a2c6818ee3d3ac05f83fb3b45d0))
+
+
+### Bug Fixes
+
+* **mcp:** fix cli argument parsing logic ([4d93d5a](https://github.com/brand-dot-dev/typescript-sdk/commit/4d93d5a9de7a986582eff55e2add9c49015b7b4a))
+* **mcp:** resolve a linting issue in server code ([c5cc506](https://github.com/brand-dot-dev/typescript-sdk/commit/c5cc506a715b7f7a969e99ccd00acb6925830eda))
+
+
+### Chores
+
+* **internal:** remove .eslintcache ([506f8c0](https://github.com/brand-dot-dev/typescript-sdk/commit/506f8c014d517dc095f76dcd9e6c3b2a416a1599))
+* **internal:** use npm pack for build uploads ([baeea68](https://github.com/brand-dot-dev/typescript-sdk/commit/baeea68c8cd558123d4b6a3cbe684b7b73156ce2))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([b74deb8](https://github.com/brand-dot-dev/typescript-sdk/commit/b74deb8d666ac9b20a4ae88e958c6d86f46cf9e2))
+* update lockfile ([e3498ad](https://github.com/brand-dot-dev/typescript-sdk/commit/e3498ad70ddafc820912b70d69b23320b772109c))
+
 ## 0.8.0 (2025-09-27)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.7.0...v0.8.0)
