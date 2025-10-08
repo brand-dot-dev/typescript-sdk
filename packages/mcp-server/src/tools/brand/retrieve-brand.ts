@@ -97,7 +97,7 @@ export const tool: Tool = {
       ticker: {
         type: 'string',
         description:
-          "Stock ticker symbol to retrieve brand data for (e.g., 'AAPL', 'GOOGL', 'BRK.A'). Must be 1-6 characters, letters/numbers/dots only. Cannot be used with domain or name parameters.",
+          "Stock ticker symbol to retrieve brand data for (e.g., 'AAPL', 'GOOGL', 'BRK.A'). Must be 1-10 characters, letters/numbers/dots only. Cannot be used with domain or name parameters.",
       },
       timeoutMS: {
         type: 'integer',
