@@ -31,6 +31,7 @@ describe('resource brand', () => {
           maxSpeed: true,
           name: 'xxx',
           ticker: 'ticker',
+          ticker_exchange: 'AMEX',
           timeoutMS: 1,
         },
         { path: '/_stainless_unknown_path' },
