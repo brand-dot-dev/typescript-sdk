@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.1 (2025-10-09)
+
+Full Changelog: [v0.9.0...v0.9.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.9.0...v0.9.1)
+
+### Chores
+
+* extract some types in mcp docs ([3b8f61b](https://github.com/brand-dot-dev/typescript-sdk/commit/3b8f61bc320fbfaef43f7c5d8e8f6fe895099c7d))
+
 ## 0.9.0 (2025-10-08)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.8.0...v0.9.0)
