@@ -25,15 +25,7 @@ describe('resource brand', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.brand.retrieve(
-        {
-          domain: 'domain',
-          force_language: 'albanian',
-          maxSpeed: true,
-          name: 'xxx',
-          ticker: 'ticker',
-          ticker_exchange: 'AMEX',
-          timeoutMS: 1,
-        },
+        { domain: 'domain', force_language: 'albanian', maxSpeed: true, timeoutMS: 1 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(BrandDev.NotFoundError);

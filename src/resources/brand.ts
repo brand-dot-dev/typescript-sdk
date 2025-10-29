@@ -6,8 +6,7 @@ import { RequestOptions } from '../internal/request-options';
 
 export class Brand extends APIResource {
   /**
-   * Retrieve brand information using one of three methods: domain name, company
-   * name, or stock ticker symbol. Exactly one of these parameters must be provided.
+   * Retrieve brand information from a domain name
    */
   retrieve(
     query: BrandRetrieveParams | null | undefined = {},
@@ -3247,98 +3246,6 @@ export interface BrandRetrieveParams {
    * less comprehensive data. Works with all three lookup methods.
    */
   maxSpeed?: boolean;
-
-  /**
-   * Company name to retrieve brand data for (e.g., 'Apple Inc', 'Microsoft
-   * Corporation'). Must be 3-30 characters. Cannot be used with domain or ticker
-   * parameters.
-   */
-  name?: string;
-
-  /**
-   * Stock ticker symbol to retrieve brand data for (e.g., 'AAPL', 'GOOGL', 'BRK.A').
-   * Must be 1-15 characters, letters/numbers/dots only. Cannot be used with domain
-   * or name parameters.
-   */
-  ticker?: string;
-
-  /**
-   * Optional stock exchange for the ticker. Only used when ticker parameter is
-   * provided. Defaults to assume ticker is American if not specified.
-   */
-  ticker_exchange?:
-    | 'AMEX'
-    | 'AMS'
-    | 'AQS'
-    | 'ASX'
-    | 'ATH'
-    | 'BER'
-    | 'BME'
-    | 'BRU'
-    | 'BSE'
-    | 'BUD'
-    | 'BUE'
-    | 'BVC'
-    | 'CBOE'
-    | 'CNQ'
-    | 'CPH'
-    | 'DFM'
-    | 'DOH'
-    | 'DUB'
-    | 'DUS'
-    | 'DXE'
-    | 'EGX'
-    | 'FSX'
-    | 'HAM'
-    | 'HEL'
-    | 'HKSE'
-    | 'HOSE'
-    | 'ICE'
-    | 'IOB'
-    | 'IST'
-    | 'JKT'
-    | 'JNB'
-    | 'JPX'
-    | 'KLS'
-    | 'KOE'
-    | 'KSC'
-    | 'KUW'
-    | 'LIS'
-    | 'LSE'
-    | 'MCX'
-    | 'MEX'
-    | 'MIL'
-    | 'MUN'
-    | 'NASDAQ'
-    | 'NEO'
-    | 'NSE'
-    | 'NYSE'
-    | 'NZE'
-    | 'OSL'
-    | 'OTC'
-    | 'PAR'
-    | 'PNK'
-    | 'PRA'
-    | 'RIS'
-    | 'SAO'
-    | 'SAU'
-    | 'SES'
-    | 'SET'
-    | 'SGO'
-    | 'SHH'
-    | 'SHZ'
-    | 'SIX'
-    | 'STO'
-    | 'STU'
-    | 'TAI'
-    | 'TAL'
-    | 'TLV'
-    | 'TSX'
-    | 'TSXV'
-    | 'TWO'
-    | 'VIE'
-    | 'WSE'
-    | 'XETRA';
 
   /**
    * Optional timeout in milliseconds for the request. If the request takes longer
