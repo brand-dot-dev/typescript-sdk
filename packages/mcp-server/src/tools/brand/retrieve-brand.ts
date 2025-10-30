@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'retrieve_brand',
-  description: 'Retrieve brand information from a domain name',
+  description: 'Retrieve logos, backdrops, colors, industry, description, and more from any domain',
   inputSchema: {
     type: 'object',
     properties: {

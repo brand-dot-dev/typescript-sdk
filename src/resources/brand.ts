@@ -6,7 +6,8 @@ import { RequestOptions } from '../internal/request-options';
 
 export class Brand extends APIResource {
   /**
-   * Retrieve brand information from a domain name
+   * Retrieve logos, backdrops, colors, industry, description, and more from any
+   * domain
    */
   retrieve(
     query: BrandRetrieveParams | null | undefined = {},
@@ -3353,6 +3354,70 @@ export interface BrandIdentifyFromTransactionParams {
    * Transaction information to identify the brand
    */
   transaction_info: string;
+
+  /**
+   * Optional parameter to force the language of the retrieved brand data.
+   */
+  force_language?:
+    | 'albanian'
+    | 'arabic'
+    | 'azeri'
+    | 'bengali'
+    | 'bulgarian'
+    | 'cebuano'
+    | 'croatian'
+    | 'czech'
+    | 'danish'
+    | 'dutch'
+    | 'english'
+    | 'estonian'
+    | 'farsi'
+    | 'finnish'
+    | 'french'
+    | 'german'
+    | 'hausa'
+    | 'hawaiian'
+    | 'hindi'
+    | 'hungarian'
+    | 'icelandic'
+    | 'indonesian'
+    | 'italian'
+    | 'kazakh'
+    | 'kyrgyz'
+    | 'latin'
+    | 'latvian'
+    | 'lithuanian'
+    | 'macedonian'
+    | 'mongolian'
+    | 'nepali'
+    | 'norwegian'
+    | 'pashto'
+    | 'pidgin'
+    | 'polish'
+    | 'portuguese'
+    | 'romanian'
+    | 'russian'
+    | 'serbian'
+    | 'slovak'
+    | 'slovene'
+    | 'somali'
+    | 'spanish'
+    | 'swahili'
+    | 'swedish'
+    | 'tagalog'
+    | 'turkish'
+    | 'ukrainian'
+    | 'urdu'
+    | 'uzbek'
+    | 'vietnamese'
+    | 'welsh';
+
+  /**
+   * Optional parameter to optimize the API call for maximum speed. When set to true,
+   * the API will skip time-consuming operations for faster response at the cost of
+   * less comprehensive data.
+   */
+  maxSpeed?: boolean;
 
   /**
    * Optional timeout in milliseconds for the request. If the request takes longer

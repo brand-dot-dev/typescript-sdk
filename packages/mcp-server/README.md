@@ -206,7 +206,7 @@ The following tools are available in this MCP server.
 
 ### Resource `brand`:
 
-- `retrieve_brand` (`read`): Retrieve brand information from a domain name
+- `retrieve_brand` (`read`): Retrieve logos, backdrops, colors, industry, description, and more from any domain
 - `ai_query_brand` (`write`): Beta feature: Use AI to extract specific data points from a brand's website. The AI will crawl the website and extract the requested information based on the provided data points.
 - `identify_from_transaction_brand` (`read`): Endpoint specially designed for platforms that want to identify transaction data by the transaction title.
 - `prefetch_brand` (`write`): Signal that you may fetch brand data for a particular domain soon to improve latency. This endpoint does not charge credits and is available for paid customers to optimize future requests. [You must be on a paid plan to use this endpoint]
