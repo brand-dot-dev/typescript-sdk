@@ -10,24 +10,24 @@ export const metadata: Metadata = {
   operation: 'read',
   tags: [],
   httpMethod: 'get',
-  httpPath: '/brand/retrieve',
+  httpPath: '/brand/retrieve-by-name',
 };
 
 export const tool: Tool = {
-  name: 'retrieve_brand',
-  description: 'Retrieve logos, backdrops, colors, industry, description, and more from any domain',
+  name: 'retrieve_by_name_brand',
+  description:
+    'Retrieve brand information using a company name. This endpoint searches for the company by name and returns its brand data.',
   inputSchema: {
     type: 'object',
     properties: {
-      domain: {
+      name: {
         type: 'string',
         description:
-          "Domain name to retrieve brand data for (e.g., 'example.com', 'google.com'). Cannot be used with name or ticker parameters.",
+          "Company name to retrieve brand data for (e.g., 'Apple Inc', 'Microsoft Corporation'). Must be 3-30 characters.",
       },
       force_language: {
         type: 'string',
-        description:
-          'Optional parameter to force the language of the retrieved brand data. Works with all three lookup methods.',
+        description: 'Optional parameter to force the language of the retrieved brand data.',
         enum: [
           'albanian',
           'arabic',
@@ -86,7 +86,7 @@ export const tool: Tool = {
       maxSpeed: {
         type: 'boolean',
         description:
-          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip time-consuming operations for faster response at the cost of less comprehensive data. Works with all three lookup methods.',
+          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip time-consuming operations for faster response at the cost of less comprehensive data.',
       },
       timeoutMS: {
         type: 'integer',
@@ -94,7 +94,7 @@ export const tool: Tool = {
           'Optional timeout in milliseconds for the request. If the request takes longer than this value, it will be aborted with a 408 status code. Maximum allowed value is 300000ms (5 minutes).',
       },
     },
-    required: [],
+    required: ['name'],
   },
   annotations: {
     readOnlyHint: true,
@@ -103,7 +103,7 @@ export const tool: Tool = {
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.brand.retrieve(body));
+  return asTextContentResult(await client.brand.retrieveByName(body));
 };
 
 export default { metadata, tool, handler };

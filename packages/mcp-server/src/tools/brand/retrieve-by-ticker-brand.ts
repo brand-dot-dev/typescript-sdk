@@ -10,24 +10,24 @@ export const metadata: Metadata = {
   operation: 'read',
   tags: [],
   httpMethod: 'get',
-  httpPath: '/brand/retrieve',
+  httpPath: '/brand/retrieve-by-ticker',
 };
 
 export const tool: Tool = {
-  name: 'retrieve_brand',
-  description: 'Retrieve logos, backdrops, colors, industry, description, and more from any domain',
+  name: 'retrieve_by_ticker_brand',
+  description:
+    'Retrieve brand information using a stock ticker symbol. This endpoint looks up the company associated with the ticker and returns its brand data.',
   inputSchema: {
     type: 'object',
     properties: {
-      domain: {
+      ticker: {
         type: 'string',
         description:
-          "Domain name to retrieve brand data for (e.g., 'example.com', 'google.com'). Cannot be used with name or ticker parameters.",
+          "Stock ticker symbol to retrieve brand data for (e.g., 'AAPL', 'GOOGL', 'BRK.A'). Must be 1-15 characters, letters/numbers/dots only.",
       },
       force_language: {
         type: 'string',
-        description:
-          'Optional parameter to force the language of the retrieved brand data. Works with all three lookup methods.',
+        description: 'Optional parameter to force the language of the retrieved brand data.',
         enum: [
           'albanian',
           'arabic',
@@ -86,7 +86,85 @@ export const tool: Tool = {
       maxSpeed: {
         type: 'boolean',
         description:
-          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip time-consuming operations for faster response at the cost of less comprehensive data. Works with all three lookup methods.',
+          'Optional parameter to optimize the API call for maximum speed. When set to true, the API will skip time-consuming operations for faster response at the cost of less comprehensive data.',
+      },
+      ticker_exchange: {
+        type: 'string',
+        description: 'Optional stock exchange for the ticker. Defaults to NASDAQ if not specified.',
+        enum: [
+          'AMEX',
+          'AMS',
+          'AQS',
+          'ASX',
+          'ATH',
+          'BER',
+          'BME',
+          'BRU',
+          'BSE',
+          'BUD',
+          'BUE',
+          'BVC',
+          'CBOE',
+          'CNQ',
+          'CPH',
+          'DFM',
+          'DOH',
+          'DUB',
+          'DUS',
+          'DXE',
+          'EGX',
+          'FSX',
+          'HAM',
+          'HEL',
+          'HKSE',
+          'HOSE',
+          'ICE',
+          'IOB',
+          'IST',
+          'JKT',
+          'JNB',
+          'JPX',
+          'KLS',
+          'KOE',
+          'KSC',
+          'KUW',
+          'LIS',
+          'LSE',
+          'MCX',
+          'MEX',
+          'MIL',
+          'MUN',
+          'NASDAQ',
+          'NEO',
+          'NSE',
+          'NYSE',
+          'NZE',
+          'OSL',
+          'OTC',
+          'PAR',
+          'PNK',
+          'PRA',
+          'RIS',
+          'SAO',
+          'SAU',
+          'SES',
+          'SET',
+          'SGO',
+          'SHH',
+          'SHZ',
+          'SIX',
+          'STO',
+          'STU',
+          'TAI',
+          'TAL',
+          'TLV',
+          'TSX',
+          'TSXV',
+          'TWO',
+          'VIE',
+          'WSE',
+          'XETRA',
+        ],
       },
       timeoutMS: {
         type: 'integer',
@@ -94,7 +172,7 @@ export const tool: Tool = {
           'Optional timeout in milliseconds for the request. If the request takes longer than this value, it will be aborted with a 408 status code. Maximum allowed value is 300000ms (5 minutes).',
       },
     },
-    required: [],
+    required: ['ticker'],
   },
   annotations: {
     readOnlyHint: true,
@@ -103,7 +181,7 @@ export const tool: Tool = {
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.brand.retrieve(body));
+  return asTextContentResult(await client.brand.retrieveByTicker(body));
 };
 
 export default { metadata, tool, handler };

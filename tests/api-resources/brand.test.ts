@@ -25,15 +25,7 @@ describe('resource brand', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.brand.retrieve(
-        {
-          domain: 'domain',
-          force_language: 'albanian',
-          maxSpeed: true,
-          name: 'xxx',
-          ticker: 'ticker',
-          ticker_exchange: 'AMEX',
-          timeoutMS: 1,
-        },
+        { domain: 'domain', force_language: 'albanian', maxSpeed: true, timeoutMS: 1 },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(BrandDev.NotFoundError);
@@ -103,6 +95,8 @@ describe('resource brand', () => {
   test.skip('identifyFromTransaction: required and optional params', async () => {
     const response = await client.brand.identifyFromTransaction({
       transaction_info: 'transaction_info',
+      force_language: 'albanian',
+      maxSpeed: true,
       timeoutMS: 1,
     });
   });
@@ -122,6 +116,51 @@ describe('resource brand', () => {
   // Prism tests are disabled
   test.skip('prefetch: required and optional params', async () => {
     const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1 });
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByName: only required params', async () => {
+    const responsePromise = client.brand.retrieveByName({ name: 'xxx' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByName: required and optional params', async () => {
+    const response = await client.brand.retrieveByName({
+      name: 'xxx',
+      force_language: 'albanian',
+      maxSpeed: true,
+      timeoutMS: 1,
+    });
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByTicker: only required params', async () => {
+    const responsePromise = client.brand.retrieveByTicker({ ticker: 'ticker' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByTicker: required and optional params', async () => {
+    const response = await client.brand.retrieveByTicker({
+      ticker: 'ticker',
+      force_language: 'albanian',
+      maxSpeed: true,
+      ticker_exchange: 'AMEX',
+      timeoutMS: 1,
+    });
   });
 
   // Prism tests are disabled
