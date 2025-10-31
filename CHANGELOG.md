@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.11.0 (2025-10-31)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **api:** manual updates ([3e591a0](https://github.com/brand-dot-dev/typescript-sdk/commit/3e591a00f79a1e02f98276bf3d00848cfe1909c4))
+
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([9988475](https://github.com/brand-dot-dev/typescript-sdk/commit/9988475ec99f02ccc698c236da8723eb6786f511))
+
 ## 0.10.0 (2025-10-30)
 
 Full Changelog: [v0.9.1...v0.10.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.9.1...v0.10.0)
