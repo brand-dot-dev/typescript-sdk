@@ -119,6 +119,28 @@ describe('resource brand', () => {
   });
 
   // Prism tests are disabled
+  test.skip('retrieveByEmail: only required params', async () => {
+    const responsePromise = client.brand.retrieveByEmail({ email: 'dev@stainless.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByEmail: required and optional params', async () => {
+    const response = await client.brand.retrieveByEmail({
+      email: 'dev@stainless.com',
+      force_language: 'albanian',
+      maxSpeed: true,
+      timeoutMS: 1,
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('retrieveByName: only required params', async () => {
     const responsePromise = client.brand.retrieveByName({ name: 'xxx' });
     const rawResponse = await responsePromise.asResponse();
