@@ -6,6 +6,7 @@ Types:
 - <code><a href="./src/resources/brand.ts">BrandAIQueryResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandIdentifyFromTransactionResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandPrefetchResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandRetrieveByEmailResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByNameResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByTickerResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveNaicsResponse</a></code>
@@ -19,6 +20,7 @@ Methods:
 - <code title="post /brand/ai/query">client.brand.<a href="./src/resources/brand.ts">aiQuery</a>({ ...params }) -> BrandAIQueryResponse</code>
 - <code title="get /brand/transaction_identifier">client.brand.<a href="./src/resources/brand.ts">identifyFromTransaction</a>({ ...params }) -> BrandIdentifyFromTransactionResponse</code>
 - <code title="post /brand/prefetch">client.brand.<a href="./src/resources/brand.ts">prefetch</a>({ ...params }) -> BrandPrefetchResponse</code>
+- <code title="get /brand/retrieve-by-email">client.brand.<a href="./src/resources/brand.ts">retrieveByEmail</a>({ ...params }) -> BrandRetrieveByEmailResponse</code>
 - <code title="get /brand/retrieve-by-name">client.brand.<a href="./src/resources/brand.ts">retrieveByName</a>({ ...params }) -> BrandRetrieveByNameResponse</code>
 - <code title="get /brand/retrieve-by-ticker">client.brand.<a href="./src/resources/brand.ts">retrieveByTicker</a>({ ...params }) -> BrandRetrieveByTickerResponse</code>
 - <code title="get /brand/naics">client.brand.<a href="./src/resources/brand.ts">retrieveNaics</a>({ ...params }) -> BrandRetrieveNaicsResponse</code>
