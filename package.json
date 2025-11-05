@@ -1,6 +1,6 @@
 {
   "name": "brand.dev",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "The official TypeScript library for the Brand Dev API",
   "author": "Brand Dev <hello@brand.dev>",
   "types": "dist/index.d.ts",
