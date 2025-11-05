@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.12.0 (2025-11-05)
+
+Full Changelog: [v0.11.0...v0.12.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.11.0...v0.12.0)
+
+### Features
+
+* **mcp:** enable optional code execution tool on http mcp servers ([0a88463](https://github.com/brand-dot-dev/typescript-sdk/commit/0a88463782af8041a3dcfe2fcc606892f6d957e7))
+
+
+### Chores
+
+* **internal:** grammar fix (it's -&gt; its) ([edaf715](https://github.com/brand-dot-dev/typescript-sdk/commit/edaf715c40910680a26bab5f696d766955665d57))
+* mcp code tool explicit error message when missing a run function ([e08bfb8](https://github.com/brand-dot-dev/typescript-sdk/commit/e08bfb8b3f3cc0d61d6e3a6ddaba45a00e344a44))
+* use structured error when code execution tool errors ([1a9c653](https://github.com/brand-dot-dev/typescript-sdk/commit/1a9c653fb8bac9b1720ece6ee0a8e07b1242d5d5))
+
 ## 0.11.0 (2025-10-31)
 
 Full Changelog: [v0.10.0...v0.11.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.10.0...v0.11.0)
