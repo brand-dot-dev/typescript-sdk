@@ -34,6 +34,13 @@ For clients with a configuration JSON, it might look something like this:
 }
 ```
 
+### Cursor
+
+      If you use Cursor, you can install the MCP server by using the button below. You will need to set your environment variables
+      in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > New MCP Server.
+
+      [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=brand.dev-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImJyYW5kLmRldi1tY3AiXSwiZW52Ijp7IkJSQU5EX0RFVl9BUElfS0VZIjoiU2V0IHlvdXIgQlJBTkRfREVWX0FQSV9LRVkgaGVyZS4ifX0)
+
 ## Exposing endpoints to your MCP Client
 
 There are two ways to expose endpoints as tools in the MCP server:
