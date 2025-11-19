@@ -47,6 +47,7 @@ const fuse = new Fuse(
     'client.brand.prefetch',
     'client.brand.retrieve',
     'client.brand.retrieveByEmail',
+    'client.brand.retrieveByIsin',
     'client.brand.retrieveByName',
     'client.brand.retrieveByTicker',
     'client.brand.retrieveNaics',

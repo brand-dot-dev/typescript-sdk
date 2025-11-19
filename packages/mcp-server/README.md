@@ -247,6 +247,7 @@ The following tools are available in this MCP server.
 - `identify_from_transaction_brand` (`read`): Endpoint specially designed for platforms that want to identify transaction data by the transaction title.
 - `prefetch_brand` (`write`): Signal that you may fetch brand data for a particular domain soon to improve latency. This endpoint does not charge credits and is available for paid customers to optimize future requests. [You must be on a paid plan to use this endpoint]
 - `retrieve_by_email_brand` (`read`): Retrieve brand information using an email address while detecting disposable and free email addresses. This endpoint extracts the domain from the email address and returns brand data for that domain. Disposable and free email addresses (like gmail.com, yahoo.com) will throw a 422 error.
+- `retrieve_by_isin_brand` (`read`): Retrieve brand information using an ISIN (International Securities Identification Number). This endpoint looks up the company associated with the ISIN and returns its brand data.
 - `retrieve_by_name_brand` (`read`): Retrieve brand information using a company name. This endpoint searches for the company by name and returns its brand data.
 - `retrieve_by_ticker_brand` (`read`): Retrieve brand information using a stock ticker symbol. This endpoint looks up the company associated with the ticker and returns its brand data.
 - `retrieve_naics_brand` (`read`): Endpoint to classify any brand into a 2022 NAICS code.

@@ -141,6 +141,28 @@ describe('resource brand', () => {
   });
 
   // Prism tests are disabled
+  test.skip('retrieveByIsin: only required params', async () => {
+    const responsePromise = client.brand.retrieveByIsin({ isin: 'SE60513A9993' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Prism tests are disabled
+  test.skip('retrieveByIsin: required and optional params', async () => {
+    const response = await client.brand.retrieveByIsin({
+      isin: 'SE60513A9993',
+      force_language: 'albanian',
+      maxSpeed: true,
+      timeoutMS: 1,
+    });
+  });
+
+  // Prism tests are disabled
   test.skip('retrieveByName: only required params', async () => {
     const responsePromise = client.brand.retrieveByName({ name: 'xxx' });
     const rawResponse = await responsePromise.asResponse();
