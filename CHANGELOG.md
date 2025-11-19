@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.13.0 (2025-11-19)
+
+Full Changelog: [v0.12.0...v0.13.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.12.0...v0.13.0)
+
+### Features
+
+* **api:** manual updates ([f0aac3b](https://github.com/brand-dot-dev/typescript-sdk/commit/f0aac3ba6b6f6f9e5c82aa40ec269887eac76022))
+
+
+### Bug Fixes
+
+* **mcp:** return tool execution error on jq failure ([3bea425](https://github.com/brand-dot-dev/typescript-sdk/commit/3bea4251c74d45f1d4f7e93eea3b7ebd3ba386c9))
+
+
+### Chores
+
+* **internal:** codegen related update ([b2a195b](https://github.com/brand-dot-dev/typescript-sdk/commit/b2a195bc347751e3b811e396a2fc98870956721a))
+* **internal:** codegen related update ([f6f2b96](https://github.com/brand-dot-dev/typescript-sdk/commit/f6f2b96cac50a4c3065664ddd109cbec0603ed5d))
+* **internal:** configure MCP Server hosting ([6fbd477](https://github.com/brand-dot-dev/typescript-sdk/commit/6fbd477fa7aca0350edc70b7ae9c0f6896c9d56f))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([275e44b](https://github.com/brand-dot-dev/typescript-sdk/commit/275e44b698b0cbfca9657aa82e11b29c91f026b2))
+* **mcp:** add line numbers to code tool errors ([f118d75](https://github.com/brand-dot-dev/typescript-sdk/commit/f118d754ded3c86a626c10252a1bf1bf3eb435dc))
+* **mcp:** clarify http auth error ([266ea4b](https://github.com/brand-dot-dev/typescript-sdk/commit/266ea4bfb9c0f988d9686ffbadfc4dbace8fe178))
+* **mcp:** upgrade jq-web ([f190a40](https://github.com/brand-dot-dev/typescript-sdk/commit/f190a4032ea01af16dae3152c9acb65b4c96d76e))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([44a87a5](https://github.com/brand-dot-dev/typescript-sdk/commit/44a87a5ffc14f155693f6b7cc281a80d41997691))
+* **mcp:** add a README link to add server to VS Code or Claude Code ([fe2322b](https://github.com/brand-dot-dev/typescript-sdk/commit/fe2322b3a9af6a0095d36b47b223c14157639442))
+
 ## 0.12.0 (2025-11-05)
 
 Full Changelog: [v0.11.0...v0.12.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.11.0...v0.12.0)
