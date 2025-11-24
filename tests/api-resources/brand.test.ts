@@ -95,8 +95,11 @@ describe('resource brand', () => {
   test.skip('identifyFromTransaction: required and optional params', async () => {
     const response = await client.brand.identifyFromTransaction({
       transaction_info: 'transaction_info',
+      city: 'city',
+      country_gl: 'ad',
       force_language: 'albanian',
       maxSpeed: true,
+      mcc: 'mcc',
       timeoutMS: 1,
     });
   });
