@@ -34,7 +34,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'brand_dev_api',
-      version: '0.13.0',
+      version: '0.14.0',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
