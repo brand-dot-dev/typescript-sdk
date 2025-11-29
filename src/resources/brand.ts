@@ -26,6 +26,14 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Beta feature: Extract font information from a brand's website including font
+   * families, usage statistics, fallbacks, and element/word counts.
+   */
+  fonts(query: BrandFontsParams, options?: RequestOptions): APIPromise<BrandFontsResponse> {
+    return this._client.get('/brand/fonts', { query, ...options });
+  }
+
+  /**
    * Endpoint specially designed for platforms that want to identify transaction data
    * by the transaction title.
    */
@@ -767,6 +775,67 @@ export namespace BrandAIQueryResponse {
      * Value of the extracted data point
      */
     datapoint_value?: string | number | boolean | Array<string> | Array<number>;
+  }
+}
+
+export interface BrandFontsResponse {
+  /**
+   * HTTP status code, e.g., 200
+   */
+  code: number;
+
+  /**
+   * The normalized domain that was processed
+   */
+  domain: string;
+
+  /**
+   * Array of font usage information
+   */
+  fonts: Array<BrandFontsResponse.Font>;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status: string;
+}
+
+export namespace BrandFontsResponse {
+  export interface Font {
+    /**
+     * Array of fallback font families
+     */
+    fallbacks: Array<string>;
+
+    /**
+     * Font family name
+     */
+    font: string;
+
+    /**
+     * Number of elements using this font
+     */
+    num_elements: number;
+
+    /**
+     * Number of words using this font
+     */
+    num_words: number;
+
+    /**
+     * Percentage of elements using this font
+     */
+    percent_elements: number;
+
+    /**
+     * Percentage of words using this font
+     */
+    percent_words: number;
+
+    /**
+     * Array of CSS selectors or element types where this font is used
+     */
+    uses: Array<string>;
   }
 }
 
@@ -4572,6 +4641,21 @@ export namespace BrandAIQueryParams {
   }
 }
 
+export interface BrandFontsParams {
+  /**
+   * Domain name to extract fonts from (e.g., 'example.com', 'google.com'). The
+   * domain will be automatically normalized and validated.
+   */
+  domain: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
 export interface BrandIdentifyFromTransactionParams {
   /**
    * Transaction information to identify the brand
@@ -5402,6 +5486,7 @@ export declare namespace Brand {
   export {
     type BrandRetrieveResponse as BrandRetrieveResponse,
     type BrandAIQueryResponse as BrandAIQueryResponse,
+    type BrandFontsResponse as BrandFontsResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandPrefetchResponse as BrandPrefetchResponse,
     type BrandRetrieveByEmailResponse as BrandRetrieveByEmailResponse,
@@ -5414,6 +5499,7 @@ export declare namespace Brand {
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIQueryParams as BrandAIQueryParams,
+    type BrandFontsParams as BrandFontsParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
     type BrandRetrieveByEmailParams as BrandRetrieveByEmailParams,

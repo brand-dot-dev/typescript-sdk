@@ -43,6 +43,7 @@ function getRunFunctionNode(
 const fuse = new Fuse(
   [
     'client.brand.aiQuery',
+    'client.brand.fonts',
     'client.brand.identifyFromTransaction',
     'client.brand.prefetch',
     'client.brand.retrieve',
