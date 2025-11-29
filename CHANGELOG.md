@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.16.0 (2025-11-29)
+
+Full Changelog: [v0.15.0...v0.16.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.15.0...v0.16.0)
+
+### Features
+
+* **api:** manual updates ([d776dcc](https://github.com/brand-dot-dev/typescript-sdk/commit/d776dccb83ff103e1439c743cbd4c230b6ef26da))
+* **mcp:** add detail field to docs search tool ([27d3cbe](https://github.com/brand-dot-dev/typescript-sdk/commit/27d3cbee160a14eed81a46b3df2718a1263879c1))
+
 ## 0.15.0 (2025-11-24)
 
 Full Changelog: [v0.14.0...v0.15.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.14.0...v0.15.0)
