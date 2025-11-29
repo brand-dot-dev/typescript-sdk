@@ -6,6 +6,7 @@ export { Metadata, Endpoint, HandlerFunction };
 
 import retrieve_brand from './brand/retrieve-brand';
 import ai_query_brand from './brand/ai-query-brand';
+import fonts_brand from './brand/fonts-brand';
 import identify_from_transaction_brand from './brand/identify-from-transaction-brand';
 import prefetch_brand from './brand/prefetch-brand';
 import retrieve_by_email_brand from './brand/retrieve-by-email-brand';
@@ -25,6 +26,7 @@ function addEndpoint(endpoint: Endpoint) {
 
 addEndpoint(retrieve_brand);
 addEndpoint(ai_query_brand);
+addEndpoint(fonts_brand);
 addEndpoint(identify_from_transaction_brand);
 addEndpoint(prefetch_brand);
 addEndpoint(retrieve_by_email_brand);
