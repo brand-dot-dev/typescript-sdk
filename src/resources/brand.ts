@@ -772,9 +772,10 @@ export namespace BrandAIQueryResponse {
     datapoint_name?: string;
 
     /**
-     * Value of the extracted data point
+     * Value of the extracted data point. Can be a primitive type, an array of
+     * primitives, or an array of objects when datapoint_list_type is 'object'.
      */
-    datapoint_value?: string | number | boolean | Array<string> | Array<number>;
+    datapoint_value?: string | number | boolean | Array<string> | Array<number> | Array<unknown>;
   }
 }
 
@@ -4593,6 +4594,18 @@ export namespace BrandAIQueryParams {
      * Type of the data point
      */
     datapoint_type: 'text' | 'number' | 'date' | 'boolean' | 'list' | 'url';
+
+    /**
+     * Type of items in the list when datapoint_type is 'list'. Defaults to 'string'.
+     * Use 'object' to extract an array of objects matching a schema.
+     */
+    datapoint_list_type?: 'string' | 'text' | 'number' | 'date' | 'boolean' | 'list' | 'url' | 'object';
+
+    /**
+     * Schema definition for objects when datapoint_list_type is 'object'. Provide a
+     * map of field names to their scalar types.
+     */
+    datapoint_object_schema?: { [key: string]: 'string' | 'number' | 'date' | 'boolean' };
   }
 
   /**
@@ -4628,6 +4641,11 @@ export namespace BrandAIQueryParams {
      * Whether to analyze the home page
      */
     home_page?: boolean;
+
+    /**
+     * Whether to analyze the pricing page
+     */
+    pricing?: boolean;
 
     /**
      * Whether to analyze the privacy policy page
