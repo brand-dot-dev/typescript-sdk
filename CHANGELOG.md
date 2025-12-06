@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.18.0 (2025-12-06)
+
+Full Changelog: [v0.17.0...v0.18.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.17.0...v0.18.0)
+
+### Features
+
+* **mcp:** add typescript check to code execution tool ([8d242b6](https://github.com/brand-dot-dev/typescript-sdk/commit/8d242b64ef1a5211031f0658436f2685dcffd461))
+* **mcp:** handle code mode calls in the Stainless API ([717986d](https://github.com/brand-dot-dev/typescript-sdk/commit/717986d162f7275c38c30af87aed7809fdb20811))
+* **mcp:** return logs on code tool errors ([4eb0778](https://github.com/brand-dot-dev/typescript-sdk/commit/4eb0778c171a85a8312f6d7ac79da4c62f9e62f2))
+
+
+### Bug Fixes
+
+* **mcp:** correct code tool API endpoint ([7d49b3d](https://github.com/brand-dot-dev/typescript-sdk/commit/7d49b3d138c9c7215a32e2e068ad2000e24e8e91))
+* **mcp:** return correct lines on typescript errors ([2e33418](https://github.com/brand-dot-dev/typescript-sdk/commit/2e33418148d64b83a9bbf8d64a9304581c9b4a45))
+* **mcp:** return tool execution error on api error ([5d28f60](https://github.com/brand-dot-dev/typescript-sdk/commit/5d28f6039cdd2f3077ff7cb59ea8188e4b2b9787))
+
+
+### Chores
+
+* **client:** fix logger property type ([27049b0](https://github.com/brand-dot-dev/typescript-sdk/commit/27049b0dca5dbf3a11299fb61dcccbf918d1746b))
+* **internal:** codegen related update ([9c16793](https://github.com/brand-dot-dev/typescript-sdk/commit/9c1679381dc7e7ff2a338c83325c0770f161bb45))
+* **internal:** codegen related update ([9c2662d](https://github.com/brand-dot-dev/typescript-sdk/commit/9c2662d38f4cd02ce6505b85609966b25feb9641))
+* **internal:** upgrade eslint ([55ddd1d](https://github.com/brand-dot-dev/typescript-sdk/commit/55ddd1db85744e461708e2d01b03755a545df4d4))
+* use latest @modelcontextprotocol/sdk ([2d6174d](https://github.com/brand-dot-dev/typescript-sdk/commit/2d6174d381e57ae5bac37be7b1ffa96193430e17))
+
 ## 0.17.0 (2025-12-01)
 
 Full Changelog: [v0.16.0...v0.17.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.16.0...v0.17.0)
