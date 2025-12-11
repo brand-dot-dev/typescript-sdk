@@ -342,6 +342,10 @@ export const tool: Tool = {
         description:
           'Optional Merchant Category Code (MCC) to help identify the business category/industry. ',
       },
+      phone: {
+        type: 'number',
+        description: 'Optional phone number from the transaction to help verify brand match.',
+      },
       timeoutMS: {
         type: 'integer',
         description:
