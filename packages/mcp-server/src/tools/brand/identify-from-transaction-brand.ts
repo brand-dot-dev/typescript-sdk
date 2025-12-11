@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Metadata, asTextContentResult } from 'brand.dev-mcp/tools/types';
+import { Metadata, asErrorResult, asTextContentResult } from 'brand.dev-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import BrandDev from 'brand.dev';
@@ -342,6 +342,10 @@ export const tool: Tool = {
         description:
           'Optional Merchant Category Code (MCC) to help identify the business category/industry. ',
       },
+      phone: {
+        type: 'number',
+        description: 'Optional phone number from the transaction to help verify brand match.',
+      },
       timeoutMS: {
         type: 'integer',
         description:
@@ -357,7 +361,14 @@ export const tool: Tool = {
 
 export const handler = async (client: BrandDev, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.brand.identifyFromTransaction(body));
+  try {
+    return asTextContentResult(await client.brand.identifyFromTransaction(body));
+  } catch (error) {
+    if (error instanceof BrandDev.APIError) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
