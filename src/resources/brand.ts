@@ -5001,6 +5001,11 @@ export interface BrandIdentifyFromTransactionParams {
   mcc?: string;
 
   /**
+   * Optional phone number from the transaction to help verify brand match.
+   */
+  phone?: number;
+
+  /**
    * Optional timeout in milliseconds for the request. If the request takes longer
    * than this value, it will be aborted with a 408 status code. Maximum allowed
    * value is 300000ms (5 minutes).

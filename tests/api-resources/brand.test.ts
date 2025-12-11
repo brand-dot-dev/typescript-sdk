@@ -120,6 +120,7 @@ describe('resource brand', () => {
       force_language: 'albanian',
       maxSpeed: true,
       mcc: 'mcc',
+      phone: 0,
       timeoutMS: 1,
     });
   });
