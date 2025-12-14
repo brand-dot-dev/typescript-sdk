@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'retrieve_naics_brand',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nEndpoint to classify any brand into a 2022 NAICS code.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/brand_retrieve_naics_response',\n  $defs: {\n    brand_retrieve_naics_response: {\n      type: 'object',\n      properties: {\n        codes: {\n          type: 'array',\n          description: 'Array of NAICS codes and titles.',\n          items: {\n            type: 'object',\n            properties: {\n              code: {\n                type: 'string',\n                description: 'NAICS code'\n              },\n              title: {\n                type: 'string',\n                description: 'NAICS title'\n              }\n            }\n          }\n        },\n        domain: {\n          type: 'string',\n          description: 'Domain found for the brand'\n        },\n        status: {\n          type: 'string',\n          description: 'Status of the response, e.g., \\'ok\\''\n        },\n        type: {\n          type: 'string',\n          description: 'Industry classification type, for naics api it will be `naics`'\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nEndpoint to classify any brand into a 2022 NAICS code.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/brand_retrieve_naics_response',\n  $defs: {\n    brand_retrieve_naics_response: {\n      type: 'object',\n      properties: {\n        codes: {\n          type: 'array',\n          description: 'Array of NAICS codes and titles.',\n          items: {\n            type: 'object',\n            properties: {\n              code: {\n                type: 'string',\n                description: 'NAICS code'\n              },\n              confidence: {\n                type: 'string',\n                description: 'Confidence level for how well this NAICS code matches the company description',\n                enum: [                  'high',\n                  'medium',\n                  'low'\n                ]\n              },\n              name: {\n                type: 'string',\n                description: 'NAICS title'\n              }\n            },\n            required: [              'code',\n              'confidence',\n              'name'\n            ]\n          }\n        },\n        domain: {\n          type: 'string',\n          description: 'Domain found for the brand'\n        },\n        status: {\n          type: 'string',\n          description: 'Status of the response, e.g., \\'ok\\''\n        },\n        type: {\n          type: 'string',\n          description: 'Industry classification type, for naics api it will be `naics`'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -25,6 +25,14 @@ export const tool: Tool = {
         type: 'string',
         description:
           'Brand domain or title to retrieve NAICS code for. If a valid domain is provided in `input`, it will be used for classification, otherwise, we will search for the brand using the provided title.',
+      },
+      maxResults: {
+        type: 'integer',
+        description: 'Maximum number of NAICS codes to return. Must be between 1 and 10. Defaults to 5.',
+      },
+      minResults: {
+        type: 'integer',
+        description: 'Minimum number of NAICS codes to return. Must be at least 1. Defaults to 1.',
       },
       timeoutMS: {
         type: 'integer',

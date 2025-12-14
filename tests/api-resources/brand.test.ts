@@ -245,7 +245,12 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('retrieveNaics: required and optional params', async () => {
-    const response = await client.brand.retrieveNaics({ input: 'input', timeoutMS: 1 });
+    const response = await client.brand.retrieveNaics({
+      input: 'input',
+      maxResults: 1,
+      minResults: 1,
+      timeoutMS: 1,
+    });
   });
 
   // Prism tests are disabled
