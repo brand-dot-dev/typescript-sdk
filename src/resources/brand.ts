@@ -3879,12 +3879,17 @@ export namespace BrandRetrieveNaicsResponse {
     /**
      * NAICS code
      */
-    code?: string;
+    code: string;
+
+    /**
+     * Confidence level for how well this NAICS code matches the company description
+     */
+    confidence: 'high' | 'medium' | 'low';
 
     /**
      * NAICS title
      */
-    title?: string;
+    name: string;
   }
 }
 
@@ -5429,6 +5434,17 @@ export interface BrandRetrieveNaicsParams {
    * the brand using the provided title.
    */
   input: string;
+
+  /**
+   * Maximum number of NAICS codes to return. Must be between 1 and 10. Defaults
+   * to 5.
+   */
+  maxResults?: number;
+
+  /**
+   * Minimum number of NAICS codes to return. Must be at least 1. Defaults to 1.
+   */
+  minResults?: number;
 
   /**
    * Optional timeout in milliseconds for the request. If the request takes longer
