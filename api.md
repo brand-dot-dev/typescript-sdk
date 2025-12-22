@@ -7,6 +7,7 @@ Types:
 - <code><a href="./src/resources/brand.ts">BrandFontsResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandIdentifyFromTransactionResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandPrefetchResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandPrefetchByEmailResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByEmailResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByIsinResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandRetrieveByNameResponse</a></code>
@@ -23,6 +24,7 @@ Methods:
 - <code title="get /brand/fonts">client.brand.<a href="./src/resources/brand.ts">fonts</a>({ ...params }) -> BrandFontsResponse</code>
 - <code title="get /brand/transaction_identifier">client.brand.<a href="./src/resources/brand.ts">identifyFromTransaction</a>({ ...params }) -> BrandIdentifyFromTransactionResponse</code>
 - <code title="post /brand/prefetch">client.brand.<a href="./src/resources/brand.ts">prefetch</a>({ ...params }) -> BrandPrefetchResponse</code>
+- <code title="post /brand/prefetch-by-email">client.brand.<a href="./src/resources/brand.ts">prefetchByEmail</a>({ ...params }) -> BrandPrefetchByEmailResponse</code>
 - <code title="get /brand/retrieve-by-email">client.brand.<a href="./src/resources/brand.ts">retrieveByEmail</a>({ ...params }) -> BrandRetrieveByEmailResponse</code>
 - <code title="get /brand/retrieve-by-isin">client.brand.<a href="./src/resources/brand.ts">retrieveByIsin</a>({ ...params }) -> BrandRetrieveByIsinResponse</code>
 - <code title="get /brand/retrieve-by-name">client.brand.<a href="./src/resources/brand.ts">retrieveByName</a>({ ...params }) -> BrandRetrieveByNameResponse</code>
