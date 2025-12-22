@@ -55,6 +55,21 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Signal that you may fetch brand data for a particular domain soon to improve
+   * latency. This endpoint accepts an email address, extracts the domain from it,
+   * validates that it's not a disposable or free email provider, and queues the
+   * domain for prefetching. This endpoint does not charge credits and is available
+   * for paid customers to optimize future requests. [You must be on a paid plan to
+   * use this endpoint]
+   */
+  prefetchByEmail(
+    body: BrandPrefetchByEmailParams,
+    options?: RequestOptions,
+  ): APIPromise<BrandPrefetchByEmailResponse> {
+    return this._client.post('/brand/prefetch-by-email', { body, ...options });
+  }
+
+  /**
    * Retrieve brand information using an email address while detecting disposable and
    * free email addresses. This endpoint extracts the domain from the email address
    * and returns brand data for that domain. Disposable and free email addresses
@@ -1440,6 +1455,23 @@ export namespace BrandIdentifyFromTransactionResponse {
 }
 
 export interface BrandPrefetchResponse {
+  /**
+   * The domain that was queued for prefetching
+   */
+  domain?: string;
+
+  /**
+   * Success message
+   */
+  message?: string;
+
+  /**
+   * Status of the response, e.g., 'ok'
+   */
+  status?: string;
+}
+
+export interface BrandPrefetchByEmailResponse {
   /**
    * The domain that was queued for prefetching
    */
@@ -5032,6 +5064,22 @@ export interface BrandPrefetchParams {
   timeoutMS?: number;
 }
 
+export interface BrandPrefetchByEmailParams {
+  /**
+   * Email address to prefetch brand data for. The domain will be extracted from the
+   * email. Free email providers (gmail.com, yahoo.com, etc.) and disposable email
+   * addresses are not allowed.
+   */
+  email: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
 export interface BrandRetrieveByEmailParams {
   /**
    * Email address to retrieve brand data for (e.g., 'contact@example.com'). The
@@ -5528,6 +5576,7 @@ export declare namespace Brand {
     type BrandFontsResponse as BrandFontsResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
     type BrandPrefetchResponse as BrandPrefetchResponse,
+    type BrandPrefetchByEmailResponse as BrandPrefetchByEmailResponse,
     type BrandRetrieveByEmailResponse as BrandRetrieveByEmailResponse,
     type BrandRetrieveByIsinResponse as BrandRetrieveByIsinResponse,
     type BrandRetrieveByNameResponse as BrandRetrieveByNameResponse,
@@ -5541,6 +5590,7 @@ export declare namespace Brand {
     type BrandFontsParams as BrandFontsParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
     type BrandPrefetchParams as BrandPrefetchParams,
+    type BrandPrefetchByEmailParams as BrandPrefetchByEmailParams,
     type BrandRetrieveByEmailParams as BrandRetrieveByEmailParams,
     type BrandRetrieveByIsinParams as BrandRetrieveByIsinParams,
     type BrandRetrieveByNameParams as BrandRetrieveByNameParams,
