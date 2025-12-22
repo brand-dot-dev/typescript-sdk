@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.20.0 (2025-12-22)
+
+Full Changelog: [v0.19.0...v0.20.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.19.0...v0.20.0)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Features
+
+* **api:** manual updates ([1d86d91](https://github.com/brand-dot-dev/typescript-sdk/commit/1d86d9156edc7bd122faf7cb50300fdadae11332))
+
+
+### Bug Fixes
+
+* **mcp:** pass base url to code tool ([bdae9f2](https://github.com/brand-dot-dev/typescript-sdk/commit/bdae9f257bef72f8fc0e3a1ebb0a0924a052c3f7))
+
+
+### Chores
+
+* **mcp:** remove deprecated tool schemes ([bba3e8f](https://github.com/brand-dot-dev/typescript-sdk/commit/bba3e8f0192d09cb61795d12b754fbb7d052f366))
+
 ## 0.19.0 (2025-12-14)
 
 Full Changelog: [v0.18.0...v0.19.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.18.0...v0.19.0)
