@@ -3,6 +3,7 @@
 export {
   Brand,
   type BrandRetrieveResponse,
+  type BrandAIProductsResponse,
   type BrandAIQueryResponse,
   type BrandFontsResponse,
   type BrandIdentifyFromTransactionResponse,
@@ -17,6 +18,7 @@ export {
   type BrandScreenshotResponse,
   type BrandStyleguideResponse,
   type BrandRetrieveParams,
+  type BrandAIProductsParams,
   type BrandAIQueryParams,
   type BrandFontsParams,
   type BrandIdentifyFromTransactionParams,
