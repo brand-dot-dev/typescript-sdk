@@ -17,6 +17,15 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Beta feature: Use AI to extract product information from a brand's website. The
+   * AI will analyze the website and return a list of products with details such as
+   * name, description, pricing, features, and more.
+   */
+  aiProducts(body: BrandAIProductsParams, options?: RequestOptions): APIPromise<BrandAIProductsResponse> {
+    return this._client.post('/brand/ai/products', { body, ...options });
+  }
+
+  /**
    * Use AI to extract specific data points from a brand's website. The AI will crawl
    * the website and extract the requested information based on the provided data
    * points.
@@ -753,6 +762,77 @@ export namespace BrandRetrieveResponse {
        */
       ticker?: string;
     }
+  }
+}
+
+export interface BrandAIProductsResponse {
+  /**
+   * Array of products extracted from the website
+   */
+  products?: Array<BrandAIProductsResponse.Product>;
+}
+
+export namespace BrandAIProductsResponse {
+  export interface Product {
+    /**
+     * Description of the product
+     */
+    description: string;
+
+    /**
+     * List of product features
+     */
+    features: Array<string>;
+
+    /**
+     * Name of the product
+     */
+    name: string;
+
+    /**
+     * Tags associated with the product
+     */
+    tags: Array<string>;
+
+    /**
+     * Target audience for the product (array of strings)
+     */
+    target_audience: Array<string>;
+
+    /**
+     * Billing frequency for the product
+     */
+    billing_frequency?: 'monthly' | 'yearly' | 'one_time' | 'usage_based' | null;
+
+    /**
+     * Category of the product
+     */
+    category?: string | null;
+
+    /**
+     * Currency code for the price (e.g., USD, EUR)
+     */
+    currency?: string | null;
+
+    /**
+     * URL to the product image
+     */
+    image_url?: string | null;
+
+    /**
+     * Price of the product
+     */
+    price?: number | null;
+
+    /**
+     * Pricing model for the product
+     */
+    pricing_model?: 'per_seat' | 'flat' | 'tiered' | 'freemium' | 'custom' | null;
+
+    /**
+     * URL to the product page
+     */
+    url?: string | null;
   }
 }
 
@@ -4585,6 +4665,25 @@ export interface BrandRetrieveParams {
   timeoutMS?: number;
 }
 
+export interface BrandAIProductsParams {
+  /**
+   * The domain name to analyze
+   */
+  domain: string;
+
+  /**
+   * Maximum number of products to extract.
+   */
+  maxProducts?: number;
+
+  /**
+   * Optional timeout in milliseconds for the request. If the request takes longer
+   * than this value, it will be aborted with a 408 status code. Maximum allowed
+   * value is 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
 export interface BrandAIQueryParams {
   /**
    * Array of data points to extract from the website
@@ -5571,6 +5670,7 @@ export interface BrandStyleguideParams {
 export declare namespace Brand {
   export {
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIProductsResponse as BrandAIProductsResponse,
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandFontsResponse as BrandFontsResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
@@ -5585,6 +5685,7 @@ export declare namespace Brand {
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIProductsParams as BrandAIProductsParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandFontsParams as BrandFontsParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
