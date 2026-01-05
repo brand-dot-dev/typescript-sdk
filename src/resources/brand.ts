@@ -17,17 +17,17 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Beta feature: Use AI to extract specific data points from a brand's website. The
-   * AI will crawl the website and extract the requested information based on the
-   * provided data points.
+   * Use AI to extract specific data points from a brand's website. The AI will crawl
+   * the website and extract the requested information based on the provided data
+   * points.
    */
   aiQuery(body: BrandAIQueryParams, options?: RequestOptions): APIPromise<BrandAIQueryResponse> {
     return this._client.post('/brand/ai/query', { body, ...options });
   }
 
   /**
-   * Beta feature: Extract font information from a brand's website including font
-   * families, usage statistics, fallbacks, and element/word counts.
+   * Extract font information from a brand's website including font families, usage
+   * statistics, fallbacks, and element/word counts.
    */
   fonts(query: BrandFontsParams, options?: RequestOptions): APIPromise<BrandFontsResponse> {
     return this._client.get('/brand/fonts', { query, ...options });
@@ -139,19 +139,18 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Beta feature: Capture a screenshot of a website. Supports both viewport
-   * (standard browser view) and full-page screenshots. Can also screenshot specific
-   * page types (login, pricing, etc.) by using heuristics to find the appropriate
-   * URL. Returns a URL to the uploaded screenshot image hosted on our CDN.
+   * Capture a screenshot of a website. Supports both viewport (standard browser
+   * view) and full-page screenshots. Can also screenshot specific page types (login,
+   * pricing, etc.) by using heuristics to find the appropriate URL. Returns a URL to
+   * the uploaded screenshot image hosted on our CDN.
    */
   screenshot(query: BrandScreenshotParams, options?: RequestOptions): APIPromise<BrandScreenshotResponse> {
     return this._client.get('/brand/screenshot', { query, ...options });
   }
 
   /**
-   * Beta feature: Automatically extract comprehensive design system information from
-   * a brand's website including colors, typography, spacing, shadows, and UI
-   * components.
+   * Automatically extract comprehensive design system information from a brand's
+   * website including colors, typography, spacing, shadows, and UI components.
    */
   styleguide(query: BrandStyleguideParams, options?: RequestOptions): APIPromise<BrandStyleguideResponse> {
     return this._client.get('/brand/styleguide', { query, ...options });
