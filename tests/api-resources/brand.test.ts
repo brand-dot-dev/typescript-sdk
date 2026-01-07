@@ -25,7 +25,12 @@ describe('resource brand', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.brand.retrieve(
-        { domain: 'domain', force_language: 'albanian', maxSpeed: true, timeoutMS: 1 },
+        {
+          domain: 'domain',
+          force_language: 'albanian',
+          maxSpeed: true,
+          timeoutMS: 1,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(BrandDev.NotFoundError);
@@ -45,7 +50,11 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('aiProducts: required and optional params', async () => {
-    const response = await client.brand.aiProducts({ domain: 'domain', maxProducts: 1, timeoutMS: 1 });
+    const response = await client.brand.aiProducts({
+      domain: 'domain',
+      maxProducts: 1,
+      timeoutMS: 1,
+    });
   });
 
   // Prism tests are disabled
@@ -340,6 +349,10 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('styleguide: required and optional params', async () => {
-    const response = await client.brand.styleguide({ domain: 'domain', prioritize: 'speed', timeoutMS: 1 });
+    const response = await client.brand.styleguide({
+      domain: 'domain',
+      prioritize: 'speed',
+      timeoutMS: 1,
+    });
   });
 });
