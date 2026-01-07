@@ -150,7 +150,9 @@ const response = await client.brand.retrieve({ domain: 'REPLACE_ME' }).asRespons
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: brand, response: raw } = await client.brand.retrieve({ domain: 'REPLACE_ME' }).withResponse();
+const { data: brand, response: raw } = await client.brand
+  .retrieve({ domain: 'REPLACE_ME' })
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(brand.brand);
 ```
