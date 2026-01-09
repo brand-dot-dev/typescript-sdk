@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.21.1 (2026-01-09)
+
+Full Changelog: [v0.21.0...v0.21.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.21.0...v0.21.1)
+
+### Bug Fixes
+
+* **mcp:** correct code tool api output types ([71f2de2](https://github.com/brand-dot-dev/typescript-sdk/commit/71f2de2f619b958491e35e33698a9a3022bade0d))
+* **mcp:** fix env parsing ([f4e7c3b](https://github.com/brand-dot-dev/typescript-sdk/commit/f4e7c3bfc7c293d394da040a48d68cf5e5704f84))
+* **mcp:** fix options parsing ([61485b9](https://github.com/brand-dot-dev/typescript-sdk/commit/61485b9b18a5753373d85c1ddd027ac166eccbb5))
+* **mcp:** update code tool prompt ([d999ce6](https://github.com/brand-dot-dev/typescript-sdk/commit/d999ce6d0da44ae19457c5f0241ee9628262c6d9))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([1e60c3c](https://github.com/brand-dot-dev/typescript-sdk/commit/1e60c3c64123dfbe848a1320b7a7429e0d0fa2fe))
+* **internal:** fix dockerfile ([f30592f](https://github.com/brand-dot-dev/typescript-sdk/commit/f30592fed13e898acde9bc7b3af34efe1d332534))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([f3962ae](https://github.com/brand-dot-dev/typescript-sdk/commit/f3962aea63074c17feabafc613dc1c9355ce6b6d))
+
 ## 0.21.0 (2026-01-05)
 
 Full Changelog: [v0.20.0...v0.21.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.20.0...v0.21.0)
