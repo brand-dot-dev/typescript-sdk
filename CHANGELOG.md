@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.22.0 (2026-02-02)
+
+Full Changelog: [v0.21.0...v0.22.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.21.0...v0.22.0)
+
+### Features
+
+* **api:** api update ([e7fb26f](https://github.com/brand-dot-dev/typescript-sdk/commit/e7fb26f7fbc617422836487ad9ffe17fd3344d68))
+
+
+### Bug Fixes
+
+* **docs:** fix mcp installation instructions for remote servers ([9360478](https://github.com/brand-dot-dev/typescript-sdk/commit/9360478746580df1f1a858a0ecf79934bb42e8f0))
+* **mcp:** allow falling back for required env variables ([09dab63](https://github.com/brand-dot-dev/typescript-sdk/commit/09dab63013ffb5a2723000b6492aef5e61bf4095))
+* **mcp:** correct code tool api output types ([71f2de2](https://github.com/brand-dot-dev/typescript-sdk/commit/71f2de2f619b958491e35e33698a9a3022bade0d))
+* **mcp:** fix env parsing ([f4e7c3b](https://github.com/brand-dot-dev/typescript-sdk/commit/f4e7c3bfc7c293d394da040a48d68cf5e5704f84))
+* **mcp:** fix options parsing ([61485b9](https://github.com/brand-dot-dev/typescript-sdk/commit/61485b9b18a5753373d85c1ddd027ac166eccbb5))
+* **mcp:** update code tool prompt ([d999ce6](https://github.com/brand-dot-dev/typescript-sdk/commit/d999ce6d0da44ae19457c5f0241ee9628262c6d9))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([1e60c3c](https://github.com/brand-dot-dev/typescript-sdk/commit/1e60c3c64123dfbe848a1320b7a7429e0d0fa2fe))
+* **ci:** upgrade `actions/github-script` ([b854ab5](https://github.com/brand-dot-dev/typescript-sdk/commit/b854ab5a5450f3234e549529f5c4298c4c05db0f))
+* **internal:** codegen related update ([b0805b6](https://github.com/brand-dot-dev/typescript-sdk/commit/b0805b6eceb018fa62a9e515dfc730789707b2f0))
+* **internal:** codegen related update ([f93b56c](https://github.com/brand-dot-dev/typescript-sdk/commit/f93b56c06551b6c81459c5fb65113fe1606419fe))
+* **internal:** codegen related update ([97b7fbd](https://github.com/brand-dot-dev/typescript-sdk/commit/97b7fbdcf37144cef821a513ade85a07367fb854))
+* **internal:** codegen related update ([bef7684](https://github.com/brand-dot-dev/typescript-sdk/commit/bef7684c2ddd0cd33eae43e80411e1f51e1a2bec))
+* **internal:** codegen related update ([bd51f18](https://github.com/brand-dot-dev/typescript-sdk/commit/bd51f183c67e1b36d62ff43c29754c22be4fd1e4))
+* **internal:** fix dockerfile ([f30592f](https://github.com/brand-dot-dev/typescript-sdk/commit/f30592fed13e898acde9bc7b3af34efe1d332534))
+* **internal:** update `actions/checkout` version ([a3dfca1](https://github.com/brand-dot-dev/typescript-sdk/commit/a3dfca1c80662bc077ea0470fcaaefd569950462))
+* **internal:** update lock file ([d8e108e](https://github.com/brand-dot-dev/typescript-sdk/commit/d8e108e933a228e13a51d2ab5e44682bf4d645c6))
+* **internal:** upgrade babel, qs, js-yaml ([2da1738](https://github.com/brand-dot-dev/typescript-sdk/commit/2da17386bba6e1d6389ed00028e47d9dda69d25b))
+* **mcp:** add intent param to execute tool ([2ec26d8](https://github.com/brand-dot-dev/typescript-sdk/commit/2ec26d8b977fa513ae563a70cffb48908f9ba182))
+* **mcp:** pass intent param to execute handler ([0062abc](https://github.com/brand-dot-dev/typescript-sdk/commit/0062abc926fd37e75089353cade4bb2be495c691))
+* **mcp:** up tsconfig lib version to es2022 ([ee9e681](https://github.com/brand-dot-dev/typescript-sdk/commit/ee9e68199f559b686d7ac6c1cac35eecc924a9ee))
+* **mcp:** upgrade dependencies ([b376c8e](https://github.com/brand-dot-dev/typescript-sdk/commit/b376c8e309722f66cdd06d225f38f91b12399adb))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([f3962ae](https://github.com/brand-dot-dev/typescript-sdk/commit/f3962aea63074c17feabafc613dc1c9355ce6b6d))
+
 ## 0.21.0 (2026-01-05)
 
 Full Changelog: [v0.20.0...v0.21.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.20.0...v0.21.0)
