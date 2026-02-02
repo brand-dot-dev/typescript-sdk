@@ -9,10 +9,7 @@ export class Brand extends APIResource {
    * Retrieve logos, backdrops, colors, industry, description, and more from any
    * domain
    */
-  retrieve(
-    query: BrandRetrieveParams | null | undefined = {},
-    options?: RequestOptions,
-  ): APIPromise<BrandRetrieveResponse> {
+  retrieve(query: BrandRetrieveParams, options?: RequestOptions): APIPromise<BrandRetrieveResponse> {
     return this._client.get('/brand/retrieve', { query, ...options });
   }
 
@@ -4590,7 +4587,7 @@ export interface BrandRetrieveParams {
    * Domain name to retrieve brand data for (e.g., 'example.com', 'google.com').
    * Cannot be used with name or ticker parameters.
    */
-  domain?: string;
+  domain: string;
 
   /**
    * Optional parameter to force the language of the retrieved brand data. Works with
