@@ -31,8 +31,8 @@ describe('resource brand', () => {
   });
 
   // Prism tests are disabled
-  test.skip('aiProducts: only required params', async () => {
-    const responsePromise = client.brand.aiProducts({ domain: 'domain' });
+  test.skip('aiProducts', async () => {
+    const responsePromise = client.brand.aiProducts({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -40,15 +40,6 @@ describe('resource brand', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
-  });
-
-  // Prism tests are disabled
-  test.skip('aiProducts: required and optional params', async () => {
-    const response = await client.brand.aiProducts({
-      domain: 'domain',
-      maxProducts: 1,
-      timeoutMS: 1,
-    });
   });
 
   // Prism tests are disabled

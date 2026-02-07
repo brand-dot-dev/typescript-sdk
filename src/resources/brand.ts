@@ -4664,9 +4664,18 @@ export interface BrandRetrieveParams {
 
 export interface BrandAIProductsParams {
   /**
-   * The domain name to analyze
+   * A specific URL to use directly as the starting point for extraction without
+   * domain resolution. Useful when you want to extract products from a specific page
+   * rather than discovering the site's product pages automatically. Either 'domain'
+   * or 'directUrl' must be provided, but not both.
    */
-  domain: string;
+  directUrl?: string;
+
+  /**
+   * The domain name to analyze. Either 'domain' or 'directUrl' must be provided, but
+   * not both.
+   */
+  domain?: string;
 
   /**
    * Maximum number of products to extract.
