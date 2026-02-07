@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.23.0 (2026-02-07)
+
+Full Changelog: [v0.22.0...v0.23.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.22.0...v0.23.0)
+
+### Features
+
+* **api:** api update ([fc0f307](https://github.com/brand-dot-dev/typescript-sdk/commit/fc0f307bf17f59c98c78310ebc2ccecc2b5ac355))
+* **mcp:** add initial server instructions ([26f830e](https://github.com/brand-dot-dev/typescript-sdk/commit/26f830ef8a93862ba2902f9bdd0a2cd53a1865f3))
+
+
+### Bug Fixes
+
+* **client:** avoid memory leak with abort signals ([60a5820](https://github.com/brand-dot-dev/typescript-sdk/commit/60a5820c6194a717c6a795b5c9aa40510f03c744))
+* **client:** avoid removing abort listener too early ([18599b7](https://github.com/brand-dot-dev/typescript-sdk/commit/18599b7afc117f6fc533ab109183ef779208da83))
+
+
+### Chores
+
+* **client:** do not parse responses with empty content-length ([00c1b99](https://github.com/brand-dot-dev/typescript-sdk/commit/00c1b991097b8681c8187edb2697259964d9f195))
+* **client:** restructure abort controller binding ([8dcedeb](https://github.com/brand-dot-dev/typescript-sdk/commit/8dcedeb141df02789f5693034f8508d6f5d649ee))
+* **internal:** add health check to MCP server when running in HTTP mode ([66562a1](https://github.com/brand-dot-dev/typescript-sdk/commit/66562a1949b45cac368d71004fb9238859011cb4))
+* **internal:** refactor flag parsing for MCP servers and add debug flag ([fc3bcca](https://github.com/brand-dot-dev/typescript-sdk/commit/fc3bcca431450e2cb886638003a1aeaebf41a210))
+* **internal:** support oauth authorization code flow for MCP servers ([55744a2](https://github.com/brand-dot-dev/typescript-sdk/commit/55744a2b31a70642e6338d615d7e20fa522d1181))
+
 ## 0.22.0 (2026-02-02)
 
 Full Changelog: [v0.21.0...v0.22.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.21.0...v0.22.0)
