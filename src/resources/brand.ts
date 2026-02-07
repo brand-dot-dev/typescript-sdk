@@ -4662,32 +4662,45 @@ export interface BrandRetrieveParams {
   timeoutMS?: number;
 }
 
-export interface BrandAIProductsParams {
-  /**
-   * A specific URL to use directly as the starting point for extraction without
-   * domain resolution. Useful when you want to extract products from a specific page
-   * rather than discovering the site's product pages automatically. Either 'domain'
-   * or 'directUrl' must be provided, but not both.
-   */
-  directUrl?: string;
+export type BrandAIProductsParams = BrandAIProductsParams.ByDomain | BrandAIProductsParams.ByDirectURL;
 
-  /**
-   * The domain name to analyze. Either 'domain' or 'directUrl' must be provided, but
-   * not both.
-   */
-  domain?: string;
+export declare namespace BrandAIProductsParams {
+  export interface ByDomain {
+    /**
+     * The domain name to analyze.
+     */
+    domain: string;
 
-  /**
-   * Maximum number of products to extract.
-   */
-  maxProducts?: number;
+    /**
+     * Maximum number of products to extract.
+     */
+    maxProducts?: number;
 
-  /**
-   * Optional timeout in milliseconds for the request. If the request takes longer
-   * than this value, it will be aborted with a 408 status code. Maximum allowed
-   * value is 300000ms (5 minutes).
-   */
-  timeoutMS?: number;
+    /**
+     * Optional timeout in milliseconds for the request. Maximum allowed value is
+     * 300000ms (5 minutes).
+     */
+    timeoutMS?: number;
+  }
+
+  export interface ByDirectURL {
+    /**
+     * A specific URL to use directly as the starting point for extraction without
+     * domain resolution.
+     */
+    directUrl: string;
+
+    /**
+     * Maximum number of products to extract.
+     */
+    maxProducts?: number;
+
+    /**
+     * Optional timeout in milliseconds for the request. Maximum allowed value is
+     * 300000ms (5 minutes).
+     */
+    timeoutMS?: number;
+  }
 }
 
 export interface BrandAIQueryParams {
