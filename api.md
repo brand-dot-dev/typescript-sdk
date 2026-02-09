@@ -3,6 +3,7 @@
 Types:
 
 - <code><a href="./src/resources/brand.ts">BrandRetrieveResponse</a></code>
+- <code><a href="./src/resources/brand.ts">BrandAIProductResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandAIProductsResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandAIQueryResponse</a></code>
 - <code><a href="./src/resources/brand.ts">BrandFontsResponse</a></code>
@@ -21,6 +22,7 @@ Types:
 Methods:
 
 - <code title="get /brand/retrieve">client.brand.<a href="./src/resources/brand.ts">retrieve</a>({ ...params }) -> BrandRetrieveResponse</code>
+- <code title="post /brand/ai/product">client.brand.<a href="./src/resources/brand.ts">aiProduct</a>({ ...params }) -> BrandAIProductResponse</code>
 - <code title="post /brand/ai/products">client.brand.<a href="./src/resources/brand.ts">aiProducts</a>({ ...params }) -> BrandAIProductsResponse</code>
 - <code title="post /brand/ai/query">client.brand.<a href="./src/resources/brand.ts">aiQuery</a>({ ...params }) -> BrandAIQueryResponse</code>
 - <code title="get /brand/fonts">client.brand.<a href="./src/resources/brand.ts">fonts</a>({ ...params }) -> BrandFontsResponse</code>
