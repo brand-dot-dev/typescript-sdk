@@ -14,6 +14,15 @@ export class Brand extends APIResource {
   }
 
   /**
+   * Beta feature: Given a single URL, determines if it is a product detail page,
+   * classifies the platform/product type, and extracts the product information.
+   * Supports Amazon, TikTok Shop, Etsy, and generic ecommerce sites.
+   */
+  aiProduct(body: BrandAIProductParams, options?: RequestOptions): APIPromise<BrandAIProductResponse> {
+    return this._client.post('/brand/ai/product', { body, ...options });
+  }
+
+  /**
    * Beta feature: Extract product information from a brand's website. Brand.dev will
    * analyze the website and return a list of products with details such as name,
    * description, image, pricing, features, and more.
@@ -759,6 +768,90 @@ export namespace BrandRetrieveResponse {
        */
       ticker?: string;
     }
+  }
+}
+
+export interface BrandAIProductResponse {
+  /**
+   * Whether the given URL is a product detail page
+   */
+  is_product_page?: boolean;
+
+  /**
+   * The detected ecommerce platform, or null if not a product page
+   */
+  platform?: 'amazon' | 'tiktok_shop' | 'etsy' | 'generic' | null;
+
+  /**
+   * The extracted product data, or null if not a product page
+   */
+  product?: BrandAIProductResponse.Product | null;
+}
+
+export namespace BrandAIProductResponse {
+  /**
+   * The extracted product data, or null if not a product page
+   */
+  export interface Product {
+    /**
+     * Description of the product
+     */
+    description: string;
+
+    /**
+     * List of product features
+     */
+    features: Array<string>;
+
+    /**
+     * Name of the product
+     */
+    name: string;
+
+    /**
+     * Tags associated with the product
+     */
+    tags: Array<string>;
+
+    /**
+     * Target audience for the product (array of strings)
+     */
+    target_audience: Array<string>;
+
+    /**
+     * Billing frequency for the product
+     */
+    billing_frequency?: 'monthly' | 'yearly' | 'one_time' | 'usage_based' | null;
+
+    /**
+     * Category of the product
+     */
+    category?: string | null;
+
+    /**
+     * Currency code for the price (e.g., USD, EUR)
+     */
+    currency?: string | null;
+
+    /**
+     * URL to the product image
+     */
+    image_url?: string | null;
+
+    /**
+     * Price of the product
+     */
+    price?: number | null;
+
+    /**
+     * Pricing model for the product
+     */
+    pricing_model?: 'per_seat' | 'flat' | 'tiered' | 'freemium' | 'custom' | null;
+
+    /**
+     * URL to the product page
+     */
+    url?: string | null;
   }
 }
 
@@ -4662,6 +4755,19 @@ export interface BrandRetrieveParams {
   timeoutMS?: number;
 }
 
+export interface BrandAIProductParams {
+  /**
+   * The product page URL to extract product data from.
+   */
+  url: string;
+
+  /**
+   * Optional timeout in milliseconds for the request. Maximum allowed value is
+   * 300000ms (5 minutes).
+   */
+  timeoutMS?: number;
+}
+
 export type BrandAIProductsParams = BrandAIProductsParams.ByDomain | BrandAIProductsParams.ByDirectURL;
 
 export declare namespace BrandAIProductsParams {
@@ -5689,6 +5795,7 @@ export interface BrandStyleguideParams {
 export declare namespace Brand {
   export {
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIProductResponse as BrandAIProductResponse,
     type BrandAIProductsResponse as BrandAIProductsResponse,
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandFontsResponse as BrandFontsResponse,
@@ -5704,6 +5811,7 @@ export declare namespace Brand {
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIProductParams as BrandAIProductParams,
     type BrandAIProductsParams as BrandAIProductsParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandFontsParams as BrandFontsParams,

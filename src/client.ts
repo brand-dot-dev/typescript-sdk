@@ -18,6 +18,8 @@ import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import {
   Brand,
+  BrandAIProductParams,
+  BrandAIProductResponse,
   BrandAIProductsParams,
   BrandAIProductsResponse,
   BrandAIQueryParams,
@@ -764,6 +766,7 @@ export declare namespace BrandDev {
   export {
     Brand as Brand,
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIProductResponse as BrandAIProductResponse,
     type BrandAIProductsResponse as BrandAIProductsResponse,
     type BrandAIQueryResponse as BrandAIQueryResponse,
     type BrandFontsResponse as BrandFontsResponse,
@@ -779,6 +782,7 @@ export declare namespace BrandDev {
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIProductParams as BrandAIProductParams,
     type BrandAIProductsParams as BrandAIProductsParams,
     type BrandAIQueryParams as BrandAIQueryParams,
     type BrandFontsParams as BrandFontsParams,
