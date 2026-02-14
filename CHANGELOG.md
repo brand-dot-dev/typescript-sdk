@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.26.0 (2026-02-14)
+
+Full Changelog: [v0.25.0...v0.26.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.25.0...v0.26.0)
+
+### Features
+
+* **api:** api update ([5785b9a](https://github.com/brand-dot-dev/typescript-sdk/commit/5785b9a30487a4a796c7c80a06121e316a17a101))
+
+
+### Chores
+
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([92dfaab](https://github.com/brand-dot-dev/typescript-sdk/commit/92dfaab1bbd8aae6b5e933ae4cd525fdba89f871))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([1971c44](https://github.com/brand-dot-dev/typescript-sdk/commit/1971c44e5ad75fe2045fd8e48ebc641a9599369b))
+* **internal:** avoid type checking errors with ts-reset ([a125dbb](https://github.com/brand-dot-dev/typescript-sdk/commit/a125dbbcf72ebdf31ada22aa18e2735a99aa5632))
+* **internal:** improve layout of generated MCP server files ([d86325e](https://github.com/brand-dot-dev/typescript-sdk/commit/d86325e44ac91494723bca3f5735650adab6ce8e))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([949d9d8](https://github.com/brand-dot-dev/typescript-sdk/commit/949d9d831c4c406b0f2599228b2ece4a9c75fbc8))
+
 ## 0.25.0 (2026-02-09)
 
 Full Changelog: [v0.24.0...v0.25.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.24.0...v0.25.0)
