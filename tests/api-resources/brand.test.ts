@@ -26,7 +26,7 @@ describe('resource brand', () => {
       domain: 'domain',
       force_language: 'albanian',
       maxSpeed: true,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -44,7 +44,7 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('aiProduct: required and optional params', async () => {
-    const response = await client.brand.aiProduct({ url: 'https://example.com', timeoutMS: 1 });
+    const response = await client.brand.aiProduct({ url: 'https://example.com', timeoutMS: 1000 });
   });
 
   // Prism tests are disabled
@@ -64,7 +64,7 @@ describe('resource brand', () => {
     const response = await client.brand.aiProducts({
       domain: 'domain',
       maxProducts: 1,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -115,7 +115,7 @@ describe('resource brand', () => {
         privacy_policy: true,
         terms_and_conditions: true,
       },
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -133,7 +133,7 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('fonts: required and optional params', async () => {
-    const response = await client.brand.fonts({ domain: 'domain', timeoutMS: 1 });
+    const response = await client.brand.fonts({ domain: 'domain', timeoutMS: 1000 });
   });
 
   // Prism tests are disabled
@@ -158,7 +158,7 @@ describe('resource brand', () => {
       maxSpeed: true,
       mcc: 'mcc',
       phone: 0,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -176,7 +176,7 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('prefetch: required and optional params', async () => {
-    const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1 });
+    const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1000 });
   });
 
   // Prism tests are disabled
@@ -193,7 +193,7 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('prefetchByEmail: required and optional params', async () => {
-    const response = await client.brand.prefetchByEmail({ email: 'dev@stainless.com', timeoutMS: 1 });
+    const response = await client.brand.prefetchByEmail({ email: 'dev@stainless.com', timeoutMS: 1000 });
   });
 
   // Prism tests are disabled
@@ -214,7 +214,7 @@ describe('resource brand', () => {
       email: 'dev@stainless.com',
       force_language: 'albanian',
       maxSpeed: true,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -236,7 +236,7 @@ describe('resource brand', () => {
       isin: 'SE60513A9993',
       force_language: 'albanian',
       maxSpeed: true,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -258,7 +258,7 @@ describe('resource brand', () => {
       name: 'xxx',
       force_language: 'albanian',
       maxSpeed: true,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -281,7 +281,7 @@ describe('resource brand', () => {
       force_language: 'albanian',
       maxSpeed: true,
       ticker_exchange: 'AMEX',
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -303,7 +303,7 @@ describe('resource brand', () => {
       input: 'input',
       maxResults: 1,
       minResults: 1,
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 
@@ -321,7 +321,7 @@ describe('resource brand', () => {
 
   // Prism tests are disabled
   test.skip('retrieveSimplified: required and optional params', async () => {
-    const response = await client.brand.retrieveSimplified({ domain: 'domain', timeoutMS: 1 });
+    const response = await client.brand.retrieveSimplified({ domain: 'domain', timeoutMS: 1000 });
   });
 
   // Prism tests are disabled
@@ -363,7 +363,7 @@ describe('resource brand', () => {
     const response = await client.brand.styleguide({
       domain: 'domain',
       prioritize: 'speed',
-      timeoutMS: 1,
+      timeoutMS: 1000,
     });
   });
 });
