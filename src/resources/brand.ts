@@ -804,6 +804,11 @@ export namespace BrandAIProductResponse {
     features: Array<string>;
 
     /**
+     * URLs to product images on the page (up to 7)
+     */
+    images: Array<string>;
+
+    /**
      * Name of the product
      */
     name: string;
@@ -873,6 +878,11 @@ export namespace BrandAIProductsResponse {
      * List of product features
      */
     features: Array<string>;
+
+    /**
+     * URLs to product images on the page (up to 7)
+     */
+    images: Array<string>;
 
     /**
      * Name of the product
