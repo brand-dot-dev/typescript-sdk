@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.26.0 (2026-02-22)
+
+Full Changelog: [v0.25.0...v0.26.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.25.0...v0.26.0)
+
+### Features
+
+* **api:** api update ([0b3258a](https://github.com/brand-dot-dev/typescript-sdk/commit/0b3258a116b8bee9d6afc0a6899ba8a245cb70c0))
+* **api:** api update ([5785b9a](https://github.com/brand-dot-dev/typescript-sdk/commit/5785b9a30487a4a796c7c80a06121e316a17a101))
+
+
+### Bug Fixes
+
+* **mcp:** initialize SDK lazily to avoid failing the connection on init errors ([4af627a](https://github.com/brand-dot-dev/typescript-sdk/commit/4af627af9269ae16f9a951756df7a58c637bd51f))
+
+
+### Chores
+
+* **internal/client:** fix form-urlencoded requests ([db0e168](https://github.com/brand-dot-dev/typescript-sdk/commit/db0e168199f3d5395f9b37c277b49dd6348f48b6))
+* **internal:** allow basic filtering of methods allowed for MCP code mode ([92dfaab](https://github.com/brand-dot-dev/typescript-sdk/commit/92dfaab1bbd8aae6b5e933ae4cd525fdba89f871))
+* **internal:** allow setting x-stainless-api-key header on mcp server requests ([9c7a5bd](https://github.com/brand-dot-dev/typescript-sdk/commit/9c7a5bdbe6c8b4427985349261f758fa80161d8a))
+* **internal:** always generate MCP server dockerfiles and upgrade associated dependencies ([1971c44](https://github.com/brand-dot-dev/typescript-sdk/commit/1971c44e5ad75fe2045fd8e48ebc641a9599369b))
+* **internal:** avoid type checking errors with ts-reset ([a125dbb](https://github.com/brand-dot-dev/typescript-sdk/commit/a125dbbcf72ebdf31ada22aa18e2735a99aa5632))
+* **internal:** cache fetch instruction calls in MCP server ([226aabb](https://github.com/brand-dot-dev/typescript-sdk/commit/226aabb395eb072bf44948274ad62e894352191a))
+* **internal:** improve layout of generated MCP server files ([d86325e](https://github.com/brand-dot-dev/typescript-sdk/commit/d86325e44ac91494723bca3f5735650adab6ce8e))
+* **internal:** remove mock server code ([218d173](https://github.com/brand-dot-dev/typescript-sdk/commit/218d1739f0f50c13d46a4095abf253ca13909264))
+* **mcp:** correctly update version in sync with sdk ([ba9fe6a](https://github.com/brand-dot-dev/typescript-sdk/commit/ba9fe6a6d94fc157cb316ba6f0b3cdf387252a73))
+* **mcp:** forward STAINLESS_API_KEY to docs search endpoint ([949d9d8](https://github.com/brand-dot-dev/typescript-sdk/commit/949d9d831c4c406b0f2599228b2ece4a9c75fbc8))
+* update mock server docs ([6ca1d31](https://github.com/brand-dot-dev/typescript-sdk/commit/6ca1d312a20179dc681e587eb1ff7777040dd74e))
+
 ## 0.25.0 (2026-02-09)
 
 Full Changelog: [v0.24.0...v0.25.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.24.0...v0.25.0)

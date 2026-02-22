@@ -2,43 +2,39 @@
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import { ClientOptions } from 'brand.dev';
 import express from 'express';
 import morgan from 'morgan';
 import morganBody from 'morgan-body';
+import { getStainlessApiKey, parseClientAuthHeaders } from './auth';
 import { McpOptions } from './options';
-import { ClientOptions, initMcpServer, newMcpServer } from './server';
-import { parseAuthHeaders } from './headers';
+import { initMcpServer, newMcpServer } from './server';
 
 const newServer = async ({
   clientOptions,
+  mcpOptions,
   req,
   res,
 }: {
   clientOptions: ClientOptions;
+  mcpOptions: McpOptions;
   req: express.Request;
   res: express.Response;
 }): Promise<McpServer | null> => {
-  const server = await newMcpServer();
+  const stainlessApiKey = getStainlessApiKey(req, mcpOptions);
+  const server = await newMcpServer(stainlessApiKey);
 
-  try {
-    const authOptions = parseAuthHeaders(req, false);
-    await initMcpServer({
-      server: server,
-      clientOptions: {
-        ...clientOptions,
-        ...authOptions,
-      },
-    });
-  } catch (error) {
-    res.status(401).json({
-      jsonrpc: '2.0',
-      error: {
-        code: -32000,
-        message: `Unauthorized: ${error instanceof Error ? error.message : error}`,
-      },
-    });
-    return null;
-  }
+  const authOptions = parseClientAuthHeaders(req, false);
+
+  await initMcpServer({
+    server: server,
+    mcpOptions: mcpOptions,
+    clientOptions: {
+      ...clientOptions,
+      ...authOptions,
+    },
+    stainlessApiKey: stainlessApiKey,
+  });
 
   return server;
 };
@@ -108,13 +104,17 @@ export const streamableHTTPApp = ({
   return app;
 };
 
-export const launchStreamableHTTPServer = async (params: {
+export const launchStreamableHTTPServer = async ({
+  mcpOptions,
+  debug,
+  port,
+}: {
   mcpOptions: McpOptions;
   debug: boolean;
   port: number | string | undefined;
 }) => {
-  const app = streamableHTTPApp({ mcpOptions: params.mcpOptions, debug: params.debug });
-  const server = app.listen(params.port);
+  const app = streamableHTTPApp({ mcpOptions, debug });
+  const server = app.listen(port);
   const address = server.address();
 
   if (typeof address === 'string') {
@@ -122,6 +122,6 @@ export const launchStreamableHTTPServer = async (params: {
   } else if (address !== null) {
     console.error(`MCP Server running on streamable HTTP on port ${address.port}`);
   } else {
-    console.error(`MCP Server running on streamable HTTP on port ${params.port}`);
+    console.error(`MCP Server running on streamable HTTP on port ${port}`);
   }
 };
