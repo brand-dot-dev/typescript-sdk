@@ -170,6 +170,50 @@ export class Brand extends APIResource {
   styleguide(query: BrandStyleguideParams, options?: RequestOptions): APIPromise<BrandStyleguideResponse> {
     return this._client.get('/brand/styleguide', { query, ...options });
   }
+
+  /**
+   * Scrapes the given URL and returns the raw HTML content of the page. Uses
+   * automatic proxy escalation to handle blocked sites.
+   */
+  webScrapeHTML(
+    query: BrandWebScrapeHTMLParams,
+    options?: RequestOptions,
+  ): APIPromise<BrandWebScrapeHTMLResponse> {
+    return this._client.get('/web/scrape/html', { query, ...options });
+  }
+
+  /**
+   * Scrapes all images from the given URL. Extracts images from img, svg,
+   * picture/source, link, and video elements including inline SVGs, base64 data
+   * URIs, and standard URLs.
+   */
+  webScrapeImages(
+    query: BrandWebScrapeImagesParams,
+    options?: RequestOptions,
+  ): APIPromise<BrandWebScrapeImagesResponse> {
+    return this._client.get('/web/scrape/images', { query, ...options });
+  }
+
+  /**
+   * Scrapes the given URL, converts the HTML content to GitHub Flavored Markdown
+   * (GFM), and returns the result. Uses automatic proxy escalation to handle blocked
+   * sites.
+   */
+  webScrapeMd(query: BrandWebScrapeMdParams, options?: RequestOptions): APIPromise<BrandWebScrapeMdResponse> {
+    return this._client.get('/web/scrape/markdown', { query, ...options });
+  }
+
+  /**
+   * Crawls the sitemap of the given domain and returns all discovered page URLs.
+   * Supports sitemap index files (recursive), parallel fetching with concurrency
+   * control, deduplication, and filters out non-page resources (images, PDFs, etc.).
+   */
+  webScrapeSitemap(
+    query: BrandWebScrapeSitemapParams,
+    options?: RequestOptions,
+  ): APIPromise<BrandWebScrapeSitemapResponse> {
+    return this._client.get('/web/scrape/sitemap', { query, ...options });
+  }
 }
 
 export interface BrandRetrieveResponse {
@@ -4685,6 +4729,130 @@ export namespace BrandStyleguideResponse {
   }
 }
 
+export interface BrandWebScrapeHTMLResponse {
+  /**
+   * Raw HTML content of the page
+   */
+  html: string;
+
+  /**
+   * Indicates success
+   */
+  success: true;
+
+  /**
+   * The URL that was scraped
+   */
+  url: string;
+}
+
+export interface BrandWebScrapeImagesResponse {
+  /**
+   * Array of scraped images
+   */
+  images: Array<BrandWebScrapeImagesResponse.Image>;
+
+  /**
+   * Indicates success
+   */
+  success: true;
+
+  /**
+   * The URL that was scraped
+   */
+  url: string;
+}
+
+export namespace BrandWebScrapeImagesResponse {
+  export interface Image {
+    /**
+     * Alt text of the image, or null if not present
+     */
+    alt: string | null;
+
+    /**
+     * The HTML element the image was found in
+     */
+    element: 'img' | 'svg' | 'link' | 'source' | 'video';
+
+    /**
+     * The image source - can be a URL, inline HTML (for SVGs), or a base64 data URI
+     */
+    src: string;
+
+    /**
+     * The type/format of the src value
+     */
+    type: 'url' | 'html' | 'base64';
+  }
+}
+
+export interface BrandWebScrapeMdResponse {
+  /**
+   * Page content converted to GitHub Flavored Markdown
+   */
+  markdown: string;
+
+  /**
+   * Indicates success
+   */
+  success: true;
+
+  /**
+   * The URL that was scraped
+   */
+  url: string;
+}
+
+export interface BrandWebScrapeSitemapResponse {
+  /**
+   * The normalized domain that was crawled
+   */
+  domain: string;
+
+  /**
+   * Metadata about the sitemap crawl operation
+   */
+  meta: BrandWebScrapeSitemapResponse.Meta;
+
+  /**
+   * Indicates success
+   */
+  success: true;
+
+  /**
+   * Array of discovered page URLs from the sitemap (max 500)
+   */
+  urls: Array<string>;
+}
+
+export namespace BrandWebScrapeSitemapResponse {
+  /**
+   * Metadata about the sitemap crawl operation
+   */
+  export interface Meta {
+    /**
+     * Number of errors encountered during crawling
+     */
+    errors: number;
+
+    /**
+     * Total number of sitemap files discovered
+     */
+    sitemapsDiscovered: number;
+
+    /**
+     * Number of sitemap files successfully fetched and parsed
+     */
+    sitemapsFetched: number;
+
+    /**
+     * Number of sitemap files skipped (due to errors, timeouts, or limits)
+     */
+    sitemapsSkipped: number;
+  }
+}
+
 export interface BrandRetrieveParams {
   /**
    * Domain name to retrieve brand data for (e.g., 'example.com', 'google.com').
@@ -5802,6 +5970,46 @@ export interface BrandStyleguideParams {
   timeoutMS?: number;
 }
 
+export interface BrandWebScrapeHTMLParams {
+  /**
+   * Full URL to scrape (must include http:// or https:// protocol)
+   */
+  url: string;
+}
+
+export interface BrandWebScrapeImagesParams {
+  /**
+   * Full URL to scrape images from (must include http:// or https:// protocol)
+   */
+  url: string;
+}
+
+export interface BrandWebScrapeMdParams {
+  /**
+   * Full URL to scrape and convert to markdown (must include http:// or https://
+   * protocol)
+   */
+  url: string;
+
+  /**
+   * Include image references in Markdown output
+   */
+  includeImages?: boolean;
+
+  /**
+   * Preserve hyperlinks in Markdown output
+   */
+  includeLinks?: boolean;
+}
+
+export interface BrandWebScrapeSitemapParams {
+  /**
+   * Domain name to crawl sitemaps for (e.g., 'example.com'). The domain will be
+   * automatically normalized and validated.
+   */
+  domain: string;
+}
+
 export declare namespace Brand {
   export {
     type BrandRetrieveResponse as BrandRetrieveResponse,
@@ -5820,6 +6028,10 @@ export declare namespace Brand {
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
+    type BrandWebScrapeHTMLResponse as BrandWebScrapeHTMLResponse,
+    type BrandWebScrapeImagesResponse as BrandWebScrapeImagesResponse,
+    type BrandWebScrapeMdResponse as BrandWebScrapeMdResponse,
+    type BrandWebScrapeSitemapResponse as BrandWebScrapeSitemapResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIProductParams as BrandAIProductParams,
     type BrandAIProductsParams as BrandAIProductsParams,
@@ -5836,5 +6048,9 @@ export declare namespace Brand {
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
     type BrandStyleguideParams as BrandStyleguideParams,
+    type BrandWebScrapeHTMLParams as BrandWebScrapeHTMLParams,
+    type BrandWebScrapeImagesParams as BrandWebScrapeImagesParams,
+    type BrandWebScrapeMdParams as BrandWebScrapeMdParams,
+    type BrandWebScrapeSitemapParams as BrandWebScrapeSitemapParams,
   };
 }
