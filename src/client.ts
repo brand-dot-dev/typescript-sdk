@@ -50,6 +50,14 @@ import {
   BrandScreenshotResponse,
   BrandStyleguideParams,
   BrandStyleguideResponse,
+  BrandWebScrapeHTMLParams,
+  BrandWebScrapeHTMLResponse,
+  BrandWebScrapeImagesParams,
+  BrandWebScrapeImagesResponse,
+  BrandWebScrapeMdParams,
+  BrandWebScrapeMdResponse,
+  BrandWebScrapeSitemapParams,
+  BrandWebScrapeSitemapResponse,
 } from './resources/brand';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
@@ -789,6 +797,10 @@ export declare namespace BrandDev {
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
     type BrandScreenshotResponse as BrandScreenshotResponse,
     type BrandStyleguideResponse as BrandStyleguideResponse,
+    type BrandWebScrapeHTMLResponse as BrandWebScrapeHTMLResponse,
+    type BrandWebScrapeImagesResponse as BrandWebScrapeImagesResponse,
+    type BrandWebScrapeMdResponse as BrandWebScrapeMdResponse,
+    type BrandWebScrapeSitemapResponse as BrandWebScrapeSitemapResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
     type BrandAIProductParams as BrandAIProductParams,
     type BrandAIProductsParams as BrandAIProductsParams,
@@ -805,5 +817,9 @@ export declare namespace BrandDev {
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
     type BrandScreenshotParams as BrandScreenshotParams,
     type BrandStyleguideParams as BrandStyleguideParams,
+    type BrandWebScrapeHTMLParams as BrandWebScrapeHTMLParams,
+    type BrandWebScrapeImagesParams as BrandWebScrapeImagesParams,
+    type BrandWebScrapeMdParams as BrandWebScrapeMdParams,
+    type BrandWebScrapeSitemapParams as BrandWebScrapeSitemapParams,
   };
 }

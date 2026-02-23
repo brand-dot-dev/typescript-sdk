@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.27.0 (2026-02-23)
+
+Full Changelog: [v0.26.0...v0.27.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.26.0...v0.27.0)
+
+### Features
+
+* **api:** manual updates ([f0fcc0f](https://github.com/brand-dot-dev/typescript-sdk/commit/f0fcc0f44172a69581295384f9ffcc9a2da8fc57))
+
 ## 0.26.0 (2026-02-22)
 
 Full Changelog: [v0.25.0...v0.26.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.25.0...v0.26.0)
