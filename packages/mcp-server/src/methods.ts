@@ -106,6 +106,30 @@ export const sdkMethods: SdkMethod[] = [
     httpMethod: 'get',
     httpPath: '/brand/styleguide',
   },
+  {
+    clientCallName: 'client.brand.webScrapeHTML',
+    fullyQualifiedName: 'brand.webScrapeHTML',
+    httpMethod: 'get',
+    httpPath: '/web/scrape/html',
+  },
+  {
+    clientCallName: 'client.brand.webScrapeImages',
+    fullyQualifiedName: 'brand.webScrapeImages',
+    httpMethod: 'get',
+    httpPath: '/web/scrape/images',
+  },
+  {
+    clientCallName: 'client.brand.webScrapeMd',
+    fullyQualifiedName: 'brand.webScrapeMd',
+    httpMethod: 'get',
+    httpPath: '/web/scrape/markdown',
+  },
+  {
+    clientCallName: 'client.brand.webScrapeSitemap',
+    fullyQualifiedName: 'brand.webScrapeSitemap',
+    httpMethod: 'get',
+    httpPath: '/web/scrape/sitemap',
+  },
 ];
 
 function allowedMethodsForCodeTool(options: McpOptions | undefined): SdkMethod[] | undefined {
