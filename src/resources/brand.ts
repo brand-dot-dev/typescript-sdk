@@ -166,8 +166,13 @@ export class Brand extends APIResource {
   /**
    * Automatically extract comprehensive design system information from a brand's
    * website including colors, typography, spacing, shadows, and UI components.
+   * Either 'domain' or 'directUrl' must be provided as a query parameter, but not
+   * both.
    */
-  styleguide(query: BrandStyleguideParams, options?: RequestOptions): APIPromise<BrandStyleguideResponse> {
+  styleguide(
+    query: BrandStyleguideParams | null | undefined = {},
+    options?: RequestOptions,
+  ): APIPromise<BrandStyleguideResponse> {
     return this._client.get('/brand/styleguide', { query, ...options });
   }
 
@@ -5949,10 +5954,16 @@ export interface BrandScreenshotParams {
 
 export interface BrandStyleguideParams {
   /**
+   * A specific URL to fetch the styleguide from directly, bypassing domain
+   * resolution (e.g., 'https://example.com/design-system').
+   */
+  directUrl?: string;
+
+  /**
    * Domain name to extract styleguide from (e.g., 'example.com', 'google.com'). The
    * domain will be automatically normalized and validated.
    */
-  domain: string;
+  domain?: string;
 
   /**
    * Optional parameter to prioritize screenshot capture for styleguide extraction.
