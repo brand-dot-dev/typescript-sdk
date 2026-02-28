@@ -155,6 +155,7 @@ describe('resource brand', () => {
       city: 'city',
       country_gl: 'ad',
       force_language: 'albanian',
+      high_confidence_only: true,
       maxSpeed: true,
       mcc: 'mcc',
       phone: 0,
