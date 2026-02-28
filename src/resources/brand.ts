@@ -5431,6 +5431,13 @@ export interface BrandIdentifyFromTransactionParams {
     | 'welsh';
 
   /**
+   * When set to true, the API will perform an additional verification steps to
+   * ensure the identified brand matches the transaction with high confidence.
+   * Defaults to false.
+   */
+  high_confidence_only?: boolean;
+
+  /**
    * Optional parameter to optimize the API call for maximum speed. When set to true,
    * the API will skip time-consuming operations for faster response at the cost of
    * less comprehensive data.
