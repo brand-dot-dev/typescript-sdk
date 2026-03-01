@@ -427,6 +427,7 @@ describe('resource brand', () => {
       url: 'https://example.com',
       includeImages: true,
       includeLinks: true,
+      shortenBase64Images: true,
     });
   });
 
