@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.29.0 (2026-03-01)
+
+Full Changelog: [v0.28.0...v0.29.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.28.0...v0.29.0)
+
+### Features
+
+* **api:** api update ([f61f789](https://github.com/brand-dot-dev/typescript-sdk/commit/f61f78949b3fc4c5e2156a1f152eefa57c1d320b))
+* **api:** api update ([a0d0ace](https://github.com/brand-dot-dev/typescript-sdk/commit/a0d0ace52f4f96e7f1a6dbad7ee05ff81f8a7315))
+* **mcp:** add an option to disable code tool ([62d0e57](https://github.com/brand-dot-dev/typescript-sdk/commit/62d0e570aae3084cd33795eb28422761cd612660))
+
+
+### Bug Fixes
+
+* **docs/contributing:** correct pnpm link command ([981d7b2](https://github.com/brand-dot-dev/typescript-sdk/commit/981d7b25688d7d18f2fe9a6d73cb11558f319f8e))
+* **mcp:** update prompt ([e317027](https://github.com/brand-dot-dev/typescript-sdk/commit/e31702769710712a195ff06a84985372a5362ecb))
+
+
+### Chores
+
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([8fa9017](https://github.com/brand-dot-dev/typescript-sdk/commit/8fa901727422b61bfaf90d4df7845e199e704100))
+* **internal:** fix MCP Dockerfiles so they can be built without buildkit ([aafcf3e](https://github.com/brand-dot-dev/typescript-sdk/commit/aafcf3e4e589491809744582e384a666ea5878b3))
+* **internal:** make MCP code execution location configurable via a flag ([96b1198](https://github.com/brand-dot-dev/typescript-sdk/commit/96b1198cb3f66f87afa61ba58941a3de8f77c133))
+* **internal:** move stringifyQuery implementation to internal function ([a5e1a07](https://github.com/brand-dot-dev/typescript-sdk/commit/a5e1a07a3034d4781078d1c881573f4a2363c34e))
+* **internal:** upgrade @modelcontextprotocol/sdk and hono ([7fa1714](https://github.com/brand-dot-dev/typescript-sdk/commit/7fa1714c66227b1598f9d7ac1bff80d4a12d31b2))
+
 ## 0.28.0 (2026-02-24)
 
 Full Changelog: [v0.27.0...v0.28.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.27.0...v0.28.0)
