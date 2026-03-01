@@ -6018,6 +6018,11 @@ export interface BrandWebScrapeMdParams {
    * Preserve hyperlinks in Markdown output
    */
   includeLinks?: boolean;
+
+  /**
+   * Shorten base64-encoded image data in the Markdown output
+   */
+  shortenBase64Images?: boolean;
 }
 
 export interface BrandWebScrapeSitemapParams {
