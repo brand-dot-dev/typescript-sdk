@@ -60,7 +60,7 @@ $ yarn link brand.dev
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global brand.dev
+$ pnpm link --global brand.dev
 ```
 
 ## Running tests
