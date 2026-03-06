@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.29.1 (2026-03-06)
+
+Full Changelog: [v0.29.0...v0.29.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.0...v0.29.1)
+
+### Chores
+
+* **internal:** codegen related update ([836c5e9](https://github.com/brand-dot-dev/typescript-sdk/commit/836c5e9cac2ad66c6f4b65484ec34ff4286e845b))
+* **internal:** codegen related update ([aa92d3f](https://github.com/brand-dot-dev/typescript-sdk/commit/aa92d3f5602f7a1869501c13186985b3dc7d926e))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([4ef071f](https://github.com/brand-dot-dev/typescript-sdk/commit/4ef071f664f0bbf4e2d5b2dffc549c1821f95e89))
+* **mcp-server:** return access instructions for 404 without API key ([476d055](https://github.com/brand-dot-dev/typescript-sdk/commit/476d05574f82aff4ad98725ac9d0aa3207ef793a))
+
 ## 0.29.0 (2026-03-01)
 
 Full Changelog: [v0.28.0...v0.29.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.28.0...v0.29.0)
