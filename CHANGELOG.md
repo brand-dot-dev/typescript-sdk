@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.29.2 (2026-03-07)
+
+Full Changelog: [v0.29.1...v0.29.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.1...v0.29.2)
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([1d7e6f0](https://github.com/brand-dot-dev/typescript-sdk/commit/1d7e6f06c0377ccf9635519bcc63b91ef54d14bf))
+
+
+### Chores
+
+* **ci:** skip uploading artifacts on stainless-internal branches ([7ffeb53](https://github.com/brand-dot-dev/typescript-sdk/commit/7ffeb53bfa12ea6e2e65826cf67a81e5840d3a01))
+* **mcp-server:** improve instructions ([8c60a40](https://github.com/brand-dot-dev/typescript-sdk/commit/8c60a40f79a2d345baf2bfacbe6159a37de59b6f))
+
 ## 0.29.1 (2026-03-06)
 
 Full Changelog: [v0.29.0...v0.29.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.0...v0.29.1)
