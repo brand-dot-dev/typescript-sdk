@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.29.3 (2026-03-14)
+
+Full Changelog: [v0.29.2...v0.29.3](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.2...v0.29.3)
+
+### Chores
+
+* **internal:** bump @modelcontextprotocol/sdk, @hono/node-server, and minimatch ([ad5e1fb](https://github.com/brand-dot-dev/typescript-sdk/commit/ad5e1fb06704dd1a00336abaa69021349f63fc33))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([57daae2](https://github.com/brand-dot-dev/typescript-sdk/commit/57daae205d76898f2f2c8069a62109d0897ad6f7))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([882dbe9](https://github.com/brand-dot-dev/typescript-sdk/commit/882dbe9a0092df3fcd4e31e6754b678685333146))
+* **internal:** update dependencies to address dependabot vulnerabilities ([061f98b](https://github.com/brand-dot-dev/typescript-sdk/commit/061f98b2f6499e816200a76cbc5881eee2ec95d0))
+
 ## 0.29.2 (2026-03-07)
 
 Full Changelog: [v0.29.1...v0.29.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.1...v0.29.2)
