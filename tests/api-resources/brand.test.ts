@@ -257,6 +257,7 @@ describe('resource brand', () => {
   test.skip('retrieveByName: required and optional params', async () => {
     const response = await client.brand.retrieveByName({
       name: 'xxx',
+      country_gl: 'ad',
       force_language: 'albanian',
       maxSpeed: true,
       timeoutMS: 1000,
