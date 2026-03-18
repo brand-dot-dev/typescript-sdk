@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.30.0 (2026-03-18)
+
+Full Changelog: [v0.29.3...v0.30.0](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.3...v0.30.0)
+
+### Features
+
+* **api:** api update ([bde4a7d](https://github.com/brand-dot-dev/typescript-sdk/commit/bde4a7dbf808e1ecf8084805b598c684d18b8ae9))
+
+
+### Chores
+
+* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([e167d33](https://github.com/brand-dot-dev/typescript-sdk/commit/e167d33619f4ec64d1c30279a8104e35aceef339))
+* **internal:** tweak CI branches ([7143eb4](https://github.com/brand-dot-dev/typescript-sdk/commit/7143eb47d5df5b11f51dc8a47c4eb128f23f0e57))
+
 ## 0.29.3 (2026-03-14)
 
 Full Changelog: [v0.29.2...v0.29.3](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.29.2...v0.29.3)
