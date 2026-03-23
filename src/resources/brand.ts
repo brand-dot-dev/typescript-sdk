@@ -23,7 +23,7 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Beta feature: Extract product information from a brand's website. Brand.dev will
+   * Beta feature: Extract product information from a brand's website. We will
    * analyze the website and return a list of products with details such as name,
    * description, image, pricing, features, and more.
    */
