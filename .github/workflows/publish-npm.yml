@@ -1,6 +1,6 @@
 # This workflow is triggered when a GitHub release is created.
 # It can also be run manually to re-publish to NPM in case it failed for some reason.
-# You can run this workflow by navigating to https://www.github.com/context-dot-dev/deprecated-brand-typescript-sdk/actions/workflows/publish-npm.yml
+# You can run this workflow by navigating to https://www.github.com/context-dot-dev/typescript-sdk/actions/workflows/publish-npm.yml
 name: Publish NPM
 on:
   workflow_dispatch:
@@ -18,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
 
     steps:
       - uses: actions/checkout@v6
@@ -40,10 +39,12 @@ jobs:
             PATHS_RELEASED='[\".\", \"packages/mcp-server\"]'
           fi
           yarn tsn scripts/publish-packages.ts "{ \"paths_released\": \"$PATHS_RELEASED\" }"
+        env:
+          NPM_TOKEN: ${{ secrets.CONTEXT_DEV_NPM_TOKEN || secrets.NPM_TOKEN }}
 
       - name: Upload MCP Server DXT GitHub release asset
         run: |
           gh release upload ${{ github.event.release.tag_name }} \
-            packages/mcp-server/brand_dev_api.mcpb
+            packages/mcp-server/context_dev_api.mcpb
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

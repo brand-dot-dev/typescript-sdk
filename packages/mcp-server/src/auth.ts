@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { IncomingMessage } from 'node:http';
-import { ClientOptions } from 'brand.dev';
+import { ClientOptions } from 'context.dev';
 import { McpOptions } from './options';
 
 export const parseClientAuthHeaders = (req: IncomingMessage, required?: boolean): Partial<ClientOptions> => {
@@ -21,9 +21,9 @@ export const parseClientAuthHeaders = (req: IncomingMessage, required?: boolean)
   }
 
   const apiKey =
-    Array.isArray(req.headers['x-brand-dev-api-key']) ?
-      req.headers['x-brand-dev-api-key'][0]
-    : req.headers['x-brand-dev-api-key'];
+    Array.isArray(req.headers['x-context-dev-api-key']) ?
+      req.headers['x-context-dev-api-key'][0]
+    : req.headers['x-context-dev-api-key'];
   return { apiKey };
 };
 
