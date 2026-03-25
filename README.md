@@ -1,32 +1,6 @@
 # Brand Dev TypeScript API Library
 
-
-# ⚠️ This SDK has been rebranded
-
-**Brand.dev is now Context.dev.** This package is no longer maintained.
-
-Please migrate to the new SDK:
-```bash
-npm uninstall brand.dev
-npm install context.dev
-```
-
-The new package is a drop-in replacement — just update your imports:
-```diff
-- import BrandDev from 'brand.dev';
-+ import ContextDev from 'context.dev';
-```
-
-📦 **New package:** [contextdev on npm](https://www.npmjs.com/package/context.dev)
-📖 **Docs:** [docs.context.dev](https://docs.context.dev)
-
-This package will continue to work but will stop receiving updates or new features at some point. All future development is on `context.dev`.
-
-------
-
-
 [![NPM version](<https://img.shields.io/npm/v/brand.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/brand.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/brand.dev)
-
 
 This library provides convenient access to the Brand Dev REST API from server-side TypeScript or JavaScript.
 
