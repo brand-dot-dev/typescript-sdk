@@ -1,12 +1,12 @@
 {
-  "name": "context.dev",
-  "version": "0.3.1",
-  "description": "The official TypeScript library for the Context Dev API",
-  "author": "Context Dev <hello@context.dev>",
+  "name": "brand.dev",
+  "version": "0.30.0",
+  "description": "The official TypeScript library for the Brand Dev API",
+  "author": "Brand Dev <hello@brand.dev>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:context-dot-dev/typescript-sdk",
+  "repository": "github:context-dot-dev/deprecated-brand-typescript-sdk",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
