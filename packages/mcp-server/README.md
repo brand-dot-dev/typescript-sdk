@@ -1,4 +1,4 @@
-# Brand Dev TypeScript MCP Server
+# Context Dev TypeScript MCP Server
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 You can run the MCP Server directly via `npx`:
 
 ```sh
-export BRAND_DEV_API_KEY="My API Key"
-npx -y brand.dev-mcp@latest
+export CONTEXT_DEV_API_KEY="My API Key"
+npx -y context.dev-mcp@latest
 ```
 
 ### Via MCP Client
@@ -23,11 +23,11 @@ For clients with a configuration JSON, it might look something like this:
 ```json
 {
   "mcpServers": {
-    "brand_dev_api": {
+    "context_dev_api": {
       "command": "npx",
-      "args": ["-y", "brand.dev-mcp"],
+      "args": ["-y", "context.dev-mcp"],
       "env": {
-        "BRAND_DEV_API_KEY": "My API Key"
+        "CONTEXT_DEV_API_KEY": "My API Key"
       }
     }
   }
@@ -39,14 +39,14 @@ For clients with a configuration JSON, it might look something like this:
 If you use Cursor, you can install the MCP server by using the button below. You will need to set your environment variables
 in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > New MCP Server.
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=brand.dev-mcp&config=eyJuYW1lIjoiYnJhbmQuZGV2LW1jcCIsInRyYW5zcG9ydCI6Imh0dHAiLCJ1cmwiOiJodHRwczovL2JyYW5kLWRldi5zdGxtY3AuY29tIiwiaGVhZGVycyI6eyJ4LWJyYW5kLWRldi1hcGkta2V5IjoiTXkgQVBJIEtleSJ9fQ)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=context.dev-mcp&config=eyJuYW1lIjoiY29udGV4dC5kZXYtbWNwIiwidHJhbnNwb3J0IjoiaHR0cCIsInVybCI6Imh0dHBzOi8vY29udGV4dC1kZXYuc3RsbWNwLmNvbSIsImhlYWRlcnMiOnsieC1jb250ZXh0LWRldi1hcGkta2V5IjoiTXkgQVBJIEtleSJ9fQ)
 
 ### VS Code
 
 If you use MCP, you can install the MCP server by clicking the link below. You will need to set your environment variables
 in VS Code's `mcp.json`, which can be found via Command Palette > MCP: Open User Configuration.
 
-[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22brand.dev-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fbrand-dev.stlmcp.com%22%2C%22headers%22%3A%7B%22x-brand-dev-api-key%22%3A%22My%20API%20Key%22%7D%7D)
+[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22context.dev-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fcontext-dev.stlmcp.com%22%2C%22headers%22%3A%7B%22x-context-dev-api-key%22%3A%22My%20API%20Key%22%7D%7D)
 
 ### Claude Code
 
@@ -54,7 +54,7 @@ If you use Claude Code, you can install the MCP server by running the command be
 environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
 
 ```
-claude mcp add brand.dev_mcp_api --header "x-brand-dev-api-key: My API Key" --transport http https://brand-dev.stlmcp.com
+claude mcp add context.dev_mcp_api --header "x-context-dev-api-key: My API Key" --transport http https://context-dev.stlmcp.com
 ```
 
 ## Code Mode
@@ -82,15 +82,15 @@ Authorization can be provided via the `Authorization` header using the Bearer sc
 
 Additionally, authorization can be provided via the following headers:
 | Header | Equivalent client option | Security scheme |
-| --------------------- | ------------------------ | --------------- |
-| `x-brand-dev-api-key` | `apiKey` | bearerAuth |
+| ----------------------- | ------------------------ | --------------- |
+| `x-context-dev-api-key` | `apiKey` | bearerAuth |
 
 A configuration JSON for this server might look like this, assuming the server is hosted at `http://localhost:3000`:
 
 ```json
 {
   "mcpServers": {
-    "brand_dev_api": {
+    "context_dev_api": {
       "url": "http://localhost:3000",
       "headers": {
         "Authorization": "Bearer <auth value>"

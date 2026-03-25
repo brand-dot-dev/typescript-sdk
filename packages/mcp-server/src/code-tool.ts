@@ -15,9 +15,9 @@ import { WorkerInput, WorkerOutput } from './code-tool-types';
 import { getLogger } from './logger';
 import { SdkMethod } from './methods';
 import { McpCodeExecutionMode } from './options';
-import { ClientOptions } from 'brand.dev';
+import { ClientOptions } from 'context.dev';
 
-const prompt = `Runs JavaScript code to interact with the Brand Dev API.
+const prompt = `Runs JavaScript code to interact with the Context Dev API.
 
 You are a skilled TypeScript programmer writing code to interface with the service.
 Define an async function named "run" that takes a single parameter of an initialized SDK client and it will be run.
@@ -145,11 +145,11 @@ const remoteStainlessHandler = async ({
   const codeModeEndpoint = readEnv('CODE_MODE_ENDPOINT_URL') ?? 'https://api.stainless.com/api/ai/code-tool';
 
   const localClientEnvs = {
-    BRAND_DEV_API_KEY: requireValue(
-      readEnv('BRAND_DEV_API_KEY') ?? client.apiKey,
-      'set BRAND_DEV_API_KEY environment variable or provide apiKey client option',
+    CONTEXT_DEV_API_KEY: requireValue(
+      readEnv('CONTEXT_DEV_API_KEY') ?? client.apiKey,
+      'set CONTEXT_DEV_API_KEY environment variable or provide apiKey client option',
     ),
-    BRAND_DEV_BASE_URL: readEnv('BRAND_DEV_BASE_URL') ?? client.baseURL ?? undefined,
+    CONTEXT_DEV_BASE_URL: readEnv('CONTEXT_DEV_BASE_URL') ?? client.baseURL ?? undefined,
   };
   // Merge any upstream client envs from the request header, with upstream values taking precedence.
   const mergedClientEnvs = { ...localClientEnvs, ...reqContext.upstreamClientEnvs };
@@ -163,7 +163,7 @@ const remoteStainlessHandler = async ({
       'x-stainless-mcp-client-envs': JSON.stringify(mergedClientEnvs),
     },
     body: JSON.stringify({
-      project_name: 'brand.dev',
+      project_name: 'context.dev',
       code,
       intent,
       client_opts: {},
@@ -246,7 +246,7 @@ const localDenoHandler = async ({
 
   // Follow symlinks in node_modules to allow read access to workspace-linked packages
   try {
-    const sdkPkgName = 'brand.dev';
+    const sdkPkgName = 'context.dev';
     const sdkDir = path.resolve(packageNodeModulesPath, sdkPkgName);
     const realSdkDir = fs.realpathSync(sdkDir);
     if (realSdkDir !== sdkDir) {
@@ -285,15 +285,13 @@ const localDenoHandler = async ({
 
       // Strip null/undefined values so that the worker SDK client can fall back to
       // reading from environment variables (including any upstreamClientEnvs).
-      const opts: ClientOptions = Object.fromEntries(
-        Object.entries({
-          baseURL: client.baseURL,
-          apiKey: client.apiKey,
-          defaultHeaders: {
-            'X-Stainless-MCP': 'true',
-          },
-        }).filter(([_, v]) => v != null),
-      ) as ClientOptions;
+      const opts = {
+        ...(client.baseURL != null ? { baseURL: client.baseURL } : undefined),
+        ...(client.apiKey != null ? { apiKey: client.apiKey } : undefined),
+        defaultHeaders: {
+          'X-Stainless-MCP': 'true',
+        },
+      } satisfies Partial<ClientOptions> as ClientOptions;
 
       const req = worker.request(
         'http://localhost',
