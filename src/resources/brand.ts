@@ -177,8 +177,7 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Scrapes the given URL and returns the raw HTML content of the page. Uses
-   * automatic proxy escalation to handle blocked sites.
+   * Scrapes the given URL and returns the raw HTML content of the page.
    */
   webScrapeHTML(
     query: BrandWebScrapeHTMLParams,
@@ -200,9 +199,8 @@ export class Brand extends APIResource {
   }
 
   /**
-   * Scrapes the given URL, converts the HTML content to GitHub Flavored Markdown
-   * (GFM), and returns the result. Uses automatic proxy escalation to handle blocked
-   * sites.
+   * Scrapes the given URL, converts the HTML content to Markdown, and returns the
+   * result.
    */
   webScrapeMd(query: BrandWebScrapeMdParams, options?: RequestOptions): APIPromise<BrandWebScrapeMdResponse> {
     return this._client.get('/web/scrape/markdown', { query, ...options });
