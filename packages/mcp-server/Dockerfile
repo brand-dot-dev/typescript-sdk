@@ -1,12 +1,12 @@
-# Dockerfile for Brand Dev MCP Server
+# Dockerfile for Context Dev MCP Server
 #
 # This Dockerfile builds a Docker image for the MCP Server.
 #
 # To build the image locally:
-#   docker build -f packages/mcp-server/Dockerfile -t brand.dev-mcp:local .
+#   docker build -f packages/mcp-server/Dockerfile -t context.dev-mcp:local .
 #
 # To run the image:
-#   docker run -i brand.dev-mcp:local [OPTIONS]
+#   docker run -i context.dev-mcp:local [OPTIONS]
 #
 # Common options:
 #   --tool=<name>              Include specific tools
@@ -16,7 +16,7 @@
 #   --transport=<type>         Set transport type (stdio or http)
 #
 # For a full list of options:
-#   docker run -i brand.dev-mcp:local --help
+#   docker run -i context.dev-mcp:local --help
 #
 # Note: The MCP server uses stdio transport by default. Docker's -i flag
 # enables interactive mode, allowing the container to communicate over stdin/stdout.
@@ -56,8 +56,8 @@ COPY --from=builder /build/packages/mcp-server/dist ./
 # Copy node_modules from mcp-server (includes all production deps)
 COPY --from=builder /build/packages/mcp-server/node_modules ./node_modules
 
-# Copy the built brand.dev into node_modules
-COPY --from=builder /build/dist ./node_modules/brand.dev
+# Copy the built context.dev into node_modules
+COPY --from=builder /build/dist ./node_modules/context.dev
 
 # Change ownership to nodejs user
 RUN chown -R nodejs:nodejs /app

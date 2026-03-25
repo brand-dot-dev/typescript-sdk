@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import BrandDev from 'brand.dev';
+import ContextDev from 'context.dev';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
 type TextContentBlock = {
@@ -43,7 +43,7 @@ export type ToolCallResult = {
 };
 
 export type McpRequestContext = {
-  client: BrandDev;
+  client: ContextDev;
   stainlessApiKey?: string | undefined;
   upstreamClientEnvs?: Record<string, string> | undefined;
 };

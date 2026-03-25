@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^brand.dev(/.*)?',
+              regex: '^context.dev(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
