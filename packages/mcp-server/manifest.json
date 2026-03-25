@@ -12,7 +12,7 @@
     "url": "git+https://github.com/context-dot-dev/deprecated-brand-typescript-sdk.git"
   },
   "homepage": "https://github.com/context-dot-dev/deprecated-brand-typescript-sdk/tree/main/packages/mcp-server#readme",
-  "documentation": "https://docs.brand.dev/",
+  "documentation": "https://docs.context.dev/",
   "server": {
     "type": "node",
     "entry_point": "index.js",
