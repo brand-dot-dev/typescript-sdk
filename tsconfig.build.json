@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "context.dev/*": ["./dist/src/*"],
-      "context.dev": ["./dist/src/index.ts"]
+      "brand.dev/*": ["./dist/src/*"],
+      "brand.dev": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

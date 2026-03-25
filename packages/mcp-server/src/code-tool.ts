@@ -15,9 +15,9 @@ import { WorkerInput, WorkerOutput } from './code-tool-types';
 import { getLogger } from './logger';
 import { SdkMethod } from './methods';
 import { McpCodeExecutionMode } from './options';
-import { ClientOptions } from 'context.dev';
+import { ClientOptions } from 'brand.dev';
 
-const prompt = `Runs JavaScript code to interact with the Context Dev API.
+const prompt = `Runs JavaScript code to interact with the Brand Dev API.
 
 You are a skilled TypeScript programmer writing code to interface with the service.
 Define an async function named "run" that takes a single parameter of an initialized SDK client and it will be run.
@@ -145,11 +145,11 @@ const remoteStainlessHandler = async ({
   const codeModeEndpoint = readEnv('CODE_MODE_ENDPOINT_URL') ?? 'https://api.stainless.com/api/ai/code-tool';
 
   const localClientEnvs = {
-    CONTEXT_DEV_API_KEY: requireValue(
-      readEnv('CONTEXT_DEV_API_KEY') ?? client.apiKey,
-      'set CONTEXT_DEV_API_KEY environment variable or provide apiKey client option',
+    BRAND_DEV_API_KEY: requireValue(
+      readEnv('BRAND_DEV_API_KEY') ?? client.apiKey,
+      'set BRAND_DEV_API_KEY environment variable or provide apiKey client option',
     ),
-    CONTEXT_DEV_BASE_URL: readEnv('CONTEXT_DEV_BASE_URL') ?? client.baseURL ?? undefined,
+    BRAND_DEV_BASE_URL: readEnv('BRAND_DEV_BASE_URL') ?? client.baseURL ?? undefined,
   };
   // Merge any upstream client envs from the request header, with upstream values taking precedence.
   const mergedClientEnvs = { ...localClientEnvs, ...reqContext.upstreamClientEnvs };
@@ -163,7 +163,7 @@ const remoteStainlessHandler = async ({
       'x-stainless-mcp-client-envs': JSON.stringify(mergedClientEnvs),
     },
     body: JSON.stringify({
-      project_name: 'context.dev',
+      project_name: 'brand.dev',
       code,
       intent,
       client_opts: {},
@@ -246,7 +246,7 @@ const localDenoHandler = async ({
 
   // Follow symlinks in node_modules to allow read access to workspace-linked packages
   try {
-    const sdkPkgName = 'context.dev';
+    const sdkPkgName = 'brand.dev';
     const sdkDir = path.resolve(packageNodeModulesPath, sdkPkgName);
     const realSdkDir = fs.realpathSync(sdkDir);
     if (realSdkDir !== sdkDir) {

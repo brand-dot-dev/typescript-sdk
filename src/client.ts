@@ -18,18 +18,21 @@ import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
 import {
-  AI,
-  AIAIQueryParams,
-  AIAIQueryResponse,
-  AIExtractProductParams,
-  AIExtractProductResponse,
-  AIExtractProductsParams,
-  AIExtractProductsResponse,
-} from './resources/ai';
-import {
   Brand,
+  BrandAIProductParams,
+  BrandAIProductResponse,
+  BrandAIProductsParams,
+  BrandAIProductsResponse,
+  BrandAIQueryParams,
+  BrandAIQueryResponse,
+  BrandFontsParams,
+  BrandFontsResponse,
   BrandIdentifyFromTransactionParams,
   BrandIdentifyFromTransactionResponse,
+  BrandPrefetchByEmailParams,
+  BrandPrefetchByEmailResponse,
+  BrandPrefetchParams,
+  BrandPrefetchResponse,
   BrandRetrieveByEmailParams,
   BrandRetrieveByEmailResponse,
   BrandRetrieveByIsinParams,
@@ -38,39 +41,25 @@ import {
   BrandRetrieveByNameResponse,
   BrandRetrieveByTickerParams,
   BrandRetrieveByTickerResponse,
+  BrandRetrieveNaicsParams,
+  BrandRetrieveNaicsResponse,
   BrandRetrieveParams,
   BrandRetrieveResponse,
   BrandRetrieveSimplifiedParams,
   BrandRetrieveSimplifiedResponse,
+  BrandScreenshotParams,
+  BrandScreenshotResponse,
+  BrandStyleguideParams,
+  BrandStyleguideResponse,
+  BrandWebScrapeHTMLParams,
+  BrandWebScrapeHTMLResponse,
+  BrandWebScrapeImagesParams,
+  BrandWebScrapeImagesResponse,
+  BrandWebScrapeMdParams,
+  BrandWebScrapeMdResponse,
+  BrandWebScrapeSitemapParams,
+  BrandWebScrapeSitemapResponse,
 } from './resources/brand';
-import { Industry, IndustryRetrieveNaicsParams, IndustryRetrieveNaicsResponse } from './resources/industry';
-import {
-  Style,
-  StyleExtractFontsParams,
-  StyleExtractFontsResponse,
-  StyleExtractStyleguideParams,
-  StyleExtractStyleguideResponse,
-} from './resources/style';
-import {
-  Utility,
-  UtilityPrefetchByEmailParams,
-  UtilityPrefetchByEmailResponse,
-  UtilityPrefetchParams,
-  UtilityPrefetchResponse,
-} from './resources/utility';
-import {
-  Web,
-  WebScreenshotParams,
-  WebScreenshotResponse,
-  WebWebScrapeHTMLParams,
-  WebWebScrapeHTMLResponse,
-  WebWebScrapeImagesParams,
-  WebWebScrapeImagesResponse,
-  WebWebScrapeMdParams,
-  WebWebScrapeMdResponse,
-  WebWebScrapeSitemapParams,
-  WebWebScrapeSitemapResponse,
-} from './resources/web';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -86,14 +75,14 @@ import { isEmptyObj } from './internal/utils/values';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['CONTEXT_DEV_API_KEY'].
+   * Defaults to process.env['BRAND_DEV_API_KEY'].
    */
   apiKey?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['CONTEXT_DEV_BASE_URL'].
+   * Defaults to process.env['BRAND_DEV_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -147,7 +136,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['CONTEXT_DEV_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['BRAND_DEV_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -160,9 +149,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Context Dev API.
+ * API Client for interfacing with the Brand Dev API.
  */
-export class ContextDev {
+export class BrandDev {
   apiKey: string;
 
   baseURL: string;
@@ -178,10 +167,10 @@ export class ContextDev {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Context Dev API.
+   * API Client for interfacing with the Brand Dev API.
    *
-   * @param {string | undefined} [opts.apiKey=process.env['CONTEXT_DEV_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['CONTEXT_DEV_BASE_URL'] ?? https://api.context.dev/v1] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.apiKey=process.env['BRAND_DEV_API_KEY'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['BRAND_DEV_BASE_URL'] ?? https://api.brand.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -190,31 +179,31 @@ export class ContextDev {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('CONTEXT_DEV_BASE_URL'),
-    apiKey = readEnv('CONTEXT_DEV_API_KEY'),
+    baseURL = readEnv('BRAND_DEV_BASE_URL'),
+    apiKey = readEnv('BRAND_DEV_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Errors.ContextDevError(
-        "The CONTEXT_DEV_API_KEY environment variable is missing or empty; either provide it, or instantiate the ContextDev client with an apiKey option, like new ContextDev({ apiKey: 'My API Key' }).",
+      throw new Errors.BrandDevError(
+        "The BRAND_DEV_API_KEY environment variable is missing or empty; either provide it, or instantiate the BrandDev client with an apiKey option, like new BrandDev({ apiKey: 'My API Key' }).",
       );
     }
 
     const options: ClientOptions = {
       apiKey,
       ...opts,
-      baseURL: baseURL || `https://api.context.dev/v1`,
+      baseURL: baseURL || `https://api.brand.dev/v1`,
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? ContextDev.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? BrandDev.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('CONTEXT_DEV_LOG'), "process.env['CONTEXT_DEV_LOG']", this) ??
+      parseLogLevel(readEnv('BRAND_DEV_LOG'), "process.env['BRAND_DEV_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -249,7 +238,7 @@ export class ContextDev {
    * Check whether the base URL is set to its default.
    */
   #baseURLOverridden(): boolean {
-    return this.baseURL !== 'https://api.context.dev/v1';
+    return this.baseURL !== 'https://api.brand.dev/v1';
   }
 
   protected defaultQuery(): Record<string, string | undefined> | undefined {
@@ -752,10 +741,10 @@ export class ContextDev {
     }
   }
 
-  static ContextDev = this;
+  static BrandDev = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static ContextDevError = Errors.ContextDevError;
+  static BrandDevError = Errors.BrandDevError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -771,85 +760,55 @@ export class ContextDev {
 
   static toFile = Uploads.toFile;
 
-  web: API.Web = new API.Web(this);
-  ai: API.AI = new API.AI(this);
-  style: API.Style = new API.Style(this);
   brand: API.Brand = new API.Brand(this);
-  industry: API.Industry = new API.Industry(this);
-  utility: API.Utility = new API.Utility(this);
 }
 
-ContextDev.Web = Web;
-ContextDev.AI = AI;
-ContextDev.Style = Style;
-ContextDev.Brand = Brand;
-ContextDev.Industry = Industry;
-ContextDev.Utility = Utility;
+BrandDev.Brand = Brand;
 
-export declare namespace ContextDev {
+export declare namespace BrandDev {
   export type RequestOptions = Opts.RequestOptions;
-
-  export {
-    Web as Web,
-    type WebScreenshotResponse as WebScreenshotResponse,
-    type WebWebScrapeHTMLResponse as WebWebScrapeHTMLResponse,
-    type WebWebScrapeImagesResponse as WebWebScrapeImagesResponse,
-    type WebWebScrapeMdResponse as WebWebScrapeMdResponse,
-    type WebWebScrapeSitemapResponse as WebWebScrapeSitemapResponse,
-    type WebScreenshotParams as WebScreenshotParams,
-    type WebWebScrapeHTMLParams as WebWebScrapeHTMLParams,
-    type WebWebScrapeImagesParams as WebWebScrapeImagesParams,
-    type WebWebScrapeMdParams as WebWebScrapeMdParams,
-    type WebWebScrapeSitemapParams as WebWebScrapeSitemapParams,
-  };
-
-  export {
-    AI as AI,
-    type AIAIQueryResponse as AIAIQueryResponse,
-    type AIExtractProductResponse as AIExtractProductResponse,
-    type AIExtractProductsResponse as AIExtractProductsResponse,
-    type AIAIQueryParams as AIAIQueryParams,
-    type AIExtractProductParams as AIExtractProductParams,
-    type AIExtractProductsParams as AIExtractProductsParams,
-  };
-
-  export {
-    Style as Style,
-    type StyleExtractFontsResponse as StyleExtractFontsResponse,
-    type StyleExtractStyleguideResponse as StyleExtractStyleguideResponse,
-    type StyleExtractFontsParams as StyleExtractFontsParams,
-    type StyleExtractStyleguideParams as StyleExtractStyleguideParams,
-  };
 
   export {
     Brand as Brand,
     type BrandRetrieveResponse as BrandRetrieveResponse,
+    type BrandAIProductResponse as BrandAIProductResponse,
+    type BrandAIProductsResponse as BrandAIProductsResponse,
+    type BrandAIQueryResponse as BrandAIQueryResponse,
+    type BrandFontsResponse as BrandFontsResponse,
     type BrandIdentifyFromTransactionResponse as BrandIdentifyFromTransactionResponse,
+    type BrandPrefetchResponse as BrandPrefetchResponse,
+    type BrandPrefetchByEmailResponse as BrandPrefetchByEmailResponse,
     type BrandRetrieveByEmailResponse as BrandRetrieveByEmailResponse,
     type BrandRetrieveByIsinResponse as BrandRetrieveByIsinResponse,
     type BrandRetrieveByNameResponse as BrandRetrieveByNameResponse,
     type BrandRetrieveByTickerResponse as BrandRetrieveByTickerResponse,
+    type BrandRetrieveNaicsResponse as BrandRetrieveNaicsResponse,
     type BrandRetrieveSimplifiedResponse as BrandRetrieveSimplifiedResponse,
+    type BrandScreenshotResponse as BrandScreenshotResponse,
+    type BrandStyleguideResponse as BrandStyleguideResponse,
+    type BrandWebScrapeHTMLResponse as BrandWebScrapeHTMLResponse,
+    type BrandWebScrapeImagesResponse as BrandWebScrapeImagesResponse,
+    type BrandWebScrapeMdResponse as BrandWebScrapeMdResponse,
+    type BrandWebScrapeSitemapResponse as BrandWebScrapeSitemapResponse,
     type BrandRetrieveParams as BrandRetrieveParams,
+    type BrandAIProductParams as BrandAIProductParams,
+    type BrandAIProductsParams as BrandAIProductsParams,
+    type BrandAIQueryParams as BrandAIQueryParams,
+    type BrandFontsParams as BrandFontsParams,
     type BrandIdentifyFromTransactionParams as BrandIdentifyFromTransactionParams,
+    type BrandPrefetchParams as BrandPrefetchParams,
+    type BrandPrefetchByEmailParams as BrandPrefetchByEmailParams,
     type BrandRetrieveByEmailParams as BrandRetrieveByEmailParams,
     type BrandRetrieveByIsinParams as BrandRetrieveByIsinParams,
     type BrandRetrieveByNameParams as BrandRetrieveByNameParams,
     type BrandRetrieveByTickerParams as BrandRetrieveByTickerParams,
+    type BrandRetrieveNaicsParams as BrandRetrieveNaicsParams,
     type BrandRetrieveSimplifiedParams as BrandRetrieveSimplifiedParams,
-  };
-
-  export {
-    Industry as Industry,
-    type IndustryRetrieveNaicsResponse as IndustryRetrieveNaicsResponse,
-    type IndustryRetrieveNaicsParams as IndustryRetrieveNaicsParams,
-  };
-
-  export {
-    Utility as Utility,
-    type UtilityPrefetchResponse as UtilityPrefetchResponse,
-    type UtilityPrefetchByEmailResponse as UtilityPrefetchByEmailResponse,
-    type UtilityPrefetchParams as UtilityPrefetchParams,
-    type UtilityPrefetchByEmailParams as UtilityPrefetchByEmailParams,
+    type BrandScreenshotParams as BrandScreenshotParams,
+    type BrandStyleguideParams as BrandStyleguideParams,
+    type BrandWebScrapeHTMLParams as BrandWebScrapeHTMLParams,
+    type BrandWebScrapeImagesParams as BrandWebScrapeImagesParams,
+    type BrandWebScrapeMdParams as BrandWebScrapeMdParams,
+    type BrandWebScrapeSitemapParams as BrandWebScrapeSitemapParams,
   };
 }
