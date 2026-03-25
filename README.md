@@ -1,5 +1,7 @@
 # Brand Dev TypeScript API Library
 
+# Note: Brand.dev has rebranded to Context.dev
+
 [![NPM version](<https://img.shields.io/npm/v/brand.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/brand.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/brand.dev)
 
 This library provides convenient access to the Brand Dev REST API from server-side TypeScript or JavaScript.
