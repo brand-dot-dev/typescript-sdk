@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'context.dev/internal/uploads';
-import { toFile } from 'context.dev/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'brand.dev/internal/uploads';
+import { toFile } from 'brand.dev/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

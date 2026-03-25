@@ -681,41 +681,154 @@ Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/brand-dot
 * **client:** explicitly copy fetch in withOptions ([17dfeaf](https://github.com/brand-dot-dev/typescript-sdk/commit/17dfeaf08885c914a1ac4c0f24233c87e358f31e))
 * **client:** get fetchOptions type more reliably ([5b28587](https://github.com/brand-dot-dev/typescript-sdk/commit/5b285874706b67864bba4152887181c2bd380173))
 
-Full Changelog: [v0.3.0...v0.3.1](https://github.com/context-dot-dev/typescript-sdk/compare/v0.3.0...v0.3.1)
 
 ### Chores
 
-* sync repo ([0a626d0](https://github.com/context-dot-dev/typescript-sdk/commit/0a626d077271a137e22ae4af10cb476e1c51106c))
-* update SDK settings ([8df9c93](https://github.com/context-dot-dev/typescript-sdk/commit/8df9c93e45ceac008134e78f1d307694ecfd72e0))
+* **ci:** only run for pushes and fork pull requests ([63b08b8](https://github.com/brand-dot-dev/typescript-sdk/commit/63b08b8334584bddd085d1de493281967e57bd51))
 
-## 0.3.0 (2026-03-18)
+## 0.1.0-alpha.10 (2025-06-19)
 
-Full Changelog: [v0.2.0...v0.3.0](https://github.com/brand-dot-dev/context-typescript-sdk/compare/v0.2.0...v0.3.0)
-
-### Features
-
-* **api:** api update ([dc135a5](https://github.com/brand-dot-dev/context-typescript-sdk/commit/dc135a5c4a01de856d7ee19efa958af62ff4e132))
-* **api:** manual updates ([7cb981d](https://github.com/brand-dot-dev/context-typescript-sdk/commit/7cb981dbb19152fc272b33b119a7099410e48c50))
-* **api:** manual updates ([6f77533](https://github.com/brand-dot-dev/context-typescript-sdk/commit/6f77533b4bdf4ca48092d378f883d01f8142a779))
-
-## 0.2.0 (2026-03-18)
-
-Full Changelog: [v0.1.0...v0.2.0](https://github.com/brand-dot-dev/context-typescript-sdk/compare/v0.1.0...v0.2.0)
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
 
 ### Features
 
-* **api:** api update ([50c0ae4](https://github.com/brand-dot-dev/context-typescript-sdk/commit/50c0ae45d4f06facdbb47a61500eb64784eec547))
+* **api:** manual updates ([17e2f82](https://github.com/brand-dot-dev/typescript-sdk/commit/17e2f8259071877dfb71d51c107b23965bf01d35))
+
+## 0.1.0-alpha.9 (2025-06-19)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** manual updates ([f405c69](https://github.com/brand-dot-dev/typescript-sdk/commit/f405c69d49712539cb8623e9a5cc2b73431dd9dc))
+* **api:** manual updates ([437ffa2](https://github.com/brand-dot-dev/typescript-sdk/commit/437ffa2b5b4d650dafc0584ab45bafce9ccabc8e))
+* **client:** add support for endpoint-specific base URLs ([bd84840](https://github.com/brand-dot-dev/typescript-sdk/commit/bd848405ed7a7b7cf967dc9e9e068a3b04eb5bfd))
+* **mcp:** set X-Stainless-MCP header ([9f8bca8](https://github.com/brand-dot-dev/typescript-sdk/commit/9f8bca8ea75f6d11b15e3dfcbc9abeb4461257e2))
+
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([ce784cd](https://github.com/brand-dot-dev/typescript-sdk/commit/ce784cdd350a285e46139075209405820d7624e1))
 
 
 ### Chores
 
-* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([4676c22](https://github.com/brand-dot-dev/context-typescript-sdk/commit/4676c2225c175647bcaaa336c45f770b5973dc52))
-* **internal:** tweak CI branches ([f9c3d86](https://github.com/brand-dot-dev/context-typescript-sdk/commit/f9c3d8651c90cbbb454cd8d8c22de1fcc1830704))
+* **ci:** enable for pull requests ([623b5d6](https://github.com/brand-dot-dev/typescript-sdk/commit/623b5d6a5ea903ac4c2ed14841587318c3b62b75))
+* **client:** refactor imports ([d90fb77](https://github.com/brand-dot-dev/typescript-sdk/commit/d90fb773c0a32e7129041025cda6bf999d4750a0))
+* **internal:** add pure annotations, make base APIResource abstract ([d8a845c](https://github.com/brand-dot-dev/typescript-sdk/commit/d8a845cc477720993869fd020e4a65d9b49c5e1f))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([cd28940](https://github.com/brand-dot-dev/typescript-sdk/commit/cd289406a6103a675b98405719a604b80c162f3c))
+* **readme:** update badges ([46380e0](https://github.com/brand-dot-dev/typescript-sdk/commit/46380e0141b9570f5e2c816c5ca90f74f781df69))
+* **readme:** use better example snippet for undocumented params ([56c698d](https://github.com/brand-dot-dev/typescript-sdk/commit/56c698d1f5b47609e2e3da90c18813c715bdbb84))
 
-## 0.1.0 (2026-03-14)
+## 0.1.0-alpha.8 (2025-06-08)
 
-Full Changelog: [v0.0.1...v0.1.0](https://github.com/brand-dot-dev/context-typescript-sdk/compare/v0.0.1...v0.1.0)
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
 
 ### Features
 
-* **api:** manual updates ([b1780ab](https://github.com/brand-dot-dev/context-typescript-sdk/commit/b1780abcb9b87f3c940e7bff49651dfa6a78efa5))
+* **api:** manual updates ([bb954b6](https://github.com/brand-dot-dev/typescript-sdk/commit/bb954b60752ae7fe07f154657d56b006427ca4b5))
+
+
+### Chores
+
+* avoid type error in certain environments ([0b97df8](https://github.com/brand-dot-dev/typescript-sdk/commit/0b97df8bf0798a7cb2d4f8d570f79dc9c599e3c7))
+
+## 0.1.0-alpha.7 (2025-06-06)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** manual updates ([d997f7b](https://github.com/brand-dot-dev/typescript-sdk/commit/d997f7b982051edb3e3a3eeb4dc6c57f7723c134))
+
+## 0.1.0-alpha.6 (2025-06-06)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** manual updates ([f9ef6a0](https://github.com/brand-dot-dev/typescript-sdk/commit/f9ef6a0bf6cb6426fec94f0abb5a6c8acc668141))
+
+## 0.1.0-alpha.5 (2025-06-06)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **api:** manual updates ([e71b7eb](https://github.com/brand-dot-dev/typescript-sdk/commit/e71b7eb187e3acef2bc6fbf5b2beb0b47800245b))
+
+## 0.1.0-alpha.4 (2025-06-06)
+
+Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
+
+### Features
+
+* **api:** manual updates ([1cc75cd](https://github.com/brand-dot-dev/typescript-sdk/commit/1cc75cd9877da7b2280329cf4e53c7b73f067d46))
+* **mcp:** implement support for binary responses ([4d35e49](https://github.com/brand-dot-dev/typescript-sdk/commit/4d35e49621a740137fde22d0d50b570366697967))
+
+
+### Chores
+
+* adjust eslint.config.mjs ignore pattern ([95468aa](https://github.com/brand-dot-dev/typescript-sdk/commit/95468aa42a24f2f9333d2cf240b8b604d30e4b75))
+* **docs:** use top-level-await in example snippets ([2376ef9](https://github.com/brand-dot-dev/typescript-sdk/commit/2376ef99f488b1b990d3adeaa783be774bd3bbdb))
+* **internal:** fix readablestream types in node 20 ([d753e24](https://github.com/brand-dot-dev/typescript-sdk/commit/d753e243856e1efa6d82e5a3ba5e395a6dfe3558))
+
+## 0.1.0-alpha.3 (2025-06-02)
+
+Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
+
+### Features
+
+* **api:** manual updates ([dbd6df5](https://github.com/brand-dot-dev/typescript-sdk/commit/dbd6df5265d5e77ed900bffec20e42b7d9686302))
+
+## 0.1.0-alpha.2 (2025-05-31)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* compat with more runtimes ([4595f13](https://github.com/brand-dot-dev/typescript-sdk/commit/4595f133be88a2d148b9267ccd4535eb9a558f51))
+
+
+### Chores
+
+* **deps:** bump eslint-plugin-prettier ([4637721](https://github.com/brand-dot-dev/typescript-sdk/commit/4637721c6e8bb3feeaf727824ee1b2f67cd13204))
+* **internal:** update jest config ([261cd8e](https://github.com/brand-dot-dev/typescript-sdk/commit/261cd8e99fcb636154c5f8b669ccfcaa6d6ff6e9))
+
+## 0.1.0-alpha.1 (2025-05-29)
+
+Full Changelog: [v0.0.1-alpha.2...v0.1.0-alpha.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.2...v0.1.0-alpha.1)
+
+### Features
+
+* **mcp:** include http information in tools ([608a554](https://github.com/brand-dot-dev/typescript-sdk/commit/608a5549eba7d3775b4be77278e44eff460a56f3))
+
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([ab24ba0](https://github.com/brand-dot-dev/typescript-sdk/commit/ab24ba029cf26e71ac15da2a6dcdc55fb5c6bc20))
+* **mcp:** include description in dynamic tool search ([d698f91](https://github.com/brand-dot-dev/typescript-sdk/commit/d698f9173f905924424c82e0026b06fec3488572))
+
+
+### Chores
+
+* improve publish-npm script --latest tag logic ([a096145](https://github.com/brand-dot-dev/typescript-sdk/commit/a0961454962591ee6e1f0179ad1abf335275235e))
+* **internal:** codegen related update ([0bdcf4b](https://github.com/brand-dot-dev/typescript-sdk/commit/0bdcf4b6aa36c58284b5afe76776711e1121b5b1))
+* **mcp:** remove duplicate assignment ([1984da9](https://github.com/brand-dot-dev/typescript-sdk/commit/1984da989afc8b54c8a81656a0c32f0a488eeb68))
+
+## 0.0.1-alpha.2 (2025-05-21)
+
+Full Changelog: [v0.0.1-alpha.1...v0.0.1-alpha.2](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.1...v0.0.1-alpha.2)
+
+### Chores
+
+* configure new SDK language ([fa4bf57](https://github.com/brand-dot-dev/typescript-sdk/commit/fa4bf57b52799969998afe320e24014cb078140c))
+
+## 0.0.1-alpha.1 (2025-05-21)
+
+Full Changelog: [v0.0.1-alpha.0...v0.0.1-alpha.1](https://github.com/brand-dot-dev/typescript-sdk/compare/v0.0.1-alpha.0...v0.0.1-alpha.1)
+
+### Chores
+
+* update SDK settings ([0ce8ece](https://github.com/brand-dot-dev/typescript-sdk/commit/0ce8ecedb16b548b04b8c09f1692249b944a1b37))
+* update SDK settings ([a090aec](https://github.com/brand-dot-dev/typescript-sdk/commit/a090aec93fa38eadb6a59c751447d2f164c45a6c))

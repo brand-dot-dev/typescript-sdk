@@ -2,7 +2,7 @@
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
-import { ClientOptions } from 'context.dev';
+import { ClientOptions } from 'brand.dev';
 import express from 'express';
 import pino from 'pino';
 import pinoHttp from 'pino-http';

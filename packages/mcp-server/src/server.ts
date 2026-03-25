@@ -7,8 +7,8 @@ import {
   ListToolsRequestSchema,
   SetLevelRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
-import { ClientOptions } from 'context.dev';
-import ContextDev from 'context.dev';
+import { ClientOptions } from 'brand.dev';
+import BrandDev from 'brand.dev';
 import { codeTool } from './code-tool';
 import docsSearchTool from './docs-search-tool';
 import { getInstructions } from './instructions';
@@ -56,15 +56,15 @@ export async function initMcpServer(params: {
     error: logAtLevel('error'),
   };
 
-  let _client: ContextDev | undefined;
+  let _client: BrandDev | undefined;
   let _clientError: Error | undefined;
   let _logLevel: 'debug' | 'info' | 'warn' | 'error' | 'off' | undefined;
 
-  const getClient = (): ContextDev => {
+  const getClient = (): BrandDev => {
     if (_clientError) throw _clientError;
     if (!_client) {
       try {
-        _client = new ContextDev({
+        _client = new BrandDev({
           logger,
           ...params.clientOptions,
           defaultHeaders: {
@@ -99,7 +99,7 @@ export async function initMcpServer(params: {
       throw new Error(`Unknown tool: ${name}`);
     }
 
-    let client: ContextDev;
+    let client: BrandDev;
     try {
       client = getClient();
     } catch (error) {

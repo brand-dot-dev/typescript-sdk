@@ -1,12 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { ContextDev as default } from './client';
+export { BrandDev as default } from './client';
 
 export { type Uploadable, toFile } from './core/uploads';
 export { APIPromise } from './core/api-promise';
-export { ContextDev, type ClientOptions } from './client';
+export { BrandDev, type ClientOptions } from './client';
 export {
-  ContextDevError,
+  BrandDevError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,

@@ -5,7 +5,7 @@ import util from 'node:util';
 import Fuse from 'fuse.js';
 import ts from 'typescript';
 import { WorkerOutput } from './code-tool-types';
-import { ContextDev, ClientOptions } from 'context.dev';
+import { BrandDev, ClientOptions } from 'brand.dev';
 
 function getRunFunctionSource(code: string): {
   type: 'declaration' | 'expression';
@@ -53,10 +53,10 @@ function getRunFunctionSource(code: string): {
 function getTSDiagnostics(code: string): string[] {
   const functionSource = getRunFunctionSource(code)!;
   const codeWithImport = [
-    'import { ContextDev } from "context.dev";',
+    'import { BrandDev } from "brand.dev";',
     functionSource.type === 'declaration' ?
-      `async function run(${functionSource.client}: ContextDev)`
-    : `const run: (${functionSource.client}: ContextDev) => Promise<unknown> =`,
+      `async function run(${functionSource.client}: BrandDev)`
+    : `const run: (${functionSource.client}: BrandDev) => Promise<unknown> =`,
     functionSource.code,
   ].join('\n');
   const sourcePath = path.resolve('code.ts');
@@ -104,26 +104,26 @@ function getTSDiagnostics(code: string): string[] {
 
 const fuse = new Fuse(
   [
-    'client.web.screenshot',
-    'client.web.webScrapeHTML',
-    'client.web.webScrapeImages',
-    'client.web.webScrapeMd',
-    'client.web.webScrapeSitemap',
-    'client.ai.aiQuery',
-    'client.ai.extractProduct',
-    'client.ai.extractProducts',
-    'client.style.extractFonts',
-    'client.style.extractStyleguide',
+    'client.brand.aiProduct',
+    'client.brand.aiProducts',
+    'client.brand.aiQuery',
+    'client.brand.fonts',
     'client.brand.identifyFromTransaction',
+    'client.brand.prefetch',
+    'client.brand.prefetchByEmail',
     'client.brand.retrieve',
     'client.brand.retrieveByEmail',
     'client.brand.retrieveByIsin',
     'client.brand.retrieveByName',
     'client.brand.retrieveByTicker',
+    'client.brand.retrieveNaics',
     'client.brand.retrieveSimplified',
-    'client.industry.retrieveNaics',
-    'client.utility.prefetch',
-    'client.utility.prefetchByEmail',
+    'client.brand.screenshot',
+    'client.brand.styleguide',
+    'client.brand.webScrapeHTML',
+    'client.brand.webScrapeImages',
+    'client.brand.webScrapeMd',
+    'client.brand.webScrapeSitemap',
   ],
   { threshold: 1, shouldSort: true },
 );
@@ -250,7 +250,7 @@ const fetch = async (req: Request): Promise<Response> => {
     );
   }
 
-  const client = new ContextDev({
+  const client = new BrandDev({
     ...opts,
   });
 
