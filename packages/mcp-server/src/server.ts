@@ -19,8 +19,8 @@ import { HandlerFunction, McpRequestContext, ToolCallResult, McpTool } from './t
 export const newMcpServer = async (stainlessApiKey: string | undefined) =>
   new McpServer(
     {
-      name: 'context_dev_api',
-      version: '0.3.1',
+      name: 'brand_dev_api',
+      version: '0.31.0',
     },
     {
       instructions: await getInstructions(stainlessApiKey),
