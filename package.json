@@ -1,6 +1,6 @@
 {
   "name": "context.dev",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The official TypeScript library for the Context Dev API",
   "author": "Context Dev <hello@context.dev>",
   "types": "dist/index.d.ts",

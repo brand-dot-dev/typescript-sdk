@@ -1,7 +1,7 @@
 {
   "dxt_version": "0.2",
   "name": "context.dev-mcp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The official MCP Server for the Context Dev API",
   "author": {
     "name": "Context Dev",

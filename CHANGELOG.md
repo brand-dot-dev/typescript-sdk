@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 (2026-03-25)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/context-dot-dev/typescript-sdk/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* sync repo ([0a626d0](https://github.com/context-dot-dev/typescript-sdk/commit/0a626d077271a137e22ae4af10cb476e1c51106c))
+* update SDK settings ([8df9c93](https://github.com/context-dot-dev/typescript-sdk/commit/8df9c93e45ceac008134e78f1d307694ecfd72e0))
+
 ## 0.3.0 (2026-03-18)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/brand-dot-dev/context-typescript-sdk/compare/v0.2.0...v0.3.0)
