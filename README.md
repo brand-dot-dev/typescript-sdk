@@ -1,26 +1,26 @@
-# Context Dev TypeScript API Library
+# Brand Dev TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/context.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/context.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/context.dev)
+[![NPM version](<https://img.shields.io/npm/v/brand.dev.svg?label=npm%20(stable)>)](https://npmjs.org/package/brand.dev) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/brand.dev)
 
-This library provides convenient access to the Context Dev REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Brand Dev REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [docs.context.dev](https://docs.context.dev/). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.brand.dev](https://docs.brand.dev/). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
 ## MCP Server
 
-Use the Context Dev MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.
+Use the Brand Dev MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=context.dev-mcp&config=eyJuYW1lIjoiY29udGV4dC5kZXYtbWNwIiwidHJhbnNwb3J0IjoiaHR0cCIsInVybCI6Imh0dHBzOi8vY29udGV4dC1kZXYuc3RsbWNwLmNvbSIsImhlYWRlcnMiOnsieC1jb250ZXh0LWRldi1hcGkta2V5IjoiTXkgQVBJIEtleSJ9fQ)
-[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22context.dev-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fcontext-dev.stlmcp.com%22%2C%22headers%22%3A%7B%22x-context-dev-api-key%22%3A%22My%20API%20Key%22%7D%7D)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=brand.dev-mcp&config=eyJuYW1lIjoiYnJhbmQuZGV2LW1jcCIsInRyYW5zcG9ydCI6Imh0dHAiLCJ1cmwiOiJodHRwczovL2JyYW5kLWRldi5zdGxtY3AuY29tIiwiaGVhZGVycyI6eyJ4LWJyYW5kLWRldi1hcGkta2V5IjoiTXkgQVBJIEtleSJ9fQ)
+[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22brand.dev-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fbrand-dev.stlmcp.com%22%2C%22headers%22%3A%7B%22x-brand-dev-api-key%22%3A%22My%20API%20Key%22%7D%7D)
 
 > Note: You may need to set environment variables in your MCP client.
 
 ## Installation
 
 ```sh
-npm install context.dev
+npm install brand.dev
 ```
 
 ## Usage
@@ -29,10 +29,10 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
-  apiKey: process.env['CONTEXT_DEV_API_KEY'], // This is the default and can be omitted
+const client = new BrandDev({
+  apiKey: process.env['BRAND_DEV_API_KEY'], // This is the default and can be omitted
 });
 
 const brand = await client.brand.retrieve({ domain: 'REPLACE_ME' });
@@ -46,14 +46,14 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
-  apiKey: process.env['CONTEXT_DEV_API_KEY'], // This is the default and can be omitted
+const client = new BrandDev({
+  apiKey: process.env['BRAND_DEV_API_KEY'], // This is the default and can be omitted
 });
 
-const params: ContextDev.BrandRetrieveParams = { domain: 'REPLACE_ME' };
-const brand: ContextDev.BrandRetrieveResponse = await client.brand.retrieve(params);
+const params: BrandDev.BrandRetrieveParams = { domain: 'REPLACE_ME' };
+const brand: BrandDev.BrandRetrieveResponse = await client.brand.retrieve(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 const brand = await client.brand.retrieve({ domain: 'REPLACE_ME' }).catch(async (err) => {
-  if (err instanceof ContextDev.APIError) {
+  if (err instanceof BrandDev.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
     console.log(err.headers); // {server: 'nginx', ...}
@@ -101,7 +101,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new ContextDev({
+const client = new BrandDev({
   maxRetries: 0, // default is 2
 });
 
@@ -118,7 +118,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new ContextDev({
+const client = new BrandDev({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -144,7 +144,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new ContextDev();
+const client = new BrandDev();
 
 const response = await client.brand.retrieve({ domain: 'REPLACE_ME' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -167,13 +167,13 @@ console.log(brand.brand);
 
 The log level can be configured in two ways:
 
-1. Via the `CONTEXT_DEV_LOG` environment variable
+1. Via the `BRAND_DEV_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
+const client = new BrandDev({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -199,13 +199,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new ContextDev({
-  logger: logger.child({ name: 'ContextDev' }),
+const client = new BrandDev({
+  logger: logger.child({ name: 'BrandDev' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -268,10 +268,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 import fetch from 'my-fetch';
 
-const client = new ContextDev({ fetch });
+const client = new BrandDev({ fetch });
 ```
 
 ### Fetch options
@@ -279,9 +279,9 @@ const client = new ContextDev({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
+const client = new BrandDev({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -296,11 +296,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new ContextDev({
+const client = new BrandDev({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -310,9 +310,9 @@ const client = new ContextDev({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
+const client = new BrandDev({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -322,10 +322,10 @@ const client = new ContextDev({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import ContextDev from 'npm:context.dev';
+import BrandDev from 'npm:brand.dev';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new ContextDev({
+const client = new BrandDev({
   fetchOptions: {
     client: httpClient,
   },
@@ -344,7 +344,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/context-dot-dev/typescript-sdk/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/brand-dot-dev/typescript-sdk/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

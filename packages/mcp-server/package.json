@@ -1,17 +1,17 @@
 {
-  "name": "context.dev-mcp",
-  "version": "0.3.1",
-  "description": "The official MCP Server for the Context Dev API",
-  "author": "Context Dev <hello@context.dev>",
+  "name": "brand.dev-mcp",
+  "version": "0.30.0",
+  "description": "The official MCP Server for the Brand Dev API",
+  "author": "Brand Dev <hello@brand.dev>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/context-dot-dev/typescript-sdk.git",
+    "url": "git+https://github.com/brand-dot-dev/typescript-sdk.git",
     "directory": "packages/mcp-server"
   },
-  "homepage": "https://github.com/context-dot-dev/typescript-sdk/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/brand-dot-dev/typescript-sdk/tree/main/packages/mcp-server#readme",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "private": false,
@@ -30,7 +30,7 @@
     "fix": "eslint --fix ."
   },
   "dependencies": {
-    "context.dev": "file:../../dist/",
+    "brand.dev": "file:../../dist/",
     "ajv": "^8.18.0",
     "@cloudflare/cabidela": "^0.2.4",
     "@hono/node-server": "^1.19.10",
@@ -77,8 +77,8 @@
     "tsconfig-paths": "^4.0.0"
   },
   "imports": {
-    "context.dev-mcp": ".",
-    "context.dev-mcp/*": "./src/*"
+    "brand.dev-mcp": ".",
+    "brand.dev-mcp/*": "./src/*"
   },
   "exports": {
     ".": {

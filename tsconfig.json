@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "context.dev/*": ["./src/*"],
-      "context.dev": ["./src/index.ts"]
+      "brand.dev/*": ["./src/*"],
+      "brand.dev": ["./src/index.ts"]
     },
     "noEmit": true,
 

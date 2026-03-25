@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ContextDev from 'context.dev';
+import BrandDev from 'brand.dev';
 
-const client = new ContextDev({
+const client = new BrandDev({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -31,6 +31,112 @@ describe('resource brand', () => {
   });
 
   // Mock server tests are disabled
+  test.skip('aiProduct: only required params', async () => {
+    const responsePromise = client.brand.aiProduct({ url: 'https://example.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('aiProduct: required and optional params', async () => {
+    const response = await client.brand.aiProduct({ url: 'https://example.com', timeoutMS: 1000 });
+  });
+
+  // Mock server tests are disabled
+  test.skip('aiProducts: only required params', async () => {
+    const responsePromise = client.brand.aiProducts({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('aiProducts: required and optional params', async () => {
+    const response = await client.brand.aiProducts({
+      domain: 'domain',
+      maxProducts: 1,
+      timeoutMS: 1000,
+    });
+  });
+
+  // Mock server tests are disabled
+  test.skip('aiQuery: only required params', async () => {
+    const responsePromise = client.brand.aiQuery({
+      data_to_extract: [
+        {
+          datapoint_description: 'datapoint_description',
+          datapoint_example: 'datapoint_example',
+          datapoint_name: 'datapoint_name',
+          datapoint_type: 'text',
+        },
+      ],
+      domain: 'domain',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('aiQuery: required and optional params', async () => {
+    const response = await client.brand.aiQuery({
+      data_to_extract: [
+        {
+          datapoint_description: 'datapoint_description',
+          datapoint_example: 'datapoint_example',
+          datapoint_name: 'datapoint_name',
+          datapoint_type: 'text',
+          datapoint_list_type: 'string',
+          datapoint_object_schema: { testimonial_text: 'string', testimonial_author: 'string' },
+        },
+      ],
+      domain: 'domain',
+      specific_pages: {
+        about_us: true,
+        blog: true,
+        careers: true,
+        contact_us: true,
+        faq: true,
+        home_page: true,
+        pricing: true,
+        privacy_policy: true,
+        terms_and_conditions: true,
+      },
+      timeoutMS: 1000,
+    });
+  });
+
+  // Mock server tests are disabled
+  test.skip('fonts: only required params', async () => {
+    const responsePromise = client.brand.fonts({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('fonts: required and optional params', async () => {
+    const response = await client.brand.fonts({ domain: 'domain', timeoutMS: 1000 });
+  });
+
+  // Mock server tests are disabled
   test.skip('identifyFromTransaction: only required params', async () => {
     const responsePromise = client.brand.identifyFromTransaction({ transaction_info: 'transaction_info' });
     const rawResponse = await responsePromise.asResponse();
@@ -55,6 +161,40 @@ describe('resource brand', () => {
       phone: 0,
       timeoutMS: 1000,
     });
+  });
+
+  // Mock server tests are disabled
+  test.skip('prefetch: only required params', async () => {
+    const responsePromise = client.brand.prefetch({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('prefetch: required and optional params', async () => {
+    const response = await client.brand.prefetch({ domain: 'domain', timeoutMS: 1000 });
+  });
+
+  // Mock server tests are disabled
+  test.skip('prefetchByEmail: only required params', async () => {
+    const responsePromise = client.brand.prefetchByEmail({ email: 'dev@stainless.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('prefetchByEmail: required and optional params', async () => {
+    const response = await client.brand.prefetchByEmail({ email: 'dev@stainless.com', timeoutMS: 1000 });
   });
 
   // Mock server tests are disabled
@@ -148,6 +288,28 @@ describe('resource brand', () => {
   });
 
   // Mock server tests are disabled
+  test.skip('retrieveNaics: only required params', async () => {
+    const responsePromise = client.brand.retrieveNaics({ input: 'input' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('retrieveNaics: required and optional params', async () => {
+    const response = await client.brand.retrieveNaics({
+      input: 'input',
+      maxResults: 1,
+      minResults: 1,
+      timeoutMS: 1000,
+    });
+  });
+
+  // Mock server tests are disabled
   test.skip('retrieveSimplified: only required params', async () => {
     const responsePromise = client.brand.retrieveSimplified({ domain: 'domain' });
     const rawResponse = await responsePromise.asResponse();
@@ -162,5 +324,128 @@ describe('resource brand', () => {
   // Mock server tests are disabled
   test.skip('retrieveSimplified: required and optional params', async () => {
     const response = await client.brand.retrieveSimplified({ domain: 'domain', timeoutMS: 1000 });
+  });
+
+  // Mock server tests are disabled
+  test.skip('screenshot: only required params', async () => {
+    const responsePromise = client.brand.screenshot({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('screenshot: required and optional params', async () => {
+    const response = await client.brand.screenshot({
+      domain: 'domain',
+      fullScreenshot: 'true',
+      page: 'login',
+      prioritize: 'speed',
+    });
+  });
+
+  // Mock server tests are disabled
+  test.skip('styleguide', async () => {
+    const responsePromise = client.brand.styleguide();
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('styleguide: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.brand.styleguide(
+        {
+          directUrl: 'https://example.com',
+          domain: 'domain',
+          prioritize: 'speed',
+          timeoutMS: 1000,
+        },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(BrandDev.NotFoundError);
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeHTML: only required params', async () => {
+    const responsePromise = client.brand.webScrapeHTML({ url: 'https://example.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeHTML: required and optional params', async () => {
+    const response = await client.brand.webScrapeHTML({ url: 'https://example.com' });
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeImages: only required params', async () => {
+    const responsePromise = client.brand.webScrapeImages({ url: 'https://example.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeImages: required and optional params', async () => {
+    const response = await client.brand.webScrapeImages({ url: 'https://example.com' });
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeMd: only required params', async () => {
+    const responsePromise = client.brand.webScrapeMd({ url: 'https://example.com' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeMd: required and optional params', async () => {
+    const response = await client.brand.webScrapeMd({
+      url: 'https://example.com',
+      includeImages: true,
+      includeLinks: true,
+      shortenBase64Images: true,
+    });
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeSitemap: only required params', async () => {
+    const responsePromise = client.brand.webScrapeSitemap({ domain: 'domain' });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  // Mock server tests are disabled
+  test.skip('webScrapeSitemap: required and optional params', async () => {
+    const response = await client.brand.webScrapeSitemap({ domain: 'domain' });
   });
 });
