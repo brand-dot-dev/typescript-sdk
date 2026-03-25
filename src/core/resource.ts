@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import type { BrandDev } from '../client';
+import type { ContextDev } from '../client';
 
 export abstract class APIResource {
-  protected _client: BrandDev;
+  protected _client: ContextDev;
 
-  constructor(client: BrandDev) {
+  constructor(client: ContextDev) {
     this._client = client;
   }
 }

@@ -8,8 +8,8 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "paths": {
-      "brand.dev-mcp/*": ["./src/*"],
-      "brand.dev-mcp": ["./src/index.ts"]
+      "context.dev-mcp/*": ["./src/*"],
+      "context.dev-mcp": ["./src/index.ts"]
     },
     "noEmit": true,
 

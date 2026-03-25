@@ -7,8 +7,8 @@ import {
   ListToolsRequestSchema,
   SetLevelRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
-import { ClientOptions } from 'brand.dev';
-import BrandDev from 'brand.dev';
+import { ClientOptions } from 'context.dev';
+import ContextDev from 'context.dev';
 import { codeTool } from './code-tool';
 import docsSearchTool from './docs-search-tool';
 import { getInstructions } from './instructions';
@@ -19,8 +19,8 @@ import { HandlerFunction, McpRequestContext, ToolCallResult, McpTool } from './t
 export const newMcpServer = async (stainlessApiKey: string | undefined) =>
   new McpServer(
     {
-      name: 'brand_dev_api',
-      version: '0.30.0',
+      name: 'context_dev_api',
+      version: '0.3.0',
     },
     {
       instructions: await getInstructions(stainlessApiKey),
@@ -56,15 +56,15 @@ export async function initMcpServer(params: {
     error: logAtLevel('error'),
   };
 
-  let _client: BrandDev | undefined;
+  let _client: ContextDev | undefined;
   let _clientError: Error | undefined;
   let _logLevel: 'debug' | 'info' | 'warn' | 'error' | 'off' | undefined;
 
-  const getClient = (): BrandDev => {
+  const getClient = (): ContextDev => {
     if (_clientError) throw _clientError;
     if (!_client) {
       try {
-        _client = new BrandDev({
+        _client = new ContextDev({
           logger,
           ...params.clientOptions,
           defaultHeaders: {
@@ -99,7 +99,7 @@ export async function initMcpServer(params: {
       throw new Error(`Unknown tool: ${name}`);
     }
 
-    let client: BrandDev;
+    let client: ContextDev;
     try {
       client = getClient();
     } catch (error) {
