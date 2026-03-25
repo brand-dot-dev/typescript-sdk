@@ -20,7 +20,7 @@ or products provided by Brand Dev, please follow the respective company's securi
 
 ### Brand Dev Terms and Policies
 
-Please contact hello@brand.dev for any questions or concerns regarding the security of our services.
+Please contact hello@context.dev for any questions or concerns regarding the security of our services.
 
 ---
 
