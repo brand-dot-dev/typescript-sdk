@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brand-dot-dev/typescript-sdk.git"
+    "url": "git+https://github.com/context-dot-dev/deprecated-brand-typescript-sdk.git"
   },
-  "homepage": "https://github.com/brand-dot-dev/typescript-sdk/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/context-dot-dev/deprecated-brand-typescript-sdk/tree/main/packages/mcp-server#readme",
   "documentation": "https://docs.brand.dev/",
   "server": {
     "type": "node",
