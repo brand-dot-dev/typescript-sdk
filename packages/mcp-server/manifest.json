@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brand-dot-dev/context-typescript-sdk.git"
+    "url": "git+https://github.com/context-dot-dev/typescript-sdk.git"
   },
-  "homepage": "https://github.com/brand-dot-dev/context-typescript-sdk/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/context-dot-dev/typescript-sdk/tree/main/packages/mcp-server#readme",
   "documentation": "https://docs.context.dev/",
   "server": {
     "type": "node",
