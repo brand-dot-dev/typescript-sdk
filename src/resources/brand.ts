@@ -6294,6 +6294,12 @@ export interface BrandWebScrapeSitemapParams {
    * automatically normalized and validated.
    */
   domain: string;
+
+  /**
+   * Maximum number of links to return from the sitemap crawl. Defaults to 10,000.
+   * Minimum is 1, maximum is 100,000.
+   */
+  maxLinks?: number;
 }
 
 export declare namespace Brand {
