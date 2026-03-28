@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.33.0 (2026-03-28)
+
+Full Changelog: [v0.32.0...v0.33.0](https://github.com/context-dot-dev/deprecated-brand-typescript-sdk/compare/v0.32.0...v0.33.0)
+
+### Features
+
+* **api:** api update ([7846da3](https://github.com/context-dot-dev/deprecated-brand-typescript-sdk/commit/7846da3c957ea87da0e2851df56f79658b8b7725))
+
 ## 0.32.0 (2026-03-28)
 
 Full Changelog: [v0.31.0...v0.32.0](https://github.com/context-dot-dev/deprecated-brand-typescript-sdk/compare/v0.31.0...v0.32.0)

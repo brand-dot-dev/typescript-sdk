@@ -429,6 +429,7 @@ describe('resource brand', () => {
       includeImages: true,
       includeLinks: true,
       shortenBase64Images: true,
+      useMainContentOnly: true,
     });
   });
 

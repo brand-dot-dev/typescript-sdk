@@ -6284,6 +6284,12 @@ export interface BrandWebScrapeMdParams {
    * Shorten base64-encoded image data in the Markdown output
    */
   shortenBase64Images?: boolean;
+
+  /**
+   * Extract only the main content of the page, excluding headers, footers, sidebars,
+   * and navigation
+   */
+  useMainContentOnly?: boolean;
 }
 
 export interface BrandWebScrapeSitemapParams {
